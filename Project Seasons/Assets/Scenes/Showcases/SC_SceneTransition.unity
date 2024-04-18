@@ -714,8 +714,8 @@ MonoBehaviour:
   progressBar: {fileID: 1825010693}
   transitionsContainer: {fileID: 2043012658}
   enableTransitionTest: 1
-  timeScale: 0.1
-  sceneName: SC_StressScene
+  timeScale: 1
+  sceneName: SC_Cutscene_Prologue
   transitionButton: 101
 --- !u!1 &1968851884
 GameObject:

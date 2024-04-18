@@ -415,7 +415,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &187917496
 Transform:
   m_ObjectHideFlags: 0
@@ -5914,14 +5914,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431779426}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7009071, y: -0, z: -0, w: 0.7132526}
+  m_LocalRotation: {x: -0.7009092, y: 0, z: 0, w: -0.7132505}
   m_LocalPosition: {x: 0, y: 13, z: -320}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 511002594}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 279, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 449, y: 0, z: 0}
 --- !u!95 &431779429
 Animator:
   serializedVersion: 5
@@ -11794,7 +11794,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832691444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7009071, y: 0, z: 0, w: 0.7132526}
+  m_LocalRotation: {x: -0.7009092, y: 0, z: 0, w: -0.7132505}
   m_LocalPosition: {x: 0, y: 13, z: -320}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12040,37 +12040,48 @@ MonoBehaviour:
   bookPageALines: 28
   bookPageB: {fileID: 1520426274}
   textToType: "<align=\"center\"><line-height=200%><size=4><b>Prologue</b></size>\r\n<align=\"justified\"><line-height=160%><size=3><b>Die
-    Entfesselung des Far Derrig</b></size>\n<line-height=100%>Einst lebte im Schatten
-    dieser Welt eine namenlose Hexen-Riesin. Unsterblich und von der Sch\xF6nheit
-    dieser Welt gefesselt, streifte sie durch die Steppen und die W\xE4lder. Angetrieben
-    vom Wunsch, das zu sch\xFCtzen, was sie liebt, erschuf sie die vier Schriftrollen
-    der Jahreszeiten. Diese Schriftrollen waren m\xE4chtige Artefakte, die ihr halfen,
-    die Welt ins Gleichgewicht zu bringen.\r\n\r\nDoch selbst die m\xE4chtigsten
-    Artefakte bergen Gefahr, wenn sie in den H\xE4nden einer einzigen Wesens vereint
-    waren. Die Schriftrollen, jede verk\xF6rperte die Essenz einer Jahreszeit, konkurrieren
-    um die Vorherrschaft \xFCber die Welt. Ihre einzigartigen Kr\xE4fte, die einst
-    im Einklang gewirkt hatten, begannen sich gegeneinander zu richten, als sie unter
-    dem Einfluss einer einzigen Hand vereint waren. Das Gleichgewicht, das die Hexen-Riesin
-    so sorgf\xE4ltig geschaffen hatte, wurde bedroht, und ein uralter Konflikt zwischen
-    den Jahreszeiten bahnte sich an.\r\n\r\nDie Hexen-Riesin, gezwungen, die Spannungen
-    zwischen den Schriftrollen zu \xFCberwinden, sah sich mit einem schwierigen Dilemma
-    konfrontiert. Um die Welt zu retten, musste sie ihre Pers\xF6nlichkeit in vier
-    Teile teilen und jede der Schriftrollen einer eigenen H\xFCterin \xFCbergeben.
-    So wurden Lentje, Imelda, Flura und Edene geboren - die H\xFCterinnen der Jahreszeiten.\r\n\r\nJede
-    der gespaltenen Hexen erhielt eine der Schriftrollen der Jahreszeiten und wurde
-    zu ihrer H\xFCterin ernannt. Lentje bewachte die Herbstrolle, Imelda die Winterrolle,
-    Flura die Fr\xFChlingsrolle und Edene die Sommerrolle. Gemeinsam trugen sie die
-    Verantwortung, das Gleichgewicht der Natur aufrechtzuerhalten und die Schriftrollen
-    vor denen zu sch\xFCtzen, die sie f\xFCr b\xF6se Zwecke missbrauchen wollten.\r\n\r\nObwohl
-    sie nun getrennt waren, f\xFChlten sich die vier Hexen immer noch eng miteinander
-    verbunden, denn sie waren einst Teil derselben Seele. Ihre Zusammenarbeit und
-    ihre gemeinsamen Bestrebungen, die Welt zu sch\xFCtzen, waren ein Zeichen ihrer
-    unzweifelhaften Bindung und ihrer Entschlossenheit, das zu verteidigen, was sie
-    liebten.\r\n"
+    Entstehung der Schriftrollen</b></size>\n<line-height=100%>In den unendlichen
+    Weiten der Natur, zwischen den W\xE4ldern, den Gebirgen und den Steppen, streifte
+    einst eine namenlose Hexen-Riesin umher. Ihre Gestalt war umh\xFCllt von der
+    unendlichen Sch\xF6nheit und ihrer Liebe f\xFCr diese Welt. Diese Liebe und Verbundenheit
+    erwachten in den einsamen Momenten, in denen sie die tiefe Verbundenheit mit
+    der lebendigen Natur sp\xFCrte. Angetrieben von dem Wunsch, die kosmische Harmonie
+    zu wahren und die wilden Kr\xE4fte zu b\xE4ndigen, die in jedem Blatt, jedem
+    Stein und jedem Atemzug pulsierten, entschloss sie sich zu einer Tat von unermesslicher
+    Gr\xF6\xDFe. So erschuf sie die vier Schriftrollen der Jahreszeiten, m\xE4chtige
+    Artefakte, die das Gef\xFCge der Welt selbst beeinflussen sollten.\n\r\nDoch
+    die m\xE4chtigen Artefakte bergen Gefahr, wenn sie in den H\xE4nden eines einzigen
+    Wesens vereint sind. Die Schriftrollen, von denen jede die Essenz einer Jahreszeit
+    verk\xF6rpert, strebten erneut nach der Vorherrschaft \xFCber die Welt. Ihre
+    einzigartigen Kr\xE4fte, die einst vereint schienen, begannen sich nun gegeneinander
+    zu richten. Das Gleichgewicht, das die Hexen-Riesin so sorgf\xE4ltig geschaffen
+    hatte, wurde bedroht, w\xE4hrend sich ein uralter Konflikt zwischen den Jahreszeiten
+    bahnte.\n\r\nDie Hexen-Riesin, konfrontiert mit der Notwendigkeit, die Spannungen
+    zwischen den Schriftrollen zu \xFCberwinden, stand vor einem schwierigen Dilemma.
+    Um zu verhindern, dass die Welt erneut ins Chaos st\xFCrzt, entschied sie sich,
+    ihre Seele in vier Teile zu teilen, um f\xFCr jede der Schriftrollen eine eigene
+    H\xFCterin zu erschaffen. So entschied sie sich, f\xFCr jede der Schriftrollen
+    eine eigene H\xFCterin zu erschaffen. So wurden Lentje, Imelda, Flura und Edene
+    geboren, die H\xFCterinnen der Jahreszeiten.\r\n\nLentje bewachte die Herbstrolle,
+    Imelda die Winterrolle, Flura die Fr\xFChlingsrolle und Edene die Sommerrolle.
+    Gemeinsam trugen sie die Verantwortung, das Gleichgewicht der Natur aufrechtzuerhalten
+    und die Schriftrollen vor denen zu sch\xFCtzen, die sie f\xFCr b\xF6se Zwecke
+    missbrauchen wollten.\r\nObwohl sie eigenst\xE4ndige Wesen waren, f\xFChlten
+    sich die vier Hexen immer noch eng miteinander verbunden, denn sie waren einst
+    Teil derselben Seele. Ihre Zusammenarbeit und ihre gemeinsamen Bestrebungen,
+    die Welt zu sch\xFCtzen, waren ein Zeichen ihrer unzweifelhaften Bindung und
+    ihrer Entschlossenheit, das zu sch\xFCtzen und zu verteidigen, was sie liebten
+    gelernt hatten.\n\r\nDennoch vermochte selbst diese starke Verbindung nicht zu
+    verhindern, dass eine neue Bedrohung auftauchte. Im Schutze der Nacht und unter
+    dem Einfluss dunkler M\xE4chte, angezogen von den Kr\xE4ften, welche die Rivalit\xE4t
+    der Schriftrollen entfesselten, drang eine unheilvolle Gestalt in die heiligen
+    Hallen der Cailleacha ein, gierig darauf bedacht, die Schriftrollen zu entwenden.
+    Die Welt war in Gefahr, w\xE4hrend das Streben nach Macht und die Sehnsucht nach
+    Kontrolle sie in Dunkelheit h\xFCllten.\r\n"
   startWithDelay: 0
-  startDelayTime: 12
-  charactersPerSecond: 26
-  interruptionDelay: 0.4
+  startDelayTime: 4
+  charactersPerSecond: 23
+  interruptionDelay: 0.8
   image: {fileID: 847252988}
   imageMaterial: {fileID: 2100000, guid: 2713f77a33014864993d7157fd0b7087, type: 2}
   timeToCompleteImage: 4.5
@@ -18931,7 +18942,7 @@ Transform:
   m_GameObject: {fileID: 1473103079}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.1751906, y: -0.9999695, z: -19.720032}
+  m_LocalPosition: {x: -0.74700123, y: -0.9999695, z: 0.26290894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20322,7 +20333,7 @@ AudioSource:
   m_GameObject: {fileID: 1958477100}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2690612155460420833, guid: 73fa5b0333cd692468ddb9517bbabaa7,
+  OutputAudioMixerGroup: {fileID: 882978162647134622, guid: 73fa5b0333cd692468ddb9517bbabaa7,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 4a85d5c5a2f3b4e4c9ce10dbffd28b8a, type: 3}
   m_PlayOnAwake: 0

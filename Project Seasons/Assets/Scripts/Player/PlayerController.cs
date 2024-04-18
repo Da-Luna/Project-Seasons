@@ -204,7 +204,10 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 mSpeed = new(InputMoveValue * currentSpeed, PlayerRb.velocity.y);
             PlayerRb.velocity = mSpeed;
-            //PlayerRb.AddForce(mSpeed, ForceMode2D.Impulse);
+
+            /* Move RB with AddForce
+            Move Base and Run Speed should be 80 and 160. The RB Material shound be Frictionless
+            PlayerRb.AddForce(mSpeed, ForceMode2D.Force);*/
         }
         if (!IsGrounded) return;
         else if (IsGrounded && ExeJump)
