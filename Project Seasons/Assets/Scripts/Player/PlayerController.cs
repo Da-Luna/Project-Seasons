@@ -2,15 +2,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public enum PlayerStates { STAND, WALK, RUN, JUMP, STUN, OTHER }
-    public PlayerStates PlayerState { get; private set; }
-
-    void SetPlayerState()
-    {
-
-    }
-
-
     [SerializeField, Tooltip("ScriptableObject for reading player input")]
     private InputReaderSO inputReader;
 

@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour
 
     public Transform Player { get; private set; }
 
-    public bool PlayerCanStart { get; private set; }
+    public bool playerCanStart;
 
     // Animation state names
     const string appear = "Appear";
@@ -112,7 +112,7 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(timeBeforeActiveControl);
 
         controller.enabled = true;
-        PlayerCanStart = true;
+        playerCanStart = true;
     }
     #endregion
 
@@ -208,7 +208,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if (!PlayerCanStart) return;
+        if (!playerCanStart) return;
 
         HandlePlayerExecutes();
         controller.HandleMovementSpeed();
@@ -217,7 +217,7 @@ public class PlayerManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!PlayerCanStart) return;
+        if (!playerCanStart) return;
 
         controller.GroundCheck();
         controller.ExecuteMovement();
