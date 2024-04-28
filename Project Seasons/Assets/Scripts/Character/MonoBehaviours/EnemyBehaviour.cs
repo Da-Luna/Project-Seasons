@@ -5,64 +5,81 @@ using UnityEditor;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [Header("Movement")]
-    public float patrolSpeed = 0.8f;
-    public float runSpeed = 0.8f;
-    public float gravity = 10.0f;
+    [SerializeField, Tooltip("Specifies whether the enemy can fly.")]
+    bool canEnemyFly;
 
+    // Movement parameters
+    [Header("Movement")]
+    [SerializeField] float patrolSpeed = 0.8f;
+    [SerializeField] float runSpeed = 0.8f;
+    [SerializeField] float gravity = 40.0f;
+
+    // Patrolling parameters
     [Header("Patrolling")]
-    [SerializeField, Tooltip("")]
-    bool canFlyEnemy;
-    [SerializeField, Tooltip("")]
-    LayerMask groundObstacleMask;
-    [SerializeField, Tooltip("")]
-    LayerMask wallObstacleMask;
-    [SerializeField, Tooltip("")]
+    [SerializeField, Tooltip("The distance at which the m_TargetPatrolPosition is set.")]
     float patrolDistanceToTravel = 5f;
-    [SerializeField, Tooltip("Specifies the minimum time that the enemy waits by game start and after reaching the m_TargetPatrolPosition in the PatrollingWalk")]
+    [SerializeField, Tooltip("Minimum time the enemy waits before patrolling.")]
     float minPatrolWaitTime = 1.5f;
-    [SerializeField, Tooltip("Specifies the maximum time that the enemy waits by game start and after reaching the m_TargetPatrolPosition in the PatrollingWalk")]
+    [SerializeField, Tooltip("Maximum time the enemy waits before patrolling.")]
     float maxPatrolWaitTime = 3.0f;
-    [SerializeField, Tooltip("")]
+
+    // Patrolling obstacle parameters
+    [Header("Patrolling Obstacle")]
+    [SerializeField, Tooltip("LayerMask for detecting ground obstacles.")]
+    LayerMask groundObstacleMask;
+    [SerializeField, Tooltip("LayerMask for detecting wall obstacles.")]
+    LayerMask wallObstacleMask;
+    [SerializeField, Tooltip("Offset position of abyss detection sphere.")]
     Vector2 abyssCheckSphereOffset = new(1.5f, 0f);
     readonly float m_AbyssCheckSphereRadius = 0.5f;
 
+    // Targeting parameters
     [Header("Targeting")]
-    [SerializeField, Range(0.0f, 10.0f), Tooltip("")]
+    [SerializeField, Range(0.0f, 10.0f), Tooltip("Height of the starting point of the field of view.")]
     float viewPointHeight = 1.0f;
-    [SerializeField, Range(0.0f, 360.0f), Tooltip("")]
+    [SerializeField, Range(0.0f, 360.0f), Tooltip("Rotation of the entire field of view.")]
     float viewDirection = 90.0f;
-    [SerializeField, Range(0.0f, 360.0f), Tooltip("")]
+    [SerializeField, Range(0.0f, 360.0f), Tooltip("Size of the field of view.")]
     float viewFov = 180.0f;
-    [SerializeField, Tooltip("")]
+    [SerializeField, Tooltip("Maximum range of the field of view.")]
     float viewDistance = 20.0f;
-    [Tooltip("Time in seconds without the target in the view cone before the target is considered lost from sight")]
+    [Tooltip("Time without target in the view cone before target is considered lost.")]
     public float timeBeforeLostTarget = 3.0f;
 
+    // Attacking parameters
     [Header("Attacking")]
-    [SerializeField]
-    LayerMask attackMask; // Layer must be markted as "Player"
-    [SerializeField]
+    [SerializeField, Tooltip("LayerMask for recognizing obstacles to avoid continuous attacks against walls.")]
+    LayerMask attackObstacleMask;
+    [SerializeField, Tooltip("LayerMask for detecting targets.")]
+    LayerMask attackMask;
+    [SerializeField, Tooltip("Additional offset for the attack detection sphere.")]
     Vector2 attackOffset = new(2.5f, 1.2f);
-    [SerializeField]
+    [SerializeField, Tooltip("Minimum range from which the character starts attacking.")]
     float attackRange = 1.2f;
+    [SerializeField, Tooltip("Radius of the sphere in which the player takes damage.")]
+    float attackRadius = 1.2f;
 
+    // References to components
     protected SpriteRenderer m_SpriteRenderer;
     protected CharacterController2D m_CharacterController2D;
     protected Animator m_Animator;
 
+    // Movement vectors and targets
     protected Vector2 m_MoveVector;
     protected Transform m_Target;
     protected Vector2 m_TargetPatrolPosition;
     protected float m_PatrolWaitTime;
     protected float m_TimeBeforeLostTarget;
 
+    // Flag for character death
     protected bool m_Dead = false;
 
+    // Animator parameter hashes
     protected readonly int m_HashIdlePara = Animator.StringToHash("Idle");
     protected readonly int m_HashPatrolPara = Animator.StringToHash("Patrol");
     protected readonly int m_HashSpottedPara = Animator.StringToHash("Spotted");
     protected readonly int m_HashAttackPara = Animator.StringToHash("Attack");
+    protected readonly int m_HashAttackIdlePara = Animator.StringToHash("AttackIlde");
     protected readonly int m_HashGroundedPara = Animator.StringToHash("Grounded");
 
     void Awake()
@@ -71,6 +88,7 @@ public class EnemyBehaviour : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     void Start()
     {
         SceneLinkedSMB<EnemyBehaviour>.Initialise(m_Animator, this);
@@ -82,12 +100,17 @@ public class EnemyBehaviour : MonoBehaviour
         if (m_Dead)
             return;
 
-        m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, -gravity);
+        // Apply gravity
+        if (!canEnemyFly)
+            m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, -gravity);
 
+        // Move the character
         m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
 
+        // Update timers
         UpdateTimers();
 
+        // Update grounded status for the animator
         m_Animator.SetBool(m_HashGroundedPara, m_CharacterController2D.IsGrounded);
     }
 
@@ -103,26 +126,21 @@ public class EnemyBehaviour : MonoBehaviour
     public void PatrollingStart()
     {
         SetPatrolPosition(ref m_TargetPatrolPosition);
-        SetViewDirection((int)Mathf.Sign((m_TargetPatrolPosition.x - transform.position.x) * patrolSpeed));
-
-        m_MoveVector.x = (m_TargetPatrolPosition.x - transform.position.x > 0) ? patrolSpeed: -patrolSpeed;
+        m_MoveVector.x = (m_TargetPatrolPosition.x - transform.position.x > 0) ? patrolSpeed : -patrolSpeed;
     }
 
     public void PatrollingWalk()
     {
         bool reachedTarget = Mathf.Abs(transform.position.x - m_TargetPatrolPosition.x) < 0.1f;
 
+        // Calculate sphere position for obstacle detection
         float offsetX = m_SpriteRenderer.flipX ? -abyssCheckSphereOffset.x : abyssCheckSphereOffset.x;
         Vector2 sphereOffset = new(offsetX, abyssCheckSphereOffset.y);
-
         Vector2 spherePosition = transform.position + transform.TransformDirection(sphereOffset);
-        bool wallDetected = Physics2D.OverlapCircleAll(spherePosition, m_AbyssCheckSphereRadius, wallObstacleMask).Length > 0;
 
-        bool abyssDetected = false;
-        if (!canFlyEnemy)
-        {
-            abyssDetected = Physics2D.OverlapCircleAll(spherePosition, m_AbyssCheckSphereRadius, groundObstacleMask).Length == 0;
-        }
+        // Detect obstacles and stop if necessary
+        bool wallDetected = Physics2D.OverlapCircleAll(spherePosition, m_AbyssCheckSphereRadius, wallObstacleMask).Length > 0;
+        bool abyssDetected = !canEnemyFly && Physics2D.OverlapCircleAll(spherePosition, m_AbyssCheckSphereRadius, groundObstacleMask).Length == 0;
 
         if (reachedTarget || abyssDetected || wallDetected)
         {
@@ -135,14 +153,19 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
-    public Vector2 SetPatrolPosition(ref Vector2 targetPosition)
+    /// <summary>
+    /// Sets the next patrol position.
+    /// </summary>
+    /// <param name="targetPosition">Reference to the target position vector.</param>
+    /// <returns>The updated target position vector.</returns>
+    Vector2 SetPatrolPosition(ref Vector2 targetPosition)
     {
-        float determinedRandomDistance = patrolDistanceToTravel;
+        float determinedPatrolPosition = patrolDistanceToTravel;
 
         bool facingRight = !m_SpriteRenderer.flipX;
         float distanceSign = facingRight ? -1f : 1f;
 
-        float xDis = transform.position.x + (distanceSign * determinedRandomDistance);
+        float xDis = transform.position.x + (distanceSign * determinedPatrolPosition);
         float yDis = m_CharacterController2D.Rigidbody2D.position.y;
 
         targetPosition = new Vector2(xDis, yDis);
@@ -154,42 +177,57 @@ public class EnemyBehaviour : MonoBehaviour
 
     #region ATTACKING
 
-    public void ChargingTarget()
+    public void ChargingToTarget()
     {
         if (m_Target == null)
             return;
 
-        m_MoveVector.x = (m_Target.position.x - transform.position.x > 0) ? runSpeed : -runSpeed;
-        SetViewDirection((int)Mathf.Sign((m_Target.position.x - transform.position.x) * runSpeed));
+        // Move towards the target or stop if close enough
+        float tolerance = 0.1f;
+        if (Mathf.Abs(transform.position.x - m_Target.position.x) <= tolerance)
+        {
+            m_MoveVector.x = 0f;
+            m_Animator.SetTrigger(m_HashAttackIdlePara);
+        }
+        else
+        {
+            m_MoveVector.x = (m_Target.position.x - transform.position.x > 0) ? runSpeed : -runSpeed;
+            m_Animator.SetTrigger(m_HashSpottedPara);
+        }
     }
 
-    public void CheckAttackRange()
+    public void UpdateMeleeAttackRangeCheck()
     {
         if (m_Target == null)
             return;
 
-        if (Vector2.Distance(m_Target.position, m_CharacterController2D.Rigidbody2D.position) <= attackRange)
+        // Check if target is in melee attack range
+        Vector2 characterPosition = new(transform.position.x, transform.position.y + attackOffset.y);
+        if (Vector2.Distance(m_Target.position, characterPosition) <= attackRange)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(characterPosition, ((Vector2)m_Target.position - characterPosition).normalized, attackRange, attackObstacleMask);
+
+            // If the Raycast doesn't hit anything, trigger attack animation
+            if (hit.collider == null)
+            {
+                m_Animator.SetTrigger(m_HashAttackPara);
+            }
+        }
+    }
+
+    public void UpdateMagicianAttackRangeCheck()
+    {
+        if (m_Target == null)
+            return;
+
+        // Check if target is in magician attack range
+        if (Vector2.Distance(m_Target.position, transform.position) <= attackRange)
         {
             m_Animator.SetTrigger(m_HashAttackPara);
         }
     }
 
-    public void MeleeAttack()
-    {
-        m_MoveVector.x = 0f;
-
-        Vector3 pos = transform.position;
-        pos += transform.right * attackOffset.x;
-        pos += transform.up * attackOffset.y;
-
-        Collider2D hitInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
-        if (hitInfo != null)
-        {
-            Debug.Log("Attack Hit Info");
-        }
-    }
-
-    public void CheckTargetStillVisible()
+    public void UpdateTargetStillVisibleCheck()
     {
         if (m_TimeBeforeLostTarget <= 0)
         {
@@ -204,23 +242,44 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    public void MeleeAttack()
+    {
+        m_MoveVector.x = 0f;
+
+        // Calculate attack position
+        int side = 1;
+        if (m_SpriteRenderer != null && m_SpriteRenderer.flipX)
+        {
+            side = -1;
+        }
+
+        Vector3 pos = transform.position;
+        pos += transform.right * (attackOffset.x * side);
+        pos += transform.up * attackOffset.y;
+
+        // Check for targets in attack range
+        Collider2D hitInfo = Physics2D.OverlapCircle(pos, attackRadius, attackMask);
+        if (hitInfo != null)
+        {
+            Debug.Log("Attack Hit Info");
+        }
+    }
+
     #endregion
 
-    public void CheckForTarget()
+    #region GENERAL
+
+    public void UpdateCheckForTarget()
     {
-        Vector3 circleDirection;
-        if (m_SpriteRenderer.flipX == false)
-        {
-            circleDirection = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right;
-        }
-        else
-        {
-            circleDirection = Quaternion.Euler(0, 180f, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right;
-        }
+        // Get the direction of the field of view
+        Vector3 circleDirection = m_SpriteRenderer.flipX == false ?
+            Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right :
+            Quaternion.Euler(0, 180f, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right;
 
         Vector3 circleCenter = transform.position + Vector3.up * viewPointHeight;
         float circleRadius = viewDistance;
 
+        // Check for targets in the field of view
         Collider2D[] colliders = Physics2D.OverlapCircleAll(circleCenter, circleRadius);
 
         foreach (Collider2D collider in colliders)
@@ -239,9 +298,23 @@ public class EnemyBehaviour : MonoBehaviour
                 }
             }
         }
-
     }
 
+    public void UpdateLookToTarget()
+    {
+        // Set the character's facing direction towards the target
+        SetViewDirection((int)Mathf.Sign(((transform.position.x - m_Target.position.x) < 0) ? 1 : -1));
+    }
+
+    public void UpdateLookToPatrolPosition()
+    {
+        // Set the character's facing direction towards the patrol position
+        SetViewDirection((int)Mathf.Sign(((transform.position.x - m_TargetPatrolPosition.x) < 0) ? 1 : -1));
+    }
+
+    #endregion // GENERAL
+
+    // Method to set the view direction of the character
     void SetViewDirection(int facing)
     {
         if (facing == -1)
@@ -254,6 +327,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    // Method to update timers used for various time-based operations
     void UpdateTimers()
     {
         if (m_PatrolWaitTime > 0.0f)
@@ -271,44 +345,37 @@ public class EnemyBehaviour : MonoBehaviour
     bool showViewField;
     [SerializeField]
     Color colorViewField = new(0f, 1.0f, 0f, 0.05f);
-    
+
     [SerializeField]
     bool showPatrolTargetPosition;
     [SerializeField]
-    Color colorPatrolTargetPosition= Color.blue;
+    Color colorPatrolTargetPosition = Color.blue;
 
     [SerializeField]
     bool showGroundDetectSphere;
     [SerializeField]
-    Color colorGroundDetectSphere= Color.cyan;
+    Color colorGroundDetectSphere = Color.cyan;
 
+    [SerializeField]
+    bool showAttackProperties;
+    [SerializeField]
+    Color colorAttackField = Color.red;
+
+    [SerializeField]
+    Transform attackTarget;
     #endregion // CONTROL PANEL
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
+        // Draw field of view
         if (showViewField)
         {
             Vector3 circleCenter = transform.position + Vector3.up * viewPointHeight;
 
-            // Anpassung der Blickrichtung basierend auf der Charakterrotation
-            Vector3 forward;
-            if (m_SpriteRenderer != null)
-            {
-                if (m_SpriteRenderer.flipX == false)
-                {
-                    // Charakter schaut nach rechts
-                    forward = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right;
-                }
-                else
-                {
-                    // Charakter schaut nach links
-                    forward = Quaternion.Euler(0, 180f, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right;
-                }
-            }
-            else
-            {
-                forward = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right;
-            }
+            // Adjust view direction based on character rotation
+            Vector3 forward = m_SpriteRenderer != null && !m_SpriteRenderer.flipX ?
+                Quaternion.Euler(0, 0, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right :
+                Quaternion.Euler(0, 180f, transform.rotation.eulerAngles.y + viewDirection) * Vector3.right;
 
             forward = Vector3.ClampMagnitude(forward, 1);
 
@@ -318,38 +385,82 @@ public class EnemyBehaviour : MonoBehaviour
             Handles.DrawSolidArc(circleCenter, -Vector3.forward, (endpoint - circleCenter).normalized, viewFov, viewDistance);
         }
 
+        // Draw patrol target position
         if (showPatrolTargetPosition)
         {
             Gizmos.color = colorPatrolTargetPosition;
 
-            if (!EditorApplication.isPlaying)
-            {
-                Vector2 newPos = new(transform.position.x + patrolDistanceToTravel, transform.position.y);
-                Gizmos.DrawSphere(newPos, 0.5f);
-            }
-            else
-            {
-                Vector2 newPos = new(m_TargetPatrolPosition.x, m_CharacterController2D.Rigidbody2D.position.y);
-                Gizmos.DrawSphere(newPos, 0.5f);
-            }
+            Vector2 newPos = !EditorApplication.isPlaying ?
+                new Vector2(transform.position.x + patrolDistanceToTravel, transform.position.y) :
+                new Vector2(m_TargetPatrolPosition.x, m_CharacterController2D.Rigidbody2D.position.y);
+
+            Gizmos.DrawSphere(newPos, 0.5f);
         }
 
+        // Draw ground detection sphere
         if (showGroundDetectSphere)
         {
             Gizmos.color = colorGroundDetectSphere;
-            Vector2 sphereOffset;
-            if (m_SpriteRenderer != null)
-            {
-                float offsetX = m_SpriteRenderer.flipX ? -abyssCheckSphereOffset.x : abyssCheckSphereOffset.x;
-                sphereOffset = new(offsetX, abyssCheckSphereOffset.y);
-            }
-            else
-            {
-                sphereOffset = abyssCheckSphereOffset;
-            }
+            Vector2 sphereOffset = m_SpriteRenderer != null ?
+                (m_SpriteRenderer.flipX ? new Vector2(-abyssCheckSphereOffset.x, abyssCheckSphereOffset.y) : abyssCheckSphereOffset) :
+                abyssCheckSphereOffset;
 
             Vector2 spherePosition = transform.position + transform.TransformDirection(sphereOffset);
             Gizmos.DrawWireSphere(spherePosition, m_AbyssCheckSphereRadius);
+        }
+
+        // Draw attack properties
+        if (showAttackProperties)
+        {
+            Gizmos.color = colorAttackField;
+
+            int side = 1;
+            if (m_SpriteRenderer != null && m_SpriteRenderer.flipX)
+            {
+                side = -1;
+            }
+
+            Vector3 attackFieldPosition = transform.position + new Vector3(attackOffset.x * side, attackOffset.y, 0f);
+            Gizmos.DrawWireSphere(attackFieldPosition, attackRadius);
+
+            Vector2 characterPosition = new(transform.position.x, transform.position.y + attackOffset.y);
+
+            if (attackTarget != null)
+            {
+                Vector2 direction = (Vector2)attackTarget.position - characterPosition;
+                Vector2 minRequiredPosition = characterPosition + direction.normalized * attackRange;
+
+                if (Vector2.Distance(attackTarget.position, characterPosition) <= attackRange)
+                {
+                    RaycastHit2D hit = Physics2D.Raycast(characterPosition, ((Vector2)attackTarget.position - characterPosition).normalized, attackRange, attackObstacleMask);
+
+                    // If the Raycast doesn't hit anything, draw green line, else draw yellow line
+                    if (hit.collider == null)
+                    {
+                        Gizmos.color = Color.green;
+                        Gizmos.DrawLine(characterPosition, attackTarget.position);
+
+                        Gizmos.color = Color.green;
+                        Gizmos.DrawWireSphere(attackTarget.position, 0.2f);
+                    }
+                    else
+                    {
+                        Gizmos.color = Color.yellow;
+                        Gizmos.DrawLine(characterPosition, attackTarget.position);
+
+                        Gizmos.color = Color.red;
+                        Gizmos.DrawWireSphere(attackTarget.position, 0.2f);
+                    }
+                }
+                else
+                {
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawLine(characterPosition, minRequiredPosition);
+
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawWireSphere(minRequiredPosition, 0.2f);
+                }
+            }
         }
     }
 #endif
