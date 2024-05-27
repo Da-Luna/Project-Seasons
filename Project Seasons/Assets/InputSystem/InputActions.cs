@@ -28,22 +28,13 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""id"": ""2daa25ed-ff12-4fe3-b539-92fcc9280ae1"",
             ""actions"": [
                 {
-                    ""name"": ""Movement"",
+                    ""name"": ""Horizontal"",
                     ""type"": ""Value"",
                     ""id"": ""e484802a-33bd-4136-8e47-8ce874d93b11"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Sprint"",
-                    ""type"": ""Button"",
-                    ""id"": ""4cbf4079-fb8b-4b02-88e4-6443acc97ef3"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Jump"",
@@ -55,9 +46,81 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Attack"",
+                    ""name"": ""Dash"",
                     ""type"": ""Button"",
-                    ""id"": ""cb148e21-f60a-44d5-a537-47035192fb85"",
+                    ""id"": ""2232e4c9-9dbd-4adf-9669-3f1359700aca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AttackLight"",
+                    ""type"": ""Button"",
+                    ""id"": ""43e95812-edd3-440a-916c-7445e3a84f40"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Focused"",
+                    ""type"": ""Button"",
+                    ""id"": ""6cb06116-da9e-41e2-9410-69ee71b7a08c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AttackHeavy"",
+                    ""type"": ""Button"",
+                    ""id"": ""797256a1-e405-499f-8348-d55c9cd79ea5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AttackSuper"",
+                    ""type"": ""Button"",
+                    ""id"": ""2f3a369e-98b3-48c0-a4a3-6f6fc8e630f8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlotSouth"",
+                    ""type"": ""Button"",
+                    ""id"": ""3b175f6f-348a-47ff-8461-5e53bba5cf81"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlotWest"",
+                    ""type"": ""Button"",
+                    ""id"": ""9b9adab4-d956-41f7-8688-0e6ce0c050cc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlotNorth"",
+                    ""type"": ""Button"",
+                    ""id"": ""50428efc-b097-444c-96a7-d4e7d8e41e22"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SlotEast"",
+                    ""type"": ""Button"",
+                    ""id"": ""0a01ade2-c768-4433-8a0e-2397126a4e88"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -66,13 +129,46 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""8a577c74-0bd7-492a-9153-820c891cff2d"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Negative"",
+                    ""id"": ""8a6d2ba1-d925-478c-aaac-c44c639a6a79"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Positive"",
+                    ""id"": ""c6410950-ab66-4f90-bc89-f7cf7cd8916d"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Horizontal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""ArrowKeys"",
                     ""id"": ""8b08753a-4e52-45f4-9a92-1bf3919c249c"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Horizontal"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -83,7 +179,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -94,7 +190,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -105,7 +201,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Movement"",
+                    ""action"": ""Horizontal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -132,46 +228,288 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": ""SuperDesktop"",
+                    ""id"": ""656d91bf-af78-486e-8d65-e0b9b93f903f"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackSuper"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""47c7126f-be72-47cf-a961-16adf84be60b"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackSuper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""7b4056b7-0f64-4b84-bbf5-f51c3f810f39"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackSuper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""SuperGamepad"",
+                    ""id"": ""e01dc549-4e5d-48c3-a200-9de01b394cf5"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackSuper"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""c56dd0c3-edd4-4ef4-8134-aaa8740c06c3"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackSuper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""a137c95e-9b4e-4e28-8e19-b2ebe22c3d4c"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackSuper"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": """",
-                    ""id"": ""01c61518-5760-47ea-8841-0e0256ed6421"",
+                    ""id"": ""2f0636c4-cea6-44d5-9dbe-64fa71d4754e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a8c6508-578d-4eb1-bbc6-aacaf1c4eafd"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""HeavyDesktop"",
+                    ""id"": ""8b16ec12-dede-4df7-8d70-fc114826968c"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackHeavy"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""68395cac-a9ef-4d15-a907-31a15b2e9fb3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackHeavy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""502fb120-600d-45b2-9280-8b7354f4e9e1"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackHeavy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""HeavyGamepad"",
+                    ""id"": ""0d466c46-91d6-4a5b-bf80-0cb4fe8a19e5"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackHeavy"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""51198790-f7bc-4f0b-8b25-1be1965e4c9a"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackHeavy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""e03b12da-623c-4bff-83b6-c91d5a0f4667"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AttackHeavy"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1704e642-b501-4b1f-b3c6-c8837ee604df"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Focused"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c631663f-8194-44d1-9f97-817fe8fd8705"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Focused"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c641047f-bc25-4eca-92f8-b0f8c6a31fc3"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Sprint"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e9bdafb1-6272-43ee-a4b9-e36b14eb67b9"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""id"": ""c3924066-c2a4-414b-8564-15dc9f887e3f"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Sprint"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""4bc41424-1581-4b94-859c-d511d1753125"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""id"": ""3d5abd11-da36-4f75-9caa-9080afa5a63e"",
+                    ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""SlotSouth"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e11efc2e-638d-4d86-94d4-6483192d615c"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""865662c9-eb6f-4418-a10a-7f1f7931750c"",
+                    ""path"": ""<Gamepad>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""SlotSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba68ef37-916f-4d77-9be9-efc4d8285080"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotWest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7d1dac89-e0c8-428c-9c1f-146a4d6e0f94"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotWest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""041e8250-4550-4e2c-b175-442d68c93511"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotNorth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5433484e-2ff4-41e3-8366-e52e81f30a1f"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotNorth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b207ebd-d231-4848-b3d0-a8545113998e"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotEast"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9e173b61-70cd-4f5d-a0da-31b1d10878bd"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SlotEast"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -760,10 +1098,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
-        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_Horizontal = m_Player.FindAction("Horizontal", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
-        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_AttackLight = m_Player.FindAction("AttackLight", throwIfNotFound: true);
+        m_Player_Focused = m_Player.FindAction("Focused", throwIfNotFound: true);
+        m_Player_AttackHeavy = m_Player.FindAction("AttackHeavy", throwIfNotFound: true);
+        m_Player_AttackSuper = m_Player.FindAction("AttackSuper", throwIfNotFound: true);
+        m_Player_SlotSouth = m_Player.FindAction("SlotSouth", throwIfNotFound: true);
+        m_Player_SlotWest = m_Player.FindAction("SlotWest", throwIfNotFound: true);
+        m_Player_SlotNorth = m_Player.FindAction("SlotNorth", throwIfNotFound: true);
+        m_Player_SlotEast = m_Player.FindAction("SlotEast", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -839,18 +1184,32 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_Movement;
-    private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_Horizontal;
     private readonly InputAction m_Player_Jump;
-    private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_AttackLight;
+    private readonly InputAction m_Player_Focused;
+    private readonly InputAction m_Player_AttackHeavy;
+    private readonly InputAction m_Player_AttackSuper;
+    private readonly InputAction m_Player_SlotSouth;
+    private readonly InputAction m_Player_SlotWest;
+    private readonly InputAction m_Player_SlotNorth;
+    private readonly InputAction m_Player_SlotEast;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Player_Movement;
-        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        public InputAction @Horizontal => m_Wrapper.m_Player_Horizontal;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
-        public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @AttackLight => m_Wrapper.m_Player_AttackLight;
+        public InputAction @Focused => m_Wrapper.m_Player_Focused;
+        public InputAction @AttackHeavy => m_Wrapper.m_Player_AttackHeavy;
+        public InputAction @AttackSuper => m_Wrapper.m_Player_AttackSuper;
+        public InputAction @SlotSouth => m_Wrapper.m_Player_SlotSouth;
+        public InputAction @SlotWest => m_Wrapper.m_Player_SlotWest;
+        public InputAction @SlotNorth => m_Wrapper.m_Player_SlotNorth;
+        public InputAction @SlotEast => m_Wrapper.m_Player_SlotEast;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -860,34 +1219,76 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
-            @Sprint.started += instance.OnSprint;
-            @Sprint.performed += instance.OnSprint;
-            @Sprint.canceled += instance.OnSprint;
+            @Horizontal.started += instance.OnHorizontal;
+            @Horizontal.performed += instance.OnHorizontal;
+            @Horizontal.canceled += instance.OnHorizontal;
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
+            @Dash.started += instance.OnDash;
+            @Dash.performed += instance.OnDash;
+            @Dash.canceled += instance.OnDash;
+            @AttackLight.started += instance.OnAttackLight;
+            @AttackLight.performed += instance.OnAttackLight;
+            @AttackLight.canceled += instance.OnAttackLight;
+            @Focused.started += instance.OnFocused;
+            @Focused.performed += instance.OnFocused;
+            @Focused.canceled += instance.OnFocused;
+            @AttackHeavy.started += instance.OnAttackHeavy;
+            @AttackHeavy.performed += instance.OnAttackHeavy;
+            @AttackHeavy.canceled += instance.OnAttackHeavy;
+            @AttackSuper.started += instance.OnAttackSuper;
+            @AttackSuper.performed += instance.OnAttackSuper;
+            @AttackSuper.canceled += instance.OnAttackSuper;
+            @SlotSouth.started += instance.OnSlotSouth;
+            @SlotSouth.performed += instance.OnSlotSouth;
+            @SlotSouth.canceled += instance.OnSlotSouth;
+            @SlotWest.started += instance.OnSlotWest;
+            @SlotWest.performed += instance.OnSlotWest;
+            @SlotWest.canceled += instance.OnSlotWest;
+            @SlotNorth.started += instance.OnSlotNorth;
+            @SlotNorth.performed += instance.OnSlotNorth;
+            @SlotNorth.canceled += instance.OnSlotNorth;
+            @SlotEast.started += instance.OnSlotEast;
+            @SlotEast.performed += instance.OnSlotEast;
+            @SlotEast.canceled += instance.OnSlotEast;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
-            @Sprint.started -= instance.OnSprint;
-            @Sprint.performed -= instance.OnSprint;
-            @Sprint.canceled -= instance.OnSprint;
+            @Horizontal.started -= instance.OnHorizontal;
+            @Horizontal.performed -= instance.OnHorizontal;
+            @Horizontal.canceled -= instance.OnHorizontal;
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
+            @Dash.started -= instance.OnDash;
+            @Dash.performed -= instance.OnDash;
+            @Dash.canceled -= instance.OnDash;
+            @AttackLight.started -= instance.OnAttackLight;
+            @AttackLight.performed -= instance.OnAttackLight;
+            @AttackLight.canceled -= instance.OnAttackLight;
+            @Focused.started -= instance.OnFocused;
+            @Focused.performed -= instance.OnFocused;
+            @Focused.canceled -= instance.OnFocused;
+            @AttackHeavy.started -= instance.OnAttackHeavy;
+            @AttackHeavy.performed -= instance.OnAttackHeavy;
+            @AttackHeavy.canceled -= instance.OnAttackHeavy;
+            @AttackSuper.started -= instance.OnAttackSuper;
+            @AttackSuper.performed -= instance.OnAttackSuper;
+            @AttackSuper.canceled -= instance.OnAttackSuper;
+            @SlotSouth.started -= instance.OnSlotSouth;
+            @SlotSouth.performed -= instance.OnSlotSouth;
+            @SlotSouth.canceled -= instance.OnSlotSouth;
+            @SlotWest.started -= instance.OnSlotWest;
+            @SlotWest.performed -= instance.OnSlotWest;
+            @SlotWest.canceled -= instance.OnSlotWest;
+            @SlotNorth.started -= instance.OnSlotNorth;
+            @SlotNorth.performed -= instance.OnSlotNorth;
+            @SlotNorth.canceled -= instance.OnSlotNorth;
+            @SlotEast.started -= instance.OnSlotEast;
+            @SlotEast.performed -= instance.OnSlotEast;
+            @SlotEast.canceled -= instance.OnSlotEast;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1041,10 +1442,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public UIActions @UI => new UIActions(this);
     public interface IPlayerActions
     {
-        void OnMovement(InputAction.CallbackContext context);
-        void OnSprint(InputAction.CallbackContext context);
+        void OnHorizontal(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnAttack(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
+        void OnAttackLight(InputAction.CallbackContext context);
+        void OnFocused(InputAction.CallbackContext context);
+        void OnAttackHeavy(InputAction.CallbackContext context);
+        void OnAttackSuper(InputAction.CallbackContext context);
+        void OnSlotSouth(InputAction.CallbackContext context);
+        void OnSlotWest(InputAction.CallbackContext context);
+        void OnSlotNorth(InputAction.CallbackContext context);
+        void OnSlotEast(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

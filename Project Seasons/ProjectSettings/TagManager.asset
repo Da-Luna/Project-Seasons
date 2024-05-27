@@ -14,9 +14,9 @@ TagManager:
   - Player
   - Enemy
   - Wall
-  - 
-  - 
-  - 
+  - Bullet
+  - Platform
+  - Destructable
   - 
   - 
   - 
@@ -38,6 +38,39 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackgroundG
+    uniqueID: 2361658391
+    locked: 0
+  - name: BackgroundF
+    uniqueID: 3872683703
+    locked: 0
+  - name: BackgroundE
+    uniqueID: 3183981347
+    locked: 0
+  - name: BackgroundD
+    uniqueID: 340756859
+    locked: 0
+  - name: BackgroundC
+    uniqueID: 4190387207
+    locked: 0
+  - name: BackgroundB
+    uniqueID: 4102443437
+    locked: 0
+  - name: BackgroundA
+    uniqueID: 496679935
+    locked: 0
+  - name: WalkableGround
+    uniqueID: 2830354351
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ForgroundA
+    uniqueID: 3285691043
+    locked: 0
+  - name: ForgroundB
+    uniqueID: 1757505633
+    locked: 0
+  - name: ForgroundC
+    uniqueID: 1184736951
     locked: 0

@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+<<<<<<< Updated upstream:Project Seasons/Assets/Art/Sprites/VFX/Weapons/HitEffect.tif.meta
+guid: 9160aa956cd9182478c36fce3f0b750e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+=======
+guid: 852db44a16a25442a9c3dd1417a8da5b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+>>>>>>> Stashed changes:Project Seasons/Assets/Art/ExternPackages/UnityAssetStore/TheStone/Popup/popup_mask.Png.meta
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+<<<<<<< Updated upstream:Project Seasons/Assets/Art/Sprites/VFX/Weapons/HitEffect.tif.meta
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+=======
+>>>>>>> Stashed changes:Project Seasons/Assets/Art/ExternPackages/UnityAssetStore/TheStone/Popup/popup_mask.Png.meta
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+<<<<<<< Updated upstream:Project Seasons/Assets/Art/Sprites/VFX/Weapons/HitEffect.tif.meta
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+=======
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+>>>>>>> Stashed changes:Project Seasons/Assets/Art/ExternPackages/UnityAssetStore/TheStone/Popup/popup_mask.Png.meta
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+<<<<<<< Updated upstream:Project Seasons/Assets/Art/Sprites/VFX/Weapons/HitEffect.tif.meta
+  alphaUsage: 2
+=======
+  alphaUsage: 1
+>>>>>>> Stashed changes:Project Seasons/Assets/Art/ExternPackages/UnityAssetStore/TheStone/Popup/popup_mask.Png.meta
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+<<<<<<< Updated upstream:Project Seasons/Assets/Art/Sprites/VFX/Weapons/HitEffect.tif.meta
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+=======
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+>>>>>>> Stashed changes:Project Seasons/Assets/Art/ExternPackages/UnityAssetStore/TheStone/Popup/popup_mask.Png.meta
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+<<<<<<< Updated upstream:Project Seasons/Assets/Art/Sprites/VFX/Weapons/HitEffect.tif.meta
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+=======
+>>>>>>> Stashed changes:Project Seasons/Assets/Art/ExternPackages/UnityAssetStore/TheStone/Popup/popup_mask.Png.meta
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+<<<<<<< Updated upstream:Project Seasons/Assets/Art/Sprites/VFX/Weapons/HitEffect.tif.meta
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+=======
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+>>>>>>> Stashed changes:Project Seasons/Assets/Art/ExternPackages/UnityAssetStore/TheStone/Popup/popup_mask.Png.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

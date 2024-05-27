@@ -60,7 +60,7 @@ TextureImporter:
       213: 21300036
     second: SpikesNew_19
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -77,11 +77,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -120,6 +121,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -131,8 +134,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 1024
@@ -143,8 +147,9 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 1024
@@ -155,8 +160,22 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -168,8 +187,8 @@ TextureImporter:
         y: 405
         width: 328
         height: 177
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 149, y: -51.5}
@@ -230,8 +249,8 @@ TextureImporter:
         y: 411
         width: 211
         height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -42.5, y: 4.5}
@@ -270,15 +289,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_4
+      name: SpikesNew_2
       rect:
         serializedVersion: 2
         x: 631
         y: 405
         width: 289
         height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 66.5, y: 60.5}
@@ -326,15 +345,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_5
+      name: SpikesNew_3
       rect:
         serializedVersion: 2
         x: 956
         y: 414
         width: 215
         height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 16.5, y: 93.5}
@@ -393,15 +412,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_8
+      name: SpikesNew_4
       rect:
         serializedVersion: 2
         x: 1225
         y: 413
         width: 281
         height: 229
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -77.5, y: -29.5}
@@ -442,15 +461,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_10
+      name: SpikesNew_5
       rect:
         serializedVersion: 2
         x: 1522
         y: 412
         width: 253
         height: 160
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.03}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 124.5, y: 27}
@@ -486,15 +505,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_11
+      name: SpikesNew_6
       rect:
         serializedVersion: 2
         x: 1806
         y: 405
         width: 198
         height: 311
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 50, y: -92.5}
@@ -540,15 +559,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_13
+      name: SpikesNew_7
       rect:
         serializedVersion: 2
         x: 0
         y: 14
         width: 382
         height: 188
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.07}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 136, y: 39}
@@ -639,15 +658,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_14
+      name: SpikesNew_8
       rect:
         serializedVersion: 2
         x: 391
         y: 24
         width: 252
         height: 242
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 98, y: -64}
@@ -704,15 +723,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_15
+      name: SpikesNew_9
       rect:
         serializedVersion: 2
         x: 631
         y: 23
         width: 306
         height: 199
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 142, y: 7.5}
@@ -759,15 +778,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_16
+      name: SpikesNew_10
       rect:
         serializedVersion: 2
         x: 946
         y: 24
         width: 275
         height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.06}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 58.5, y: 77.5}
@@ -827,15 +846,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_17
+      name: SpikesNew_11
       rect:
         serializedVersion: 2
         x: 1229
-        y: 24
+        y: 25
         width: 293
         height: 244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.09}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 84.5, y: 122}
@@ -889,15 +908,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_18
+      name: SpikesNew_12
       rect:
         serializedVersion: 2
         x: 1496
         y: 27
         width: 275
         height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.12}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: -23.5, y: 91}
@@ -938,15 +957,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpikesNew_19
+      name: SpikesNew_13
       rect:
         serializedVersion: 2
         x: 1793
         y: 43
         width: 250
         height: 318
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 8, y: 38}
@@ -994,7 +1013,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dd043db967dc7d14b9801b806beaa49e
     internalID: 0
     vertices: []
     indices: 
@@ -1002,23 +1021,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpikesNew_4: 21300008
-      SpikesNew_5: 21300010
       SpikesNew_0: 21300000
-      SpikesNew_14: 21300026
-      SpikesNew_16: 21300030
-      SpikesNew_10: 21300020
-      SpikesNew_19: 21300036
-      SpikesNew_11: 21300022
-      SpikesNew_8: 21300016
       SpikesNew_1: 21300002
-      SpikesNew_15: 21300028
-      SpikesNew_17: 21300032
-      SpikesNew_13: 21300024
-      SpikesNew_18: 21300034
-  spritePackingTag: 
+      SpikesNew_10: 21300030
+      SpikesNew_11: 21300032
+      SpikesNew_12: 21300034
+      SpikesNew_13: 21300036
+      SpikesNew_2: 21300008
+      SpikesNew_3: 21300010
+      SpikesNew_4: 21300016
+      SpikesNew_5: 21300020
+      SpikesNew_6: 21300022
+      SpikesNew_7: 21300024
+      SpikesNew_8: 21300026
+      SpikesNew_9: 21300028
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

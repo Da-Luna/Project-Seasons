@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Showcases/SC_Cutscene_Prologue.unity
-    guid: 046d4500107db664f96c7f7eea3ad2d4
+    path: Assets/Scenes/Showcases/SC_ControllerPlayer.unity
+    guid: 4e41a88ab2073774c848f511a0cc1ff1
   m_configObjects: {}

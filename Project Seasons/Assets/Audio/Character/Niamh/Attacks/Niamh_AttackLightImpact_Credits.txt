@@ -1,0 +1,2 @@
+Artist:		Unity 2D GameKit
+Title:		EllenRangedAttack02 (Niamh_AttackLightImpact)

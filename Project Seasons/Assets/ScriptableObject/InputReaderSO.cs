@@ -5,21 +5,40 @@ using UnityEngine.Events;
 [CreateAssetMenu(menuName = "TLS Scriptable Objects/InputReader")]
 public class InputReaderSO : ScriptableObject, InputActions.IPlayerActions, InputActions.IUIActions
 {
-    private InputActions _gameInput;
+    InputActions _gameInput;
 
-    public event UnityAction<float> Movement;
-    public event UnityAction<float> Sprint;
-    public event UnityAction Jump;
-    public event UnityAction Attack;
+    #region GAMEPLAY INPUT PROPERTIES
+    public event UnityAction<float> Horizontal;
+        
+    public event UnityAction<float> Jump;
+    public event UnityAction<float> Dash;
+
+    public event UnityAction<float> AttackLight;
+    public event UnityAction<float> Focused;
+    public event UnityAction<float> AttackHeavy;
+    public event UnityAction<float> AttackSuper;
+
+    public event UnityAction<float> QuickselectA;
+    public event UnityAction<float> QuickselectB;
+    public event UnityAction<float> QuickselectC;
+    public event UnityAction<float> QuickselectD;
+
+    #endregion // GAMEPLAY INPUT PROPERTIES
+
+    #region USER INTERFACE INPUT PROPERTIES
 
     public event UnityAction<Vector2> UINavigate;
+
     public event UnityAction UISubmit;
     public event UnityAction UICancel;
+    
     public event UnityAction<Vector2> UIOnPoint;
-    //public event UnityAction UIOnClick;
+
+    #endregion // USER INTERFACE INPUT PROPERTIES
 
     #region On Enable and Disable
-    private void OnEnable()
+
+    void OnEnable()
     {
         if (_gameInput == null)
         {
@@ -29,48 +48,86 @@ public class InputReaderSO : ScriptableObject, InputActions.IPlayerActions, Inpu
         _gameInput.Player.SetCallbacks(instance:this);
         _gameInput.UI.SetCallbacks(instance:this);
     }
-    private void OnDisable()
+    
+    void OnDisable()
     {
         _gameInput.Player.Disable();
         _gameInput.UI.Disable();
     }
+
     #endregion
 
     #region Player Actions
+    
     public void EnablePlayerActions()
     {
         _gameInput.Player.Enable();
     }
+    
     public void DisablePlayerActions()
     {
         _gameInput.Player.Disable();
     }
 
-    public void OnMovement(InputAction.CallbackContext context)
+    public void OnHorizontal(InputAction.CallbackContext context)
     {
-        Movement?.Invoke(context.ReadValue<float>());
+        Horizontal?.Invoke(context.ReadValue<float>());
     }
-    public void OnSprint(InputAction.CallbackContext context)
-    {
-        Sprint?.Invoke(context.ReadValue<float>());
-    }
+
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            Jump?.Invoke();
-        }
+        Jump?.Invoke(context.ReadValue<float>());
     }
-    public void OnAttack(InputAction.CallbackContext context)
+
+    public void OnDash(InputAction.CallbackContext context)
     {
-        if (context.started)
-        {
-            Attack?.Invoke();
-        }
+        Dash?.Invoke(context.ReadValue<float>());
     }
+    
+    public void OnAttackLight(InputAction.CallbackContext context)
+    {
+        AttackLight?.Invoke(context.ReadValue<float>());
+    }
+
+    public void OnFocused(InputAction.CallbackContext context)
+    {
+        Focused?.Invoke(context.ReadValue<float>());
+    }
+
+    public void OnAttackHeavy(InputAction.CallbackContext context)
+    {
+        AttackHeavy?.Invoke(context.ReadValue<float>());
+    }
+
+    public void OnAttackSuper(InputAction.CallbackContext context)
+    {
+        AttackSuper?.Invoke(context.ReadValue<float>());
+    }
+
+    public void OnSlotSouth(InputAction.CallbackContext context)
+    {
+        QuickselectA?.Invoke(context.ReadValue<float>());
+    }
+
+    public void OnSlotWest(InputAction.CallbackContext context)
+    {
+        QuickselectB?.Invoke(context.ReadValue<float>());
+    }
+
+    public void OnSlotNorth(InputAction.CallbackContext context)
+    {
+        QuickselectC?.Invoke(context.ReadValue<float>());
+    }
+
+    public void OnSlotEast(InputAction.CallbackContext context)
+    {
+        QuickselectD?.Invoke(context.ReadValue<float>());
+    }
+
     #endregion
 
     #region UI Actions
+
     public void EnableUIActions()
     {
         _gameInput.UI.Enable();
@@ -159,5 +216,6 @@ public class InputReaderSO : ScriptableObject, InputActions.IPlayerActions, Inpu
             Debug.Log("OnPreviousTab)");
         }
     }
+
     #endregion
 }
