@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_AttackingRunSMB : SceneLinkedSMB<EnemyBehaviour>
+public class Enemy_AttackingRunSMB : SceneLinkedSMB<EnemyBaseBehaviour>
 {
     public override void OnSLStateNoTransitionUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

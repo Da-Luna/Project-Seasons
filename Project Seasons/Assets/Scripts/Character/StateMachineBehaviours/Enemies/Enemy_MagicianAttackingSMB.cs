@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_MagicianAttackingSMB : SceneLinkedSMB<EnemyBehaviour>
+public class Enemy_MagicianAttackingSMB : SceneLinkedSMB<EnemyBaseBehaviour>
 {
     public override void OnSLStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

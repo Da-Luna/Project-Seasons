@@ -3,19 +3,15 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-public class EnemyBehaviour : MonoBehaviour
+public class EnemyBaseBehaviour : MonoBehaviour
 {
-    [SerializeField, Tooltip("Specifies whether the enemy can fly.")]
-    bool canEnemyFly;
-
-    // Movement parameters
-    [Header("Movement")]
+    // Movement parameters  
     [SerializeField] float patrolSpeed = 0.8f;
-    [SerializeField] float runSpeed = 0.8f;
+    public float runSpeed = 0.8f;
     [SerializeField] float gravity = 40.0f;
+    public bool useGravity = true;
 
     // Patrolling parameters
-    [Header("Patrolling")]
     [SerializeField, Tooltip("The distance at which the m_TargetPatrolPosition is set.")]
     float patrolDistanceToTravel = 5f;
     [SerializeField, Tooltip("Minimum time the enemy waits before patrolling.")]
@@ -24,7 +20,6 @@ public class EnemyBehaviour : MonoBehaviour
     float maxPatrolWaitTime = 3.0f;
 
     // Patrolling obstacle parameters
-    [Header("Patrolling Obstacle")]
     [SerializeField, Tooltip("LayerMask for detecting ground obstacles.")]
     LayerMask groundObstacleMask;
     [SerializeField, Tooltip("LayerMask for detecting wall obstacles.")]
@@ -34,7 +29,6 @@ public class EnemyBehaviour : MonoBehaviour
     readonly float m_AbyssCheckSphereRadius = 0.5f;
 
     // Targeting parameters
-    [Header("Targeting")]
     [SerializeField, Range(0.0f, 10.0f), Tooltip("Height of the starting point of the field of view.")]
     float viewPointHeight = 1.0f;
     [SerializeField, Range(0.0f, 360.0f), Tooltip("Rotation of the entire field of view.")]
@@ -47,7 +41,6 @@ public class EnemyBehaviour : MonoBehaviour
     public float timeBeforeLostTarget = 3.0f;
 
     // Attacking parameters
-    [Header("Attacking")]
     [SerializeField, Tooltip("LayerMask for recognizing obstacles to avoid continuous attacks against walls.")]
     LayerMask attackObstacleMask;
     [SerializeField, Tooltip("LayerMask for detecting targets.")]
@@ -66,7 +59,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     // Movement vectors and targets
     protected Vector2 m_MoveVector;
-    protected Transform m_Target;
+    public  Transform m_Target;
     protected Vector2 m_TargetPatrolPosition;
     protected float m_PatrolWaitTime;
     protected float m_TimeBeforeLostTarget;
@@ -82,16 +75,16 @@ public class EnemyBehaviour : MonoBehaviour
     protected readonly int m_HashAttackIdlePara = Animator.StringToHash("AttackIlde");
     protected readonly int m_HashGroundedPara = Animator.StringToHash("Grounded");
 
-    void Awake()
+    public virtual void Awake()
     {
         m_CharacterController2D = GetComponent<CharacterController2D>();
         m_Animator = GetComponent<Animator>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
+    public virtual void Start()
     {
-        SceneLinkedSMB<EnemyBehaviour>.Initialise(m_Animator, this);
+        SceneLinkedSMB<EnemyBaseBehaviour>.Initialise(m_Animator, this);       
         m_PatrolWaitTime = Random.Range(minPatrolWaitTime, maxPatrolWaitTime);
     }
 
@@ -100,9 +93,8 @@ public class EnemyBehaviour : MonoBehaviour
         if (m_Dead)
             return;
 
-        // Apply gravity
-        if (!canEnemyFly)
-            m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, -gravity);
+        // Apply gravity    
+        if(useGravity) m_MoveVector.y = Mathf.Max(m_MoveVector.y - gravity * Time.deltaTime, -gravity);
 
         // Move the character
         m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);
@@ -129,7 +121,7 @@ public class EnemyBehaviour : MonoBehaviour
         m_MoveVector.x = (m_TargetPatrolPosition.x - transform.position.x > 0) ? patrolSpeed : -patrolSpeed;
     }
 
-    public void PatrollingWalk()
+    public virtual void PatrollingWalk(bool useabyss = true)
     {
         bool reachedTarget = Mathf.Abs(transform.position.x - m_TargetPatrolPosition.x) < 0.1f;
 
@@ -140,11 +132,11 @@ public class EnemyBehaviour : MonoBehaviour
 
         // Detect obstacles and stop if necessary
         bool wallDetected = Physics2D.OverlapCircleAll(spherePosition, m_AbyssCheckSphereRadius, wallObstacleMask).Length > 0;
-        bool abyssDetected = !canEnemyFly && Physics2D.OverlapCircleAll(spherePosition, m_AbyssCheckSphereRadius, groundObstacleMask).Length == 0;
+        bool abyssDetected = useabyss && Physics2D.OverlapCircleAll(spherePosition, m_AbyssCheckSphereRadius, groundObstacleMask).Length == 0;
 
         if (reachedTarget || abyssDetected || wallDetected)
         {
-            m_MoveVector.x = 0f;
+            m_MoveVector = Vector2.zero;
             m_PatrolWaitTime = Random.Range(minPatrolWaitTime, maxPatrolWaitTime);
 
             m_Animator.SetTrigger(m_HashIdlePara);
@@ -177,25 +169,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     #region ATTACKING
 
-    public void ChargingToTarget()
-    {
-        if (m_Target == null)
-            return;
-
-        // Move towards the target or stop if close enough
-        float tolerance = 0.1f;
-        if (Mathf.Abs(transform.position.x - m_Target.position.x) <= tolerance)
-        {
-            m_MoveVector.x = 0f;
-            m_Animator.SetTrigger(m_HashAttackIdlePara);
-        }
-        else
-        {
-            m_MoveVector.x = (m_Target.position.x - transform.position.x > 0) ? runSpeed : -runSpeed;
-            m_Animator.SetTrigger(m_HashSpottedPara);
-        }
-    }
-
+    //Method to use in specific enemy scripts for movement on X and Y Axes when Moving to the Target
+    public virtual void ChargingToTarget() { }
+   
     public void UpdateMeleeAttackRangeCheck()
     {
         if (m_Target == null)
@@ -208,7 +184,7 @@ public class EnemyBehaviour : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(characterPosition, ((Vector2)m_Target.position - characterPosition).normalized, attackRange, attackObstacleMask);
 
             // If the Raycast doesn't hit anything, trigger attack animation
-            if (hit.collider == null)
+            if (hit.collider == null)// || canEnemyFly)
             {
                 m_Animator.SetTrigger(m_HashAttackPara);
             }
@@ -237,6 +213,7 @@ public class EnemyBehaviour : MonoBehaviour
             m_Animator.SetTrigger(m_HashIdlePara);
 
             m_MoveVector.x = 0f;
+            m_MoveVector.y = 0f;
 
             m_PatrolWaitTime = Random.Range(minPatrolWaitTime, maxPatrolWaitTime);
         }
@@ -245,6 +222,7 @@ public class EnemyBehaviour : MonoBehaviour
     public void MeleeAttack()
     {
         m_MoveVector.x = 0f;
+        m_MoveVector.y = 0f;
 
         // Calculate attack position
         int side = 1;
@@ -315,7 +293,7 @@ public class EnemyBehaviour : MonoBehaviour
     #endregion // GENERAL
 
     // Method to set the view direction of the character
-    void SetViewDirection(int facing)
+    public virtual void SetViewDirection(int facing)
     {
         if (facing == -1)
         {
@@ -328,7 +306,7 @@ public class EnemyBehaviour : MonoBehaviour
     }
 
     // Method to update timers used for various time-based operations
-    void UpdateTimers()
+    public virtual void UpdateTimers()
     {
         if (m_PatrolWaitTime > 0.0f)
             m_PatrolWaitTime -= Time.deltaTime;
@@ -339,7 +317,6 @@ public class EnemyBehaviour : MonoBehaviour
 
 #if UNITY_EDITOR
     #region CONTROL PANEL PARAMETERS
-    [Header("CONTROL PANEL (ONLY EDITOR)")]
 
     [SerializeField]
     bool showViewField;

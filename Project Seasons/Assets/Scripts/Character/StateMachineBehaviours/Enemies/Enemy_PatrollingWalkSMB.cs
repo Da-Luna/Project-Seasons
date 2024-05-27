@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_PatrollingWalkSMB : SceneLinkedSMB<EnemyBehaviour>
+public class Enemy_PatrollingWalkSMB : SceneLinkedSMB<EnemyBaseBehaviour>
 {
     public override void OnSLStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {

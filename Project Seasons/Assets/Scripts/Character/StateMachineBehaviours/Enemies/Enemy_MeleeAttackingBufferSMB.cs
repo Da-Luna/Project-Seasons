@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_PatrollingWaitSMB : SceneLinkedSMB<EnemyBaseBehaviour>
+public class Enemy_AttackingBufferSMB : SceneLinkedSMB<EnemyBaseBehaviour>
 {
     public override void OnSLStateNoTransitionUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {       
-        m_MonoBehaviour.PatrollingWait();
-
-        m_MonoBehaviour.UpdateCheckForTarget();
+    {     
+        m_MonoBehaviour.UpdateLookToTarget();
+        m_MonoBehaviour.ChargingToTarget();
     }
 }
