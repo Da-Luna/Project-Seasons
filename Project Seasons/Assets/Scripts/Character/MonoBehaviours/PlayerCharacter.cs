@@ -15,8 +15,12 @@ public class PlayerCharacter : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     [SerializeField]
-    Damageable damageable;
-    public Damageable PlayerDamageable { get { return damageable; } }
+    DamageController damageController;
+    public DamageController PlayerDamageable { get { return damageController; } }
+
+    [SerializeField]
+    AetherController aetherController;
+    public AetherController PlayerAether{ get { return aetherController; } }
 
     [SerializeField]
     Transform facingLeftBulletSpawnPoint;
@@ -48,7 +52,7 @@ public class PlayerCharacter : MonoBehaviour
     public float PushingSpeedProportion { get { return pushingSpeedProportion; } }
     #endregion // MOVEMENT PROPERTIES
 
-    #region HURT PROPERTIES
+    #region JUMP PROPERTIES
 
     [SerializeField, Range(0f, 5f)]
     float airborneAccelProportion = 1f;
@@ -67,7 +71,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public float JumpSpeed { get { return jumpSpeed; } }
 
-    #endregion // HURT PROPERTIES
+    #endregion // JUMP PROPERTIES
 
     #region DASHING PROPERTIES
 
@@ -95,6 +99,40 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     #endregion // DASHING PROPERTIES
+
+    #region HEALING PROPERTIES
+
+    [Tooltip("The health value that the player get from heal potion.")]
+    public float healPotionValue = 1.0f;
+
+    [SerializeField, Tooltip("The maximum value for heal potion in inventory.")]
+    int maxHealthPotionInInventory = 10;
+
+    protected int healthPotionCounter;
+
+    public int HealthItemCounter { get { return healthPotionCounter; } }
+    public bool CanCollectHealthItem { get { return healthPotionCounter < maxHealthPotionInInventory; } }
+
+    public UnityEvent<int> OnHealthItemCounterChanged = new();
+
+    #endregion // HEALTH PROPERTIES
+
+    #region AETHER PROPERTIES
+
+    [Tooltip("The aether value that the player get from heal potion.")]
+    public float aetherPotionValue = 1.0f;
+
+    [SerializeField, Tooltip("The maximum value for aether potion in inventory.")]
+    int maxAetherPotionInInventory = 10;
+
+    protected int aetherPotionCounter;
+
+    public int AetherItemCounter { get { return aetherPotionCounter; } }
+    public bool CanCollectAetherItem { get { return aetherPotionCounter < maxAetherPotionInInventory; } }
+
+    public UnityEvent<int> OnAetherItemCounterChanged = new();
+
+    #endregion // AETHER PROPERTIES
 
     #region HURT PROPERTIES
 
@@ -214,7 +252,7 @@ public class PlayerCharacter : MonoBehaviour
     const string m_HeavyAttackShot = "HeavyAttackShot";
     const string m_SuperAttackShot = "SuperAttackShot";
 
-    const string m_PotionsHealthUse = "ItemPotionsHealthUse";
+    const string m_PotionsHealthUse = "ItemPotionHealthUse";
 
     const float k_MinHurtJumpAngle = 0.001f;
     const float k_MaxHurtJumpAngle = 89.999f;
@@ -368,132 +406,6 @@ public class PlayerCharacter : MonoBehaviour
 
     #endregion // AIRBORN BEHAVIOUR
 
-    #region HURTING
-    public void OnHurt(Damager damager, Damageable damageable)
-    {
-        if (damageable.GetDamageDirection().x > 0f)
-        {
-            spriteRenderer.flipX = true;
-            m_CurrentBulletSpawnPoint = facingLeftBulletSpawnPoint;
-        }
-        else
-        {
-            spriteRenderer.flipX = false;
-            m_CurrentBulletSpawnPoint = facingRightBulletSpawnPoint;
-        }
-
-        damageable.EnableInvulnerability();
-        m_Animator.SetTrigger(m_HashHurtPara);
-
-        //we only force respawn if helath > 0, otherwise both forceRespawn & Death trigger are set in the animator, messing with each other.
-        if (damageable.CurrentHealth > 0 && damager.forceRespawn)
-            m_Animator.SetTrigger(m_HashForcedRespawnPara);
-
-        m_Animator.SetBool(m_HashGroundedPara, false);
-        hurtAudioPlayer.PlayRandomSound();
-
-        //if the health is < 0, mean die callback will take care of respawn
-        if (damager.forceRespawn && damageable.CurrentHealth > 0)
-        {
-            //StartCoroutine(DieRespawnCoroutine(false, true));
-            Debug.LogWarning("Respawn need to be write");
-        }
-
-    }
-
-    public void SetMoveVector(Vector2 newMoveVector)
-    {
-        m_MoveVector = newMoveVector;
-    }
-
-    public Vector2 GetHurtDirection()
-    {
-        Vector2 damageDirection = damageable.GetDamageDirection();
-
-        if (damageDirection.y < 0f)
-            return new Vector2(Mathf.Sign(damageDirection.x), 0f);
-
-        float y = Mathf.Abs(damageDirection.x) * m_TanHurtJumpAngle;
-
-        return new Vector2(damageDirection.x, y).normalized;
-    }
-
-    public void StartFlickering()
-    {
-        m_FlickerCoroutine = StartCoroutine(Flicker());
-    }
-
-    public void StopFlickering()
-    {
-        StopCoroutine(m_FlickerCoroutine);
-        spriteRenderer.enabled = true;
-    }
-
-    protected IEnumerator Flicker()
-    {
-        float timer = 0f;
-
-        while (timer < damageable.invulnerabilityDuration)
-        {
-            spriteRenderer.enabled = !spriteRenderer.enabled;
-            yield return m_FlickeringWait;
-            timer += flickeringDuration;
-        }
-
-        spriteRenderer.enabled = true;
-    }
-
-    #endregion // HURTING
-
-    #region DEAD
-    public void OnDie()
-    {
-        m_Animator.SetTrigger(m_HashDeadPara);
-
-        //StartCoroutine(DieRespawnCoroutine(true, false));
-    }
-
-    /*IEnumerator DieRespawnCoroutine(bool resetHealth, bool useCheckPoint)
-    {
-        //PlayerInput.Instance.ReleaseControl(true);
-        yield return new WaitForSeconds(1.0f); //wait one second before respawing
-        //yield return StartCoroutine(ScreenFader.FadeSceneOut(useCheckPoint ? ScreenFader.FadeType.Black : ScreenFader.FadeType.GameOver));
-        if (!useCheckPoint)
-            yield return new WaitForSeconds(2f);
-        Respawn(resetHealth, useCheckPoint);
-        yield return new WaitForEndOfFrame();
-        //yield return StartCoroutine(ScreenFader.FadeSceneIn());
-        //PlayerInput.Instance.GainControl();
-    }
-
-    public void Respawn(bool resetHealth, bool useCheckpoint)
-    {
-        if (resetHealth)
-            damageable.SetHealth(damageable.startingHealth);
-
-        //we reset the hurt trigger, as we don't want the player to go back to hurt animation once respawned
-        m_Animator.ResetTrigger(m_HashHurtPara);
-        if (m_FlickerCoroutine != null)
-        {//we stop flcikering for the same reason
-            StopFlickering();
-        }
-
-        m_Animator.SetTrigger(m_HashRespawnPara);
-
-        if (useCheckpoint && m_LastCheckpoint != null)
-        {
-            UpdateFacing(m_LastCheckpoint.respawnFacingLeft);
-            GameObjectTeleporter.Teleport(gameObject, m_LastCheckpoint.transform.position);
-        }
-        else
-        {
-            UpdateFacing(m_StartingFacingLeft);
-            GameObjectTeleporter.Teleport(gameObject, m_StartingPosition);
-        }
-    }
-    */
-    #endregion // DEAD
-
     #region ACTIONS MOVEMENT
     public void PlayFootstep()
     {
@@ -569,6 +481,187 @@ public class PlayerCharacter : MonoBehaviour
 
     #endregion // DASHING
 
+    #region HEALING
+
+    void AddHealth()
+    {
+        if (healthPotionCounter > 0 && damageController.CurrentHealth < damageController.maxHealth)
+        {
+            damageController.GainHealth(healPotionValue);
+
+            healthPotionCounter -= 1;
+            OnHealthItemCounterChanged.Invoke(healthPotionCounter);
+
+            Vector2 pos = new(transform.position.x, transform.position.y + 0.5f);
+            VFXController.Instance.Trigger(m_PotionsHealthUse, pos, 0, false, null);
+        }
+    }
+
+    public void AddHealthItem()
+    {
+        if (healthPotionCounter < maxHealthPotionInInventory)
+        {
+            healthPotionCounter += 1;
+            OnHealthItemCounterChanged.Invoke(healthPotionCounter);
+        }
+    }
+
+    #endregion // HEALTH AND AETHER
+
+    #region AETHER
+
+    void AddAether()
+    {
+        if (aetherPotionCounter > 0 && aetherController.CurrentAether < aetherController.maxAether)
+        {
+            aetherController.GainAether(aetherPotionValue);
+
+            aetherPotionCounter -= 1;
+            OnAetherItemCounterChanged.Invoke(aetherPotionCounter);
+
+            Vector2 pos = new(transform.position.x, transform.position.y + 0.5f);
+            VFXController.Instance.Trigger(m_PotionsHealthUse, pos, 0, false, null);
+
+        }
+    }
+
+    public void AddAetherItem()
+    {
+        if (aetherPotionCounter < maxAetherPotionInInventory)
+        {
+            aetherPotionCounter += 1;
+            OnAetherItemCounterChanged.Invoke(aetherPotionCounter);
+        }
+    }
+
+    #endregion // AETHER
+
+    #region HURTING
+    public void OnHurt(Damager damager, DamageController damageController)
+    {
+        if (damageController.GetDamageDirection().x > 0f)
+        {
+            spriteRenderer.flipX = true;
+            m_CurrentBulletSpawnPoint = facingLeftBulletSpawnPoint;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
+            m_CurrentBulletSpawnPoint = facingRightBulletSpawnPoint;
+        }
+
+        damageController.EnableInvulnerability();
+        m_Animator.SetTrigger(m_HashHurtPara);
+
+        //we only force respawn if helath > 0, otherwise both forceRespawn & Death trigger are set in the animator, messing with each other.
+        if (damageController.CurrentHealth > 0 && damager.forceRespawn)
+            m_Animator.SetTrigger(m_HashForcedRespawnPara);
+
+        m_Animator.SetBool(m_HashGroundedPara, false);
+        hurtAudioPlayer.PlayRandomSound();
+
+        //if the health is < 0, mean die callback will take care of respawn
+        if (damager.forceRespawn && damageController.CurrentHealth > 0)
+        {
+            //StartCoroutine(DieRespawnCoroutine(false, true));
+            Debug.LogWarning("Respawn need to be write");
+        }
+
+    }
+
+    public void SetMoveVector(Vector2 newMoveVector)
+    {
+        m_MoveVector = newMoveVector;
+    }
+
+    public Vector2 GetHurtDirection()
+    {
+        Vector2 damageDirection = damageController.GetDamageDirection();
+
+        if (damageDirection.y < 0f)
+            return new Vector2(Mathf.Sign(damageDirection.x), 0f);
+
+        float y = Mathf.Abs(damageDirection.x) * m_TanHurtJumpAngle;
+
+        return new Vector2(damageDirection.x, y).normalized;
+    }
+
+    public void StartFlickering()
+    {
+        m_FlickerCoroutine = StartCoroutine(Flicker());
+    }
+
+    public void StopFlickering()
+    {
+        StopCoroutine(m_FlickerCoroutine);
+        spriteRenderer.enabled = true;
+    }
+
+    protected IEnumerator Flicker()
+    {
+        float timer = 0f;
+
+        while (timer < damageController.invulnerabilityDuration)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return m_FlickeringWait;
+            timer += flickeringDuration;
+        }
+
+        spriteRenderer.enabled = true;
+    }
+
+    #endregion // HURTING
+
+    #region DEAD
+    public void OnDie()
+    {
+        m_Animator.SetTrigger(m_HashDeadPara);
+
+        //StartCoroutine(DieRespawnCoroutine(true, false));
+    }
+
+    /*IEnumerator DieRespawnCoroutine(bool resetHealth, bool useCheckPoint)
+    {
+        //PlayerInput.Instance.ReleaseControl(true);
+        yield return new WaitForSeconds(1.0f); //wait one second before respawing
+        //yield return StartCoroutine(ScreenFader.FadeSceneOut(useCheckPoint ? ScreenFader.FadeType.Black : ScreenFader.FadeType.GameOver));
+        if (!useCheckPoint)
+            yield return new WaitForSeconds(2f);
+        Respawn(resetHealth, useCheckPoint);
+        yield return new WaitForEndOfFrame();
+        //yield return StartCoroutine(ScreenFader.FadeSceneIn());
+        //PlayerInput.Instance.GainControl();
+    }
+
+    public void Respawn(bool resetHealth, bool useCheckpoint)
+    {
+        if (resetHealth)
+            damageable.SetHealth(damageable.startingHealth);
+
+        //we reset the hurt trigger, as we don't want the player to go back to hurt animation once respawned
+        m_Animator.ResetTrigger(m_HashHurtPara);
+        if (m_FlickerCoroutine != null)
+        {//we stop flcikering for the same reason
+            StopFlickering();
+        }
+
+        m_Animator.SetTrigger(m_HashRespawnPara);
+
+        if (useCheckpoint && m_LastCheckpoint != null)
+        {
+            UpdateFacing(m_LastCheckpoint.respawnFacingLeft);
+            GameObjectTeleporter.Teleport(gameObject, m_LastCheckpoint.transform.position);
+        }
+        else
+        {
+            UpdateFacing(m_StartingFacingLeft);
+            GameObjectTeleporter.Teleport(gameObject, m_StartingPosition);
+        }
+    }
+    */
+    #endregion // DEAD
+
     #region FOCUSED
 
     public bool InputCheckForFocused()
@@ -636,81 +729,6 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     #endregion // FOCUSED
-
-    #region QUICKSLOTS
-
-    public void InputQuickslots()
-    {
-        var playerInput = PlayerInput.Instance;
-
-        if (playerInput.InputQuickselectA != 0f && !m_QuickslotAPressed)
-        {
-            QuickslotA();
-            m_QuickslotAPressed = true;
-        }
-        else if (m_QuickslotAPressed)
-        {
-            m_QuickslotAPressed = false;
-        }
-
-        else if (playerInput.InputQuickselectB != 0f && !m_QuickslotBPressed)
-        {
-            QuickslotB();
-            m_QuickslotBPressed = true;
-        }
-        else if (m_QuickslotBPressed)
-        {
-            m_QuickslotBPressed = false;
-        }
-
-        if (playerInput.InputQuickselectC != 0f && !m_QuickslotCPressed)
-        {
-            QuickslotC();
-            m_QuickslotCPressed = true;
-        }
-        else if (m_QuickslotCPressed)
-        {
-            m_QuickslotCPressed = false;
-        }
-
-        if (playerInput.InputQuickselectD != 0f && !m_QuickslotDPressed)
-        {
-            QuickslotD();
-            m_QuickslotDPressed = true;
-        }
-        else if (m_QuickslotDPressed)
-        {
-            m_QuickslotDPressed = false;
-        }
-    }
-
-    void QuickslotA()
-    {        
-        if (healthItemCounter > 0 && damageable.CurrentHealth < damageable.startingHealth)
-        {
-            damageable.GainHealth(vialhealthPoints);
-
-            healthItemCounter -= 1;
-            OnHealthItemCounterChanged.Invoke(healthItemCounter);
-
-            Vector2 pos = new(transform.position.x, transform.position.y + 0.5f);
-            VFXController.Instance.Trigger(m_PotionsHealthUse, pos, 0, false, null);
-        }
-    }
-    void QuickslotB()
-    {
-        Debug.LogWarning("Function is not implemented");
-    }
-    void QuickslotC()
-    {
-        Debug.LogWarning("Function is not implemented");
-    }
-    void QuickslotD()
-    {
-        Debug.LogWarning("Function is not implemented");
-    }
-
-    #endregion // QUICKSLOTS
 
     #region ACTIONS LIGHT ATTACK
 
@@ -862,6 +880,9 @@ public class PlayerCharacter : MonoBehaviour
         if (!CanShotCheck())
             return false;
 
+        if (aetherController.CurrentAether < 1f)
+            return false;
+
         bool superAtk = PlayerInput.Instance.AttackSuper != 0f;
 
         if (superAtk)
@@ -894,6 +915,8 @@ public class PlayerCharacter : MonoBehaviour
 
         yield return new WaitForSeconds(superAttackTimeBeforeShot);
 
+        aetherController.SetAether(0f);
+
         SpawnBullet(bulletPoolSuperAttack, superAttackBulletSpeed);
         VFXController.Instance.Trigger(m_SuperAttackShot, m_CurrentBulletSpawnPoint.position, 0, false, null);
 
@@ -901,6 +924,153 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     #endregion // ACTIONS SUPER ATTACK
+
+    #region PUSHING
+    public void CheckForPushing()
+    {
+        bool pushableOnCorrectSide = false;
+        Pushable previousPushable = m_CurrentPushable;
+
+        m_CurrentPushable = null;
+
+        if (m_CurrentPushables.Count > 0)
+        {
+            bool movingRight = PlayerInput.Instance.InputHorizontal > float.Epsilon;
+            bool movingLeft = PlayerInput.Instance.InputHorizontal < -float.Epsilon;
+
+            for (int i = 0; i < m_CurrentPushables.Count; i++)
+            {
+                float pushablePosX = m_CurrentPushables[i].pushablePosition.position.x;
+                float playerPosX = m_Transform.position.x;
+                if (pushablePosX < playerPosX && movingLeft || pushablePosX > playerPosX && movingRight)
+                {
+                    pushableOnCorrectSide = true;
+                    m_CurrentPushable = m_CurrentPushables[i];
+                    break;
+                }
+            }
+
+            if (pushableOnCorrectSide)
+            {
+                Vector2 moveToPosition = movingRight ? m_CurrentPushable.playerPushingRightPosition.position : m_CurrentPushable.playerPushingLeftPosition.position;
+                moveToPosition.y = m_CharacterController2D.Rigidbody2D.position.y;
+                m_CharacterController2D.Teleport(moveToPosition);
+            }
+        }
+
+        if (previousPushable != null && m_CurrentPushable != previousPushable)
+        {//we changed pushable (or don't have one anymore), stop the old one sound
+            previousPushable.EndPushing();
+        }
+
+        m_Animator.SetBool(m_HashPushingPara, pushableOnCorrectSide);
+    }
+
+    public void MovePushable()
+    {
+        //we don't push ungrounded pushable, avoid pushing floating pushable or falling pushable.
+        if (m_CurrentPushable && m_CurrentPushable.Grounded)
+            m_CurrentPushable.Move(m_MoveVector * Time.deltaTime);
+    }
+
+    public void StartPushing()
+    {
+        if (m_CurrentPushable)
+            m_CurrentPushable.StartPushing();
+    }
+
+    public void StopPushing()
+    {
+        if (m_CurrentPushable)
+            m_CurrentPushable.EndPushing();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Pushable pushable = other.GetComponent<Pushable>();
+        if (pushable != null)
+        {
+            m_CurrentPushables.Add(pushable);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        Pushable pushable = other.GetComponent<Pushable>();
+        if (pushable != null)
+        {
+            if (m_CurrentPushables.Contains(pushable))
+                m_CurrentPushables.Remove(pushable);
+        }
+    }
+
+    #endregion // PUSHING
+
+    #region QUICKSLOTS
+
+    public void InputQuickslots()
+    {
+        var playerInput = PlayerInput.Instance;
+
+        if (playerInput.InputQuickselectA != 0f && !m_QuickslotAPressed)
+        {
+            QuickslotA();
+            m_QuickslotAPressed = true;
+        }
+        else if (playerInput.InputQuickselectA == 0f && m_QuickslotAPressed)
+        {
+            m_QuickslotAPressed = false;
+        }
+
+        else if (playerInput.InputQuickselectB != 0f && !m_QuickslotBPressed)
+        {
+            QuickslotB();
+            m_QuickslotBPressed = true;
+        }
+        else if (playerInput.InputQuickselectB == 0f && m_QuickslotBPressed)
+        {
+            m_QuickslotBPressed = false;
+        }
+
+        if (playerInput.InputQuickselectC != 0f && !m_QuickslotCPressed)
+        {
+            QuickslotC();
+            m_QuickslotCPressed = true;
+        }
+        else if (playerInput.InputQuickselectC == 0f && m_QuickslotCPressed)
+        {
+            m_QuickslotCPressed = false;
+        }
+
+        if (playerInput.InputQuickselectD != 0f && !m_QuickslotDPressed)
+        {
+            QuickslotD();
+            m_QuickslotDPressed = true;
+        }
+        else if (playerInput.InputQuickselectD == 0f && m_QuickslotDPressed)
+        {
+            m_QuickslotDPressed = false;
+        }
+    }
+
+    void QuickslotA()
+    {
+        AddHealth();
+    }
+    void QuickslotB()
+    {
+        Debug.LogWarning("Function is not implemented");
+    }
+    void QuickslotC()
+    {
+        Debug.LogWarning("Function is not implemented");
+    }
+    void QuickslotD()
+    {
+        AddAether();
+    }
+
+    #endregion // QUICKSLOTS
 
     #region GENERAL
 
@@ -1004,110 +1174,6 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     #endregion // GENERAL
-
-    #region PUSHING
-    public void CheckForPushing()
-    {
-        bool pushableOnCorrectSide = false;
-        Pushable previousPushable = m_CurrentPushable;
-
-        m_CurrentPushable = null;
-
-        if (m_CurrentPushables.Count > 0)
-        {
-            bool movingRight = PlayerInput.Instance.InputHorizontal > float.Epsilon;
-            bool movingLeft = PlayerInput.Instance.InputHorizontal < -float.Epsilon;
-
-            for (int i = 0; i < m_CurrentPushables.Count; i++)
-            {
-                float pushablePosX = m_CurrentPushables[i].pushablePosition.position.x;
-                float playerPosX = m_Transform.position.x;
-                if (pushablePosX < playerPosX && movingLeft || pushablePosX > playerPosX && movingRight)
-                {
-                    pushableOnCorrectSide = true;
-                    m_CurrentPushable = m_CurrentPushables[i];
-                    break;
-                }
-            }
-
-            if (pushableOnCorrectSide)
-            {
-                Vector2 moveToPosition = movingRight ? m_CurrentPushable.playerPushingRightPosition.position : m_CurrentPushable.playerPushingLeftPosition.position;
-                moveToPosition.y = m_CharacterController2D.Rigidbody2D.position.y;
-                m_CharacterController2D.Teleport(moveToPosition);
-            }
-        }
-
-        if (previousPushable != null && m_CurrentPushable != previousPushable)
-        {//we changed pushable (or don't have one anymore), stop the old one sound
-            previousPushable.EndPushing();
-        }
-
-        m_Animator.SetBool(m_HashPushingPara, pushableOnCorrectSide);
-    }
-
-    public void MovePushable()
-    {
-        //we don't push ungrounded pushable, avoid pushing floating pushable or falling pushable.
-        if (m_CurrentPushable && m_CurrentPushable.Grounded)
-            m_CurrentPushable.Move(m_MoveVector * Time.deltaTime);
-    }
-
-    public void StartPushing()
-    {
-        if (m_CurrentPushable)
-            m_CurrentPushable.StartPushing();
-    }
-
-    public void StopPushing()
-    {
-        if (m_CurrentPushable)
-            m_CurrentPushable.EndPushing();
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Pushable pushable = other.GetComponent<Pushable>();
-        if (pushable != null)
-        {
-            m_CurrentPushables.Add(pushable);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        Pushable pushable = other.GetComponent<Pushable>();
-        if (pushable != null)
-        {
-            if (m_CurrentPushables.Contains(pushable))
-                m_CurrentPushables.Remove(pushable);
-        }
-    }
-
-    #endregion // PUSHING
-
-    #region INVENTORY
-
-    [SerializeField]
-    float vialhealthPoints = 0.5f;
-    [SerializeField]
-    int maxVialhealthInInventory = 10;
-    
-    public UnityEvent<int> OnHealthItemCounterChanged = new();
-
-    int healthItemCounter;
-    public int HealthItemCounter { get { return healthItemCounter; } }
-
-    public void AddHealthItem()
-    {
-        if (healthItemCounter < maxVialhealthInInventory)
-        {
-            healthItemCounter += 1;
-            OnHealthItemCounterChanged.Invoke(healthItemCounter);
-        }
-    }
-
-    #endregion // INVENTORY
 
     private void Update()
     {

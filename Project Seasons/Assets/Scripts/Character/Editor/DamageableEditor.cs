@@ -3,6 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Damageable))]
+[CustomEditor(typeof(DamageController))]
 public class DamageableEditor : DataPersisterEditor
 { }

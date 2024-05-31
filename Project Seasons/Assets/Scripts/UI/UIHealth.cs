@@ -4,51 +4,51 @@ using UnityEngine.UI;
 public class UIHealth : MonoBehaviour
 {
     Image healthBar;
-    Damageable damageable;
+    DamageController damageController;
 
     void Start()
     {
         if (healthBar == null)
             healthBar = GetComponent<Image>();
 
-        if (damageable == null)
-            damageable = PlayerCharacter.PlayerInstance.PlayerDamageable;
+        if (damageController == null)
+            damageController = PlayerCharacter.PlayerInstance.PlayerDamageable;
 
-        if (damageable != null)
+        if (damageController != null)
         {
-            damageable.OnTakeDamage.AddListener(OnDamageTaken);
-            damageable.OnGainHealth.AddListener(OnHealthGained);
+            damageController.OnTakeDamage.AddListener(OnDamageTaken);
+            damageController.OnGainHealth.AddListener(OnHealthGained);
         }
 
         // Initialize the health bar fill amount
-        UpdateHealthBar(damageable.CurrentHealth);
+        UpdateHealthBar(damageController.CurrentHealth);
     }
 
     void OnDisable()
     {
-        if (damageable != null)
+        if (damageController != null)
         {
-            damageable.OnTakeDamage.RemoveListener(OnDamageTaken);
-            damageable.OnGainHealth.RemoveListener(OnHealthGained);
+            damageController.OnTakeDamage.RemoveListener(OnDamageTaken);
+            damageController.OnGainHealth.RemoveListener(OnHealthGained);
         }
     }
 
     // Method to handle the OnTakeDamage event
-    void OnDamageTaken(Damager damager, Damageable damageable)
+    void OnDamageTaken(Damager damager, DamageController damageController)
     {
-        UpdateHealthBar(damageable.CurrentHealth);
+        UpdateHealthBar(damageController.CurrentHealth);
     }
 
     // Method to handle the OnGainHealth event
-    void OnHealthGained(float amount, Damageable damageable)
+    void OnHealthGained(float amount, DamageController damageController)
     {
-        UpdateHealthBar(damageable.CurrentHealth);
+        UpdateHealthBar(damageController.CurrentHealth);
     }
 
     // Method to update the health bar
     void UpdateHealthBar(float currentHealth)
     {
         if (healthBar != null)
-            healthBar.fillAmount = currentHealth / damageable.startingHealth;
+            healthBar.fillAmount = currentHealth;
     }
 }

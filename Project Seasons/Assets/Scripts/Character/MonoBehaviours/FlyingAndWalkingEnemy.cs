@@ -1,4 +1,3 @@
-using Cinemachine.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,7 +44,7 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
             base.PatrollingWalk(m_isGroundedMode);
         else
         {            
-            if (!isOnScreen())
+            if (!IsOnScreen())
             {
 
             }
@@ -122,7 +121,7 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
                 m_Animator.SetTrigger(m_HashSpottedPara);
             }
 
-            if (!isOnScreen())
+            if (!IsOnScreen())
             {
 
             }
@@ -142,7 +141,7 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
         VFXController.Instance.Trigger("NoseDiveVFX", transform.position, 0, false, null);
     }
 
-    private bool isOnScreen()
+    private bool IsOnScreen()
     {
         Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
         bool onScreen = screenPoint.z > 0 && screenPoint.x > -k_OffScreenError &&

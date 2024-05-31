@@ -228,6 +228,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4f8350513ede8f741a321df8f0133c9a, type: 3}
   overrides: []
   playOnAwake: 0
+  playWithDelay: 0
+  delayTime: 1
   randomizePitch: 0
   pitchRange: 0
 --- !u!1 &939970334903420235
@@ -407,6 +409,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7b5b9b8265be63c4297c82057cf8531d, type: 3}
   overrides: []
   playOnAwake: 0
+  playWithDelay: 0
+  delayTime: 1
   randomizePitch: 1
   pitchRange: 0.1
 --- !u!1 &1569151665457680029
@@ -604,6 +608,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f4ccf863ebb466f47a615c77ba6303d7, type: 3}
     - {fileID: 8300000, guid: e384e536e1fdd3a4db0dcc9ab86d28e9, type: 3}
   playOnAwake: 0
+  playWithDelay: 0
+  delayTime: 1
   randomizePitch: 1
   pitchRange: 0.3
 --- !u!1 &2754089600031746544
@@ -5740,6 +5746,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 87541ec475451d3449f57a644757b0a7, type: 3}
   overrides: []
   playOnAwake: 0
+  playWithDelay: 0
+  delayTime: 1
   randomizePitch: 0
   pitchRange: 0
 --- !u!1 &4479752737834388533
@@ -5888,6 +5896,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 92b3629931f8b7a4fb8151bca1d18e08, type: 3}
   overrides: []
   playOnAwake: 0
+  playWithDelay: 0
+  delayTime: 1
   randomizePitch: 0
   pitchRange: 0
 --- !u!1 &4826358520694656389
@@ -5938,6 +5948,7 @@ GameObject:
   - component: {fileID: 2551592711844696837}
   - component: {fileID: 8519782350887988599}
   - component: {fileID: 8961680013174268380}
+  - component: {fileID: 3761663689958701941}
   - component: {fileID: 7489637415833193676}
   - component: {fileID: 6330274757492932931}
   - component: {fileID: 2964034282668106941}
@@ -6158,7 +6169,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 5501769069536875725}
-  damageable: {fileID: 8961680013174268380}
+  damageController: {fileID: 8961680013174268380}
+  aetherController: {fileID: 3761663689958701941}
   facingLeftBulletSpawnPoint: {fileID: 6583433056952679526}
   facingRightBulletSpawnPoint: {fileID: 2618592704804130192}
   bulletPoolLightAttack: {fileID: 7489637415833193676}
@@ -6181,6 +6193,16 @@ MonoBehaviour:
   OnDashCooldownChanged:
     m_PersistentCalls:
       m_Calls: []
+  healPotionValue: 0.25
+  maxHealthPotionInInventory: 10
+  OnHealthItemCounterChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  aetherPotionValue: 0.25
+  maxAetherPotionInInventory: 10
+  OnAetherItemCounterChanged:
+    m_PersistentCalls:
+      m_Calls: []
   hurtJumpAngle: 45
   hurtJumpSpeed: 8
   flickeringDuration: 0.05
@@ -6201,11 +6223,6 @@ MonoBehaviour:
   particleLightAttack: {fileID: 6570728182153863200}
   jumpDustPositionOffset: {x: 0, y: -1.5, z: 0}
   landDustPositionOffset: {x: 0, y: -0.1, z: 0}
-  vialhealthPoints: 0.5
-  maxVialhealthInInventory: 10
-  OnHealthItemCounterChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &8961680013174268380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6218,7 +6235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 037be7f9e4594bc41865f86c32ea9875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 1
+  startingHealth: 0.5
+  maxHealth: 1
   invulnerableAfterDamage: 1
   invulnerabilityDuration: 2
   disableOnDeath: 0
@@ -6262,6 +6280,29 @@ MonoBehaviour:
   dataSettings:
     dataTag: 870bb598-001e-42bb-8a49-8cf6433acc72
     persistenceType: 3
+--- !u!114 &3761663689958701941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6681807776746989026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2005458f049644242abb2589705a4ec7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingAether: 0.5
+  maxAether: 1
+  dataSettings:
+    dataTag: 29aaa9f1-7e2f-49c5-8f21-57eb55a4536e
+    persistenceType: 3
+  OnAetherSet:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGainAether:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7489637415833193676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6324,6 +6365,25 @@ MonoBehaviour:
         - m_Target: {fileID: 8519782350887988599}
           m_TargetAssemblyTypeName: PlayerCharacter, Assembly-CSharp
           m_MethodName: AddHealthItem
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    OnRemove:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: AetherItem
+    OnAdd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8519782350887988599}
+          m_TargetAssemblyTypeName: PlayerCharacter, Assembly-CSharp
+          m_MethodName: AddAetherItem
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -11318,6 +11378,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e9c132ccbd6e5724dbdc3aaa6ea5c47d, type: 3}
   overrides: []
   playOnAwake: 0
+  playWithDelay: 0
+  delayTime: 1
   randomizePitch: 1
   pitchRange: 0.1
 --- !u!1 &7770263223511948094
@@ -11466,6 +11528,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c7b964a617829d943a3d0954aba4088e, type: 3}
   overrides: []
   playOnAwake: 0
+  playWithDelay: 0
+  delayTime: 1
   randomizePitch: 1
   pitchRange: 0.1
 --- !u!1 &8075594693406786445

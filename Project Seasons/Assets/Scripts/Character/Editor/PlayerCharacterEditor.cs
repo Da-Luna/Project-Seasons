@@ -8,7 +8,8 @@ public class PlayerCharacterEditor : Editor
 
     #region REFERENCES
     SerializedProperty m_SpriteRendererProp;
-    SerializedProperty m_DamageableProp;
+    SerializedProperty m_DamageControllerProp;
+    SerializedProperty m_AetherControllerProp;
     SerializedProperty m_FacingLeftBulletSpawnProp;
     SerializedProperty m_FacingRightBulletSpawnProp;
     SerializedProperty m_BulletPoolLightAttackProp;
@@ -39,6 +40,18 @@ public class PlayerCharacterEditor : Editor
     SerializedProperty m_DashCooldownTimeProp;
     SerializedProperty m_DashOnChangeEventProp;
     #endregion // DASHING SETTINGS
+
+    #region HEALTH
+    SerializedProperty m_HealPotionValueProp;
+    SerializedProperty m_MaxHealthPotionProp;
+    SerializedProperty m_OnHealthEventProp;
+    #endregion // HEALTH
+
+    #region AETHER
+    SerializedProperty m_AetherPotionValueProp;
+    SerializedProperty m_MaxAetherPotionProp;
+    SerializedProperty m_OnAetherEventProp;
+    #endregion // AETHER
 
     #region HURT SETTINGS
     SerializedProperty m_HurtJumpAngleProp;
@@ -78,7 +91,8 @@ public class PlayerCharacterEditor : Editor
 
     #region REFERENCES
     readonly GUIContent m_SpriteRendererContent = new("Sprite Renderer");
-    readonly GUIContent m_DamageableContent = new("Damageable");
+    readonly GUIContent m_DamageControllerContent = new("Damage Controller");
+    readonly GUIContent m_AetherControllerContent = new("Aether Controller");
     readonly GUIContent m_FacingLeftBulletSpawnContent = new("Facing Left Bullet Spawn Point");
     readonly GUIContent m_FacingRightBulletSpawnContent = new("Facing Rights Bullet Spawn Point");
     readonly GUIContent m_BulletPoolLightAttackContent = new("Bullet Pool Light Attack");
@@ -109,6 +123,18 @@ public class PlayerCharacterEditor : Editor
     readonly GUIContent m_DashCooldownTimeContent = new("Dash Cooldown Time");
     readonly GUIContent m_DashOnChangeEventContent = new("Dash On Change Event");
     #endregion // DASHING SETTINGS
+
+    #region HEALTH
+    readonly GUIContent m_HealPotionValueContent = new("Heal Potion Value");
+    readonly GUIContent m_MaxHealthPotionContent = new("Max Health Potion In Inventory");
+    readonly GUIContent m_OnHealthEventContent = new("On Health Event");
+    #endregion // HEALTH
+
+    #region AETHER
+    readonly GUIContent m_AetherPotionValueContent = new("Aether Potion Value");
+    readonly GUIContent m_MaxAetherPotionContent = new("Max Aether Potion In Inventory");
+    readonly GUIContent m_OnAetherEventContent = new("On Aether Event");
+    #endregion // AETHER
 
     #region HURT SETTINGS
     readonly GUIContent m_HurtJumpAngleContent = new("Hurt Jump Angle");
@@ -149,6 +175,8 @@ public class PlayerCharacterEditor : Editor
     readonly GUIContent m_MovementSettingsContent = new("Movement Settings");
     readonly GUIContent m_AirborneSettingsContent = new("Airborne Settings");
     readonly GUIContent m_DashingSettingsContent = new("Dashing Settings");
+    readonly GUIContent m_HealingSettingsContent = new("Healing Settings");
+    readonly GUIContent m_AetherSettingsContent = new("Aether Settings");
     readonly GUIContent m_HurtSettingsContent = new("Hurt Settings");
     readonly GUIContent m_AttackingSettingsContent = new("Attacking Settings");
     readonly GUIContent m_AudioSettingsContent = new("Audio Settings");
@@ -159,6 +187,8 @@ public class PlayerCharacterEditor : Editor
     bool m_MovementSettingsFoldout;
     bool m_AirborneSettingsFoldout;
     bool m_DashingSettingsFoldout;
+    bool m_HealingSettingsFoldout;
+    bool m_AetherSettingsFoldout;
     bool m_HurtSettingsFoldout;
     bool m_AttackingSettingsFoldout;
     bool m_AudioSettingsFoldout;
@@ -168,7 +198,8 @@ public class PlayerCharacterEditor : Editor
     {
         #region REFERENCES
         m_SpriteRendererProp = serializedObject.FindProperty("spriteRenderer");
-        m_DamageableProp = serializedObject.FindProperty("damageable");
+        m_DamageControllerProp = serializedObject.FindProperty("damageController");
+        m_AetherControllerProp = serializedObject.FindProperty("aetherController");
         m_FacingLeftBulletSpawnProp = serializedObject.FindProperty("facingLeftBulletSpawnPoint");
         m_FacingRightBulletSpawnProp = serializedObject.FindProperty("facingRightBulletSpawnPoint");
         m_BulletPoolLightAttackProp = serializedObject.FindProperty("bulletPoolLightAttack");
@@ -199,6 +230,18 @@ public class PlayerCharacterEditor : Editor
         m_DashCooldownTimeProp = serializedObject.FindProperty("dashCooldownTime");
         m_DashOnChangeEventProp = serializedObject.FindProperty("OnDashCooldownChanged");
         #endregion // DASHING SETTINGS
+
+        #region HEALTHLING
+        m_HealPotionValueProp = serializedObject.FindProperty("healPotionValue");
+        m_MaxHealthPotionProp = serializedObject.FindProperty("maxHealthPotionInInventory");
+        m_OnHealthEventProp = serializedObject.FindProperty("OnHealthItemCounterChanged");
+        #endregion // HEALTHLING
+
+        #region AETHER
+        m_AetherPotionValueProp = serializedObject.FindProperty("aetherPotionValue");
+        m_MaxAetherPotionProp = serializedObject.FindProperty("maxAetherPotionInInventory");
+        m_OnAetherEventProp = serializedObject.FindProperty("OnAetherItemCounterChanged");
+        #endregion // AETHER
 
         #region HURT SETTINGS
         m_HurtJumpAngleProp = serializedObject.FindProperty("hurtJumpAngle");
@@ -252,7 +295,8 @@ public class PlayerCharacterEditor : Editor
         if (m_ReferencesFoldout)
         {
             EditorGUILayout.PropertyField(m_SpriteRendererProp, m_SpriteRendererContent);
-            EditorGUILayout.PropertyField(m_DamageableProp, m_DamageableContent);
+            EditorGUILayout.PropertyField(m_DamageControllerProp, m_DamageControllerContent);
+            EditorGUILayout.PropertyField(m_AetherControllerProp, m_AetherControllerContent);
             EditorGUILayout.PropertyField(m_FacingLeftBulletSpawnProp, m_FacingLeftBulletSpawnContent);
             EditorGUILayout.PropertyField(m_FacingRightBulletSpawnProp, m_FacingRightBulletSpawnContent);
             EditorGUILayout.PropertyField(m_BulletPoolLightAttackProp, m_BulletPoolLightAttackContent);
@@ -326,6 +370,44 @@ public class PlayerCharacterEditor : Editor
         EditorGUI.indentLevel--;
         EditorGUILayout.EndVertical();
         #endregion // DASHING SETTINGS
+
+        #region HEALING SETTINGS
+        EditorGUILayout.BeginVertical(GUI.skin.box);
+        EditorGUI.indentLevel++;
+
+        EditorGUILayout.Space();
+        m_HealingSettingsFoldout = EditorGUILayout.Foldout(m_HealingSettingsFoldout, m_HealingSettingsContent, boldFoldoutStyle);
+        EditorGUILayout.Space();
+
+        if (m_HealingSettingsFoldout)
+        {
+            EditorGUILayout.PropertyField(m_HealPotionValueProp, m_HealPotionValueContent);
+            EditorGUILayout.PropertyField(m_MaxHealthPotionProp, m_MaxHealthPotionContent);
+            EditorGUILayout.PropertyField(m_OnHealthEventProp, m_OnHealthEventContent);
+        }
+
+        EditorGUI.indentLevel--;
+        EditorGUILayout.EndVertical();
+        #endregion // HEALING SETTINGS
+
+        #region AETHER SETTINGS
+        EditorGUILayout.BeginVertical(GUI.skin.box);
+        EditorGUI.indentLevel++;
+
+        EditorGUILayout.Space();
+        m_AetherSettingsFoldout = EditorGUILayout.Foldout(m_AetherSettingsFoldout, m_AetherSettingsContent, boldFoldoutStyle);
+        EditorGUILayout.Space();
+
+        if (m_AetherSettingsFoldout)
+        {
+            EditorGUILayout.PropertyField(m_AetherPotionValueProp, m_AetherPotionValueContent);
+            EditorGUILayout.PropertyField(m_MaxAetherPotionProp, m_MaxAetherPotionContent);
+            EditorGUILayout.PropertyField(m_OnAetherEventProp, m_OnAetherEventContent);
+        }
+
+        EditorGUI.indentLevel--;
+        EditorGUILayout.EndVertical();
+        #endregion // AETHER SETTINGS
 
         #region HURT SETTINGS
         EditorGUILayout.BeginVertical(GUI.skin.box);

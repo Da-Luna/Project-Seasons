@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class HealthPickup : MonoBehaviour
 {
     [SerializeField]
-    float healthAmount = 1;
+    float healthAmount = 0.25f;
 
     [SerializeField]
     UnityEvent OnGivingHealth;
@@ -15,10 +15,11 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.gameObject == PlayerCharacter.PlayerInstance.gameObject)
         {
-            Damageable damageable = PlayerCharacter.PlayerInstance.PlayerDamageable;
-            if (damageable.CurrentHealth < damageable.startingHealth)
+            DamageController damageController = PlayerCharacter.PlayerInstance.PlayerDamageable;
+
+            if (damageController.CurrentHealth < damageController.maxHealth)
             {
-                damageable.GainHealth(Mathf.Min(healthAmount, damageable.startingHealth - damageable.CurrentHealth));
+                damageController.GainHealth(healthAmount);
                 OnGivingHealth.Invoke();
             }
         }

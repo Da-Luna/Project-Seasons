@@ -2,37 +2,60 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// The Damager class represents an object that can deal damage to Damageable objects.
+/// It handles collision detection and triggers appropriate events when damage is dealt.
+/// </summary>
 public class Damager : MonoBehaviour
 {
     [Serializable]
-    public class DamagableEvent : UnityEvent<Damager, Damageable>
+    public class DamageableEvent : UnityEvent<Damager, DamageController>
     { }
-
 
     [Serializable]
-    public class NonDamagableEvent : UnityEvent<Damager>
+    public class NonDamageableEvent : UnityEvent<Damager>
     { }
 
-    //call that from inside the onDamageableHIt or OnNonDamageableHit to get what was hit.
+    /// <summary>
+    /// Gets the last collider hit by the Damager.
+    /// </summary>
     public Collider2D LastHit { get { return m_LastHit; } }
 
+    [Tooltip("Amount of damage this damager deals.")]
     public float damage = 1;
+
+    [Tooltip("Offset of the damager from its transform position.")]
     public Vector2 offset = new(1.5f, 1f);
+
+    [Tooltip("Size of the damager's hit area.")]
     public Vector2 size = new(2.5f, 1f);
-    [Tooltip("If this is set, the offset x will be changed base on the sprite flipX setting. e.g. Allow to make the damager alway forward in the direction of sprite")]
+
+    [Tooltip("If set, the offset x will be changed based on the sprite's flipX setting. This makes the damager always face the direction of the sprite.")]
     public bool offsetBasedOnSpriteFacing = true;
-    [Tooltip("SpriteRenderer used to read the flipX value used by offset Based OnSprite Facing")]
+
+    [Tooltip("SpriteRenderer used to read the flipX value when using offsetBasedOnSpriteFacing.")]
     public SpriteRenderer spriteRenderer;
-    [Tooltip("If disabled, damager ignore trigger when casting for damage")]
+
+    [Tooltip("If disabled, the damager will ignore triggers when checking for hits.")]
     public bool canHitTriggers;
+
+    [Tooltip("If set, the damager will be disabled after hitting an object.")]
     public bool disableDamageAfterHit = false;
-    [Tooltip("If set, the player will be forced to respawn to latest checkpoint in addition to loosing life")]
+
+    [Tooltip("If set, the player will be forced to respawn to the latest checkpoint in addition to losing life.")]
     public bool forceRespawn = false;
-    [Tooltip("If set, an invincible damageable hit will still get the onHit message (but won't loose any life)")]
+
+    [Tooltip("If set, invincible damageable objects will still receive the onHit message (but won't lose any life).")]
     public bool ignoreInvincibility = false;
+
+    [Tooltip("Layers that the damager can hit.")]
     public LayerMask hittableLayers;
-    public DamagableEvent OnDamageableHit;
-    public NonDamagableEvent OnNonDamageableHit;
+
+    [Tooltip("Event triggered when a Damageable object is hit.")]
+    public DamageableEvent OnDamageableHit;
+
+    [Tooltip("Event triggered when a non-Damageable object is hit.")]
+    public NonDamageableEvent OnNonDamageableHit;
 
     protected bool m_SpriteOriginallyFlipped;
     protected bool m_CanDamage = true;
@@ -41,6 +64,9 @@ public class Damager : MonoBehaviour
     protected Transform m_DamagerTransform;
     protected Collider2D m_LastHit;
 
+    /// <summary>
+    /// Initializes the damager's contact filter and other settings.
+    /// </summary>
     void Awake()
     {
         m_AttackContactFilter.layerMask = hittableLayers;
@@ -53,16 +79,25 @@ public class Damager : MonoBehaviour
         m_DamagerTransform = transform;
     }
 
+    /// <summary>
+    /// Enables the damager to deal damage.
+    /// </summary>
     public void EnableDamage()
     {
         m_CanDamage = true;
     }
 
+    /// <summary>
+    /// Disables the damager from dealing damage.
+    /// </summary>
     public void DisableDamage()
     {
         m_CanDamage = false;
     }
 
+    /// <summary>
+    /// Checks for collisions and deals damage if a Damageable object is hit.
+    /// </summary>
     void FixedUpdate()
     {
         if (!m_CanDamage)
@@ -84,7 +119,7 @@ public class Damager : MonoBehaviour
         for (int i = 0; i < hitCount; i++)
         {
             m_LastHit = m_AttackOverlapResults[i];
-            Damageable damageable = m_LastHit.GetComponent<Damageable>();
+            DamageController damageable = m_LastHit.GetComponent<DamageController>();
 
             if (damageable)
             {

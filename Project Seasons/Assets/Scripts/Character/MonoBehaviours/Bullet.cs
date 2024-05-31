@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
         bulletPoolObject.ReturnToPool();
     }
 
-    public void OnHitDamageable(Damager origin, Damageable damageable)
+    public void OnHitDamageable(Damager origin, DamageController damageController)
     {
         FindSurface(origin.LastHit);
     }

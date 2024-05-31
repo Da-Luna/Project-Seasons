@@ -5212,7 +5212,7 @@ GameObject:
   - component: {fileID: 4884018391270026605}
   - component: {fileID: 3762601293920196680}
   m_Layer: 15
-  m_Name: ItemPotionsHealthUse
+  m_Name: ItemPotionHealthUse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
