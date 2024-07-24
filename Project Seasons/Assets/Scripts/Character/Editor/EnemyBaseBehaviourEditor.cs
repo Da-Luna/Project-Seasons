@@ -42,11 +42,15 @@ public class EnemyBaseBehaviourEditor : Editor
     #endregion // ATTACKING
 
     #region SPECIFICS
+    //Flying and Walking
     SerializedProperty m_TargetPointProp;
     SerializedProperty m_TargetPointYOffsetProp;
     SerializedProperty m_minWaitTimeForNosediveProp;
     SerializedProperty m_maxWaitTimeForNosediveProp;
     SerializedProperty m_noseDiveSpeedProp;
+
+    //Jumping
+    SerializedProperty m_jumpingGroundLayerProp;
     #endregion // SPECIFICS
 
     #region CONTROL PANEL
@@ -110,6 +114,8 @@ public class EnemyBaseBehaviourEditor : Editor
     readonly GUIContent m_minWaitTimeForNosediveContent = new("Min. Wait Time");
     readonly GUIContent m_maxWaitTimeForNosediveContent = new("Max. Wait Time");
     readonly GUIContent m_noseDiveSpeedContent = new("Attack Speed");
+
+    readonly GUIContent m_jumpingGroundLayerContent = new("Jump Ground Layer");
     #endregion // SPECIFICS
 
     #region CONTROL PANEL
@@ -190,6 +196,8 @@ public class EnemyBaseBehaviourEditor : Editor
         m_minWaitTimeForNosediveProp = serializedObject.FindProperty("minWaitTimeForNosedive");
         m_maxWaitTimeForNosediveProp = serializedObject.FindProperty("maxWaitTimeForNosedive");
         m_noseDiveSpeedProp = serializedObject.FindProperty("noseDiveSpeed");
+
+        m_jumpingGroundLayerProp = serializedObject.FindProperty("jumpingGroundLayer");
         #endregion // SPECIFICS
     }
 
@@ -318,6 +326,11 @@ public class EnemyBaseBehaviourEditor : Editor
                 EditorGUILayout.PropertyField(m_minWaitTimeForNosediveProp, m_minWaitTimeForNosediveContent);
                 EditorGUILayout.PropertyField(m_maxWaitTimeForNosediveProp, m_maxWaitTimeForNosediveContent);
                 EditorGUILayout.PropertyField(m_noseDiveSpeedProp, m_noseDiveSpeedContent);
+            }
+
+            if(enemyBase as JumpingEnemy)
+            {
+                EditorGUILayout.PropertyField(m_jumpingGroundLayerProp, m_jumpingGroundLayerContent);
             }
         }
 

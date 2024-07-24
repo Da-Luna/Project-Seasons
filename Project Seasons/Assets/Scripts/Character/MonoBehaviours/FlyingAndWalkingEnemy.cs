@@ -25,6 +25,7 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
     protected bool m_isGroundedMode = false;
 
     protected Vector2 m_LastPositionOfTargetObject;
+    protected Vector2 m_LastAirPosition;
 
     const float k_OffScreenError = 0.01f;
 
@@ -40,13 +41,16 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
 
     public override void PatrollingWalk(bool useabyss)
     {
-        if(!m_isGroundedMode)
+        if (!m_isGroundedMode)
+        {
             base.PatrollingWalk(m_isGroundedMode);
+            print("Jaffe");
+        }      
         else
         {            
             if (!IsOnScreen())
             {
-
+                ChangeMoveBehaviour(false);
             }
 
         }       
@@ -75,6 +79,7 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
                 NosediveWait();
 
                 m_MoveVector.x = (m_Target.position.x - transform.position.x > 0) ? (runSpeed - 1) : (-runSpeed + 1);
+                print("ajj");
             }
             else
             {
@@ -94,7 +99,7 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
 
                 if (Vector2.Distance(m_LastPositionOfTargetObject, transform.position) < 1 && m_IsNosediving)
                 {
-                    //StartWalking();
+                    ChangeMoveBehaviour(true);
                     return;
                 }
 
@@ -120,25 +125,26 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
 
                 m_Animator.SetTrigger(m_HashSpottedPara);
             }
-
-            if (!IsOnScreen())
-            {
-
-            }
         }
 
     }
 
-    private void ChangeMoveBehaviour()
+    private void ChangeMoveBehaviour(bool groundMode)
     {
         m_MoveVector = Vector2.zero;
         targetPointObject.gameObject.SetActive(false);
-        m_Animator.SetBool("IsGroundedMode", true);
+        m_Animator.SetBool("IsGroundedMode", groundMode);
+        m_isGroundedMode = m_Animator.GetBool("IsGroundedMode");
         m_IsNosediving = false;
-        base.useGravity = true;
-        m_CharacterController2D.Rigidbody2D.isKinematic = false;
+        m_startedNosedive = false;
+        base.useGravity = groundMode;
+        m_CharacterController2D.Rigidbody2D.isKinematic = !groundMode;
 
-        VFXController.Instance.Trigger("NoseDiveVFX", transform.position, 0, false, null);
+        if(groundMode) VFXController.Instance.Trigger("NoseDiveVFX", transform.position, 0, false, null);
+        else
+        {
+            transform.position = m_LastAirPosition;
+        }
     }
 
     private bool IsOnScreen()
@@ -187,6 +193,9 @@ public class FlyingAndWalkingEnemy : EnemyBaseBehaviour
     private void StartNoseDiveWait()
     {
         m_IsNosediving = true;
+
+        m_LastAirPosition = transform.position;
+
         m_IsWaitingForNosedive = false;
     }
 
