@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 974764672351665391}
   - {fileID: 3512737945785542829}
+  - {fileID: 974764672351665391}
   - {fileID: 6155352104627542559}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -126,6 +126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PressurePad
+      objectReference: {fileID: 0}
+    - target: {fileID: 5598216539301404926, guid: 8b40e6cddc91e2f488bc0157aa02344e,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5930927361511121426, guid: 8b40e6cddc91e2f488bc0157aa02344e,
         type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 public class DisableAfterDelay : MonoBehaviour
 {
     [SerializeField]
-    GameObject objToDisable;
+    GameObject[] objToDisable;
 
     [SerializeField]
     float delayTime = 1f;
@@ -21,6 +21,10 @@ public class DisableAfterDelay : MonoBehaviour
     IEnumerator DelayTimer()
     {
         yield return m_DelayTime;
-        objToDisable.SetActive(false);
+
+        foreach (var obj in objToDisable)
+        {
+            obj.SetActive(false);
+        }
     }
 }

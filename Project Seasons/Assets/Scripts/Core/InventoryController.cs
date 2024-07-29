@@ -7,7 +7,7 @@ using UnityEngine.Events;
 /// InventoryController is responsible for managing an inventory system. It can add, remove,
 /// and check for items in the inventory, as well as handle persistence of the inventory data.
 /// </summary>
-public class InventoryController : MonoBehaviour, IDataPersister
+public class InventoryController : MonoBehaviour
 {
     [System.Serializable]
     public class InventoryEvent
@@ -66,9 +66,6 @@ public class InventoryController : MonoBehaviour, IDataPersister
     [Tooltip("Event triggered when the inventory is loaded.")]
     public event System.Action OnInventoryLoaded;
 
-    [Tooltip("Settings for data persistence.")]
-    public DataSettings dataSettings;
-
     protected Dictionary<string, int> m_InventoryItems = new(); // Dictionary to store inventory items
 
     /// <summary>
@@ -81,22 +78,6 @@ public class InventoryController : MonoBehaviour, IDataPersister
         {
             Debug.Log($"{item.Key}: {item.Value}");
         }
-    }
-
-    /// <summary>
-    /// Registers this instance with the PersistentDataManager.
-    /// </summary>
-    void OnEnable()
-    {
-        PersistentDataManager.RegisterPersister(this);
-    }
-
-    /// <summary>
-    /// Unregisters this instance from the PersistentDataManager.
-    /// </summary>
-    void OnDisable()
-    {
-        PersistentDataManager.UnregisterPersister(this);
     }
 
     /// <summary>
@@ -167,45 +148,5 @@ public class InventoryController : MonoBehaviour, IDataPersister
         }
 
         return null;
-    }
-
-    /// <summary>
-    /// Gets the data settings for persistence.
-    /// </summary>
-    /// <returns>The data settings.</returns>
-    public DataSettings GetDataSettings()
-    {
-        return dataSettings;
-    }
-
-    /// <summary>
-    /// Sets the data settings for persistence.
-    /// </summary>
-    /// <param name="dataTag">The data tag.</param>
-    /// <param name="persistenceType">The type of persistence.</param>
-    public void SetDataSettings(string dataTag, DataSettings.PersistenceType persistenceType)
-    {
-        dataSettings.dataTag = dataTag;
-        dataSettings.persistenceType = persistenceType;
-    }
-
-    /// <summary>
-    /// Saves the current inventory data.
-    /// </summary>
-    /// <returns>The saved data.</returns>
-    public Data SaveData()
-    {
-        return new Data<Dictionary<string, int>>(m_InventoryItems);
-    }
-
-    /// <summary>
-    /// Loads the inventory data.
-    /// </summary>
-    /// <param name="data">The data to load.</param>
-    public void LoadData(Data data)
-    {
-        Data<Dictionary<string, int>> inventoryData = (Data<Dictionary<string, int>>)data;
-        m_InventoryItems = inventoryData.value;
-        OnInventoryLoaded?.Invoke(); // Trigger event when inventory is loaded
     }
 }

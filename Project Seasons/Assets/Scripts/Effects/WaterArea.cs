@@ -47,7 +47,7 @@ public class WaterArea : MonoBehaviour
     protected Mesh m_Mesh;
 
     protected BoxCollider2D m_BoxCollider;
-    protected Damager m_Damager;
+    protected HealthDamager m_HealthDamager;
     protected ParticleSystem m_Bubbles;
     protected ParticleSystem m_Steam;
     protected BuoyancyEffector2D m_BuoyancyEffector;
@@ -111,7 +111,7 @@ public class WaterArea : MonoBehaviour
 
         m_BoxCollider = GetComponent<BoxCollider2D>();
 
-        m_Damager = GetComponent<Damager>();
+        m_HealthDamager = GetComponent<HealthDamager>();
         m_Bubbles = transform.Find("Bubbles").GetComponent<ParticleSystem>();
         m_Steam = transform.Find("Steam").GetComponent<ParticleSystem>();
         m_BuoyancyEffector = GetComponent<BuoyancyEffector2D>();
@@ -178,8 +178,8 @@ public class WaterArea : MonoBehaviour
         }
 #endif
 
-        m_Damager.size = size;
-        m_Damager.offset = offset;
+        m_HealthDamager.size = size;
+        m_HealthDamager.offset = offset;
 
         m_BoxCollider.size = size;
         m_BoxCollider.offset = offset;

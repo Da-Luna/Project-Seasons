@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2314817383898497916}
   - {fileID: 8748075244602278080}
+  - {fileID: 2314817383898497916}
   - {fileID: 5130190767423876347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -148,11 +148,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8540487282980492292}
     m_Modifications:
-    - target: {fileID: 713680379127371625, guid: 532df34281a76c140afaf415c1b08bba,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.039
-      objectReference: {fileID: 0}
     - target: {fileID: 2082096240558571071, guid: 532df34281a76c140afaf415c1b08bba,
         type: 3}
       propertyPath: m_Size.y
@@ -198,10 +193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PushableBox
       objectReference: {fileID: 0}
-    - target: {fileID: 5855513903119701183, guid: 532df34281a76c140afaf415c1b08bba,
+    - target: {fileID: 7799498125276001761, guid: 532df34281a76c140afaf415c1b08bba,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.039
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8873803250109087282, guid: 532df34281a76c140afaf415c1b08bba,
         type: 3}

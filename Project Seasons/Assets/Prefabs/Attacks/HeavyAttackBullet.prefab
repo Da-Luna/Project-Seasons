@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7758546960959379922}
   - component: {fileID: 1606633794140841750}
   - component: {fileID: -7021278327615448580}
-  - component: {fileID: -8542817081519167558}
+  - component: {fileID: 5143245698622270987}
   m_Layer: 9
   m_Name: HeavyAttackBullet
   m_TagString: Untagged
@@ -166,9 +166,9 @@ MonoBehaviour:
   attackType: 1
   destroyWhenOutOfView: 1
   spriteOriginallyFacesLeft: 0
-  timeBeforeAutodestruct: 4
+  timeBeforeAutodestruct: -1
   mainCamera: {fileID: 0}
---- !u!114 &-8542817081519167558
+--- !u!114 &5143245698622270987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2235369310408988702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd206276fd62a1c4cb8a3e3e78306d7b, type: 3}
+  m_Script: {fileID: 11500000, guid: f531f9dd8dfc3ca448c27e953967ae5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0.25

@@ -8,7 +8,7 @@ public class PlayerCharacterEditor : Editor
 
     #region REFERENCES
     SerializedProperty m_SpriteRendererProp;
-    SerializedProperty m_DamageControllerProp;
+    SerializedProperty m_HealthControllerProp;
     SerializedProperty m_AetherControllerProp;
     SerializedProperty m_FacingLeftBulletSpawnProp;
     SerializedProperty m_FacingRightBulletSpawnProp;
@@ -81,6 +81,7 @@ public class PlayerCharacterEditor : Editor
     #region PARTICLE SYSTEMS
     SerializedProperty m_ParticleFocusedProp;
     SerializedProperty m_ParticleLightAttackProp;
+    SerializedProperty m_ParticleForceFieldProp;
     SerializedProperty m_JumpDustPositionOffsetProp;
     SerializedProperty m_LandDustPositionOffsetProp;
     #endregion // PARTICLE SYSTEMS
@@ -164,6 +165,7 @@ public class PlayerCharacterEditor : Editor
     #region PARTICLE SYSTEMS
     readonly GUIContent m_ParticleFocusedContent = new("Particle Focused");
     readonly GUIContent m_ParticleLightAttackContent = new("Particle Light Attack");
+    readonly GUIContent m_ParticleForceFieldContent = new("Force Field Particle");
     readonly GUIContent m_JumpDustPositionOffsetContent = new("Jump Dust Position Offset");
     readonly GUIContent m_LandDustPositionOffsetContent = new("Land Dust Position Offset");
     #endregion // PARTICLE SYSTEMS
@@ -198,7 +200,7 @@ public class PlayerCharacterEditor : Editor
     {
         #region REFERENCES
         m_SpriteRendererProp = serializedObject.FindProperty("spriteRenderer");
-        m_DamageControllerProp = serializedObject.FindProperty("damageController");
+        m_HealthControllerProp = serializedObject.FindProperty("healthController");
         m_AetherControllerProp = serializedObject.FindProperty("aetherController");
         m_FacingLeftBulletSpawnProp = serializedObject.FindProperty("facingLeftBulletSpawnPoint");
         m_FacingRightBulletSpawnProp = serializedObject.FindProperty("facingRightBulletSpawnPoint");
@@ -271,6 +273,7 @@ public class PlayerCharacterEditor : Editor
         #region PARTICLE SYSTEMS
         m_ParticleFocusedProp = serializedObject.FindProperty("particleFocused");
         m_ParticleLightAttackProp = serializedObject.FindProperty("particleLightAttack");
+        m_ParticleForceFieldProp = serializedObject.FindProperty("particleForceField");
         m_JumpDustPositionOffsetProp = serializedObject.FindProperty("jumpDustPositionOffset");
         m_LandDustPositionOffsetProp = serializedObject.FindProperty("landDustPositionOffset");
         #endregion // PARTICLE SYSTEMS
@@ -295,7 +298,7 @@ public class PlayerCharacterEditor : Editor
         if (m_ReferencesFoldout)
         {
             EditorGUILayout.PropertyField(m_SpriteRendererProp, m_SpriteRendererContent);
-            EditorGUILayout.PropertyField(m_DamageControllerProp, m_DamageControllerContent);
+            EditorGUILayout.PropertyField(m_HealthControllerProp, m_DamageControllerContent);
             EditorGUILayout.PropertyField(m_AetherControllerProp, m_AetherControllerContent);
             EditorGUILayout.PropertyField(m_FacingLeftBulletSpawnProp, m_FacingLeftBulletSpawnContent);
             EditorGUILayout.PropertyField(m_FacingRightBulletSpawnProp, m_FacingRightBulletSpawnContent);
@@ -484,6 +487,7 @@ public class PlayerCharacterEditor : Editor
         {
             EditorGUILayout.PropertyField(m_ParticleFocusedProp, m_ParticleFocusedContent);
             EditorGUILayout.PropertyField(m_ParticleLightAttackProp, m_ParticleLightAttackContent);
+            EditorGUILayout.PropertyField(m_ParticleForceFieldProp, m_ParticleForceFieldContent);
             EditorGUILayout.PropertyField(m_JumpDustPositionOffsetProp, m_JumpDustPositionOffsetContent);
             EditorGUILayout.PropertyField(m_LandDustPositionOffsetProp, m_LandDustPositionOffsetContent);
         }

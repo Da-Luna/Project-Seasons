@@ -9,7 +9,7 @@ public class UIDash : MonoBehaviour
     [SerializeField]
     float startValue = 1f;
 
-    private void Start()
+    void Start()
     {
         if (dashBar == null)
             dashBar = GetComponent<Image>();
@@ -23,7 +23,7 @@ public class UIDash : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
         if (PlayerCharacter.PlayerInstance != null)
         {
@@ -31,7 +31,7 @@ public class UIDash : MonoBehaviour
         }
     }
 
-    private void UpdateDashBar(float dashCooldownTime)
+    void UpdateDashBar(float dashCooldownTime)
     {
         float dashCooldown = PlayerCharacter.PlayerInstance.DashCooldownTime;
         float dashCooldownProgress = 1 - Mathf.Clamp01(dashCooldownTime / dashCooldown);

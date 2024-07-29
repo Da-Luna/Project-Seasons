@@ -287,13 +287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d2c2b57ca513148aa4934938d93213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grdLayerMask:
+  groundedLayerMask:
     serializedVersion: 2
-    m_Bits: 8
-  grdCheckOffset: {x: 0, y: -0.1}
-  grdCheckRadius: {x: 1.6, y: 0.1}
-  showGroundCheckPosition: 1
-  colorGroundCheckMark: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    m_Bits: 0
+  groundedRaycastDistance: 0.1
 --- !u!114 &102957588845867419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,39 +300,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 5063298945517284366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30725af9d7edad14a834815ee4d865b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 549dab4a153f4d142871536065796a94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canEnemyFly: 0
   patrolSpeed: 0.8
-  runSpeed: 2
+  runSpeed: 1.2
   gravity: 40
-  patrolDistanceToTravel: 25
-  minPatrolWaitTime: 1
-  maxPatrolWaitTime: 4
+  useGravity: 1
+  patrolDistanceToTravel: 5
+  minPatrolWaitTime: 1.5
+  maxPatrolWaitTime: 3
   groundObstacleMask:
     serializedVersion: 2
     m_Bits: 8
   wallObstacleMask:
     serializedVersion: 2
     m_Bits: 256
-  abyssCheckSphereOffset: {x: 1.6, y: 0}
-  viewPointHeight: 1.2
-  viewDirection: 5
-  viewFov: 45
-  viewDistance: 40
-  timeBeforeLostTarget: 15
+  abyssCheckSphereOffset: {x: 1.5, y: 0}
+  viewPointHeight: 1
+  viewDirection: 180
+  viewFov: 35
+  viewDistance: 20
+  timeBeforeLostTarget: 3
   attackObstacleMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 3336
   attackMask:
     serializedVersion: 2
     m_Bits: 64
-  attackOffset: {x: 2.2, y: 2}
-  attackRange: 2.8
+  attackOffset: {x: 2.5, y: 1.2}
+  attackRange: 1.2
   attackRadius: 1.2
-  showViewField: 0
-  colorViewField: {r: 0, g: 1, b: 0, a: 0.050980393}
+  m_Target: {fileID: 0}
+  showViewField: 1
+  colorViewField: {r: 0, g: 1, b: 0, a: 0.05}
   showPatrolTargetPosition: 1
   colorPatrolTargetPosition: {r: 0, g: 0, b: 1, a: 1}
   showGroundDetectSphere: 1

@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 62582760817062306}
   - component: {fileID: 8553478438050162441}
   - component: {fileID: 6701791428244217490}
-  - component: {fileID: 1980864758226627735}
+  - component: {fileID: 2018919803688319915}
   m_Layer: 9
   m_Name: SuperAttackBullet
   m_TagString: Untagged
@@ -416,9 +416,9 @@ MonoBehaviour:
   attackType: 2
   destroyWhenOutOfView: 1
   spriteOriginallyFacesLeft: 0
-  timeBeforeAutodestruct: 4
+  timeBeforeAutodestruct: -1
   mainCamera: {fileID: 0}
---- !u!114 &1980864758226627735
+--- !u!114 &2018919803688319915
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6838497446236239159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd206276fd62a1c4cb8a3e3e78306d7b, type: 3}
+  m_Script: {fileID: 11500000, guid: f531f9dd8dfc3ca448c27e953967ae5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1

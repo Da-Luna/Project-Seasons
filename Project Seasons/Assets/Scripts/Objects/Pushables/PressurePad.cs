@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-#if UNITY_EDITOR
+﻿#if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;
@@ -27,13 +25,13 @@ public class PressurePad : MonoBehaviour
 
     //bug in 17.3 make rigidbody loose all contacts when sprites of different size/pivot are swapped in spriterenderer
     //so we delay (de)activation to "ignore" any outlier single frame problem 
-    static int DELAYEDFRAME_COUNT = 2;
+    static readonly int DELAYEDFRAME_COUNT = 2;
     protected int m_ActivationFrameCount = 0;
     protected bool m_PreviousWasPressed = false;
 
 #if UNITY_EDITOR
-    protected GUIStyle errorStyle = new GUIStyle();
-    protected GUIStyle errorBackgroundStyle = new GUIStyle();
+    protected GUIStyle errorStyle = new ();
+    protected GUIStyle errorBackgroundStyle = new ();
 #endif
 
     void FixedUpdate()

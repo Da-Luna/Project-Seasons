@@ -15,7 +15,7 @@ public class HealthPickup : MonoBehaviour
     {
         if (other.gameObject == PlayerCharacter.PlayerInstance.gameObject)
         {
-            DamageController damageController = PlayerCharacter.PlayerInstance.PlayerDamageable;
+            HealthController damageController = PlayerCharacter.PlayerInstance.PlayerHealthController;
 
             if (damageController.CurrentHealth < damageController.maxHealth)
             {

@@ -206,37 +206,15 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "SuperDesktop",
-                    "id": "656d91bf-af78-486e-8d65-e0b9b93f903f",
-                    "path": "OneModifier",
+                    "name": "",
+                    "id": "0c2062fd-f2f0-4f89-bbd1-46a3c8c853fb",
+                    "path": "<Mouse>/middleButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "AttackSuper",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "47c7126f-be72-47cf-a961-16adf84be60b",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttackSuper",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "7b4056b7-0f64-4b84-bbf5-f51c3f810f39",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttackSuper",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "SuperGamepad",
@@ -285,7 +263,7 @@
                 {
                     "name": "",
                     "id": "4a8c6508-578d-4eb1-bbc6-aacaf1c4eafd",
-                    "path": "<Gamepad>/rightShoulder",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -294,75 +272,31 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "HeavyDesktop",
-                    "id": "8b16ec12-dede-4df7-8d70-fc114826968c",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttackHeavy",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "modifier",
-                    "id": "68395cac-a9ef-4d15-a907-31a15b2e9fb3",
+                    "name": "",
+                    "id": "993ece1c-b08c-49d2-b2db-7a9f4e72e765",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "AttackHeavy",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "502fb120-600d-45b2-9280-8b7354f4e9e1",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttackHeavy",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "HeavyGamepad",
-                    "id": "0d466c46-91d6-4a5b-bf80-0cb4fe8a19e5",
-                    "path": "OneModifier",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttackHeavy",
-                    "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
-                    "id": "51198790-f7bc-4f0b-8b25-1be1965e4c9a",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AttackHeavy",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "binding",
-                    "id": "e03b12da-623c-4bff-83b6-c91d5a0f4667",
+                    "name": "",
+                    "id": "270ba13c-b566-4ae9-893e-5038f4a027f8",
                     "path": "<Gamepad>/rightShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "AttackHeavy",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "1704e642-b501-4b1f-b3c6-c8837ee604df",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -373,7 +307,7 @@
                 {
                     "name": "",
                     "id": "c631663f-8194-44d1-9f97-817fe8fd8705",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -395,7 +329,7 @@
                 {
                     "name": "",
                     "id": "c3924066-c2a4-414b-8564-15dc9f887e3f",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

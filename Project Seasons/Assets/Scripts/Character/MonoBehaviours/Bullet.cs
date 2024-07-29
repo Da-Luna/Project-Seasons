@@ -2,7 +2,7 @@
 using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Damager))]
+[RequireComponent(typeof(HealthDamager))]
 public class Bullet : MonoBehaviour
 {
     [SerializeField]
@@ -48,12 +48,12 @@ public class Bullet : MonoBehaviour
         bulletPoolObject.ReturnToPool();
     }
 
-    public void OnHitDamageable(Damager origin, DamageController damageController)
+    public void OnHitDamageable(HealthDamager origin, HealthController healthController)
     {
         FindSurface(origin.LastHit);
     }
 
-    public void OnHitNonDamageable(Damager origin)
+    public void OnHitNonDamageable(HealthDamager origin)
     {
         FindSurface(origin.LastHit);
     }

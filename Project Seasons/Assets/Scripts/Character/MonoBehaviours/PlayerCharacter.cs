@@ -15,8 +15,8 @@ public class PlayerCharacter : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     [SerializeField]
-    DamageController damageController;
-    public DamageController PlayerDamageable { get { return damageController; } }
+    HealthController healthController;
+    public HealthController PlayerHealthController { get { return healthController; } }
 
     [SerializeField]
     AetherController aetherController;
@@ -200,6 +200,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     ParticleSystem particleLightAttack;
     GameObject particleChildLightAttack;
+    public ParticleSystem particleForceField;
 
     [Header("Particle System Settings")]
     [SerializeField]
@@ -279,6 +280,11 @@ public class PlayerCharacter : MonoBehaviour
         hurtJumpAngle = Mathf.Clamp(hurtJumpAngle, k_MinHurtJumpAngle, k_MaxHurtJumpAngle);
         m_TanHurtJumpAngle = Mathf.Tan(Mathf.Deg2Rad * hurtJumpAngle);
         m_FlickeringWait = new WaitForSeconds(flickeringDuration);
+
+        DashCurrentCooldownTime = 0f;
+
+        QualitySettings.vSyncCount = 1;
+        Debug.LogWarning("QualitySettings.vSyncCount is 1");
     }
 
     #region GROUND MOVEMENT
@@ -319,7 +325,6 @@ public class PlayerCharacter : MonoBehaviour
 
         m_MoveVector.x = Mathf.MoveTowards(m_MoveVector.x, desiredSpeed, acceleration * Time.deltaTime);
     }
-
 
     public void UpdateGroundedViewDirection()
     {
@@ -434,7 +439,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public bool InputCheckForDash()
     {
-        if (DashCurrentCooldownTime >= 0f)
+        if (DashCurrentCooldownTime > 0f)
         {
             return false;
         }
@@ -460,8 +465,9 @@ public class PlayerCharacter : MonoBehaviour
         {
             m_Animator.SetTrigger(m_HashDashPara);
 
-            m_DashCurrentCooldownTime = dashCooldownTime;
-            OnDashCooldownChanged.Invoke(m_DashCurrentCooldownTime);
+            DashCurrentCooldownTime = dashCooldownTime;
+
+            StartCoroutine(DashingCooldown());
         }
     }
 
@@ -472,12 +478,16 @@ public class PlayerCharacter : MonoBehaviour
         m_MoveVector.y = 0f;
     }
 
-    public void CooldownTimerDashing()
+    IEnumerator DashingCooldown()
     {
-        if (DashCurrentCooldownTime >= 0f)
+        while (DashCurrentCooldownTime > 0f)
+        {
             DashCurrentCooldownTime -= Time.deltaTime;
-    }
+            yield return null;
+        }
 
+        DashCurrentCooldownTime = 0f;
+    }
 
     #endregion // DASHING
 
@@ -485,9 +495,9 @@ public class PlayerCharacter : MonoBehaviour
 
     void AddHealth()
     {
-        if (healthPotionCounter > 0 && damageController.CurrentHealth < damageController.maxHealth)
+        if (healthPotionCounter > 0 && healthController.CurrentHealth < healthController.maxHealth)
         {
-            damageController.GainHealth(healPotionValue);
+            healthController.GainHealth(healPotionValue);
 
             healthPotionCounter -= 1;
             OnHealthItemCounterChanged.Invoke(healthPotionCounter);
@@ -512,7 +522,7 @@ public class PlayerCharacter : MonoBehaviour
 
     void AddAether()
     {
-        if (aetherPotionCounter > 0 && aetherController.CurrentAether < aetherController.maxAether)
+        if (aetherPotionCounter > 0 && aetherController.CurrentAether < aetherController.maxAetherValue)
         {
             aetherController.GainAether(aetherPotionValue);
 
@@ -521,7 +531,6 @@ public class PlayerCharacter : MonoBehaviour
 
             Vector2 pos = new(transform.position.x, transform.position.y + 0.5f);
             VFXController.Instance.Trigger(m_PotionsHealthUse, pos, 0, false, null);
-
         }
     }
 
@@ -537,9 +546,9 @@ public class PlayerCharacter : MonoBehaviour
     #endregion // AETHER
 
     #region HURTING
-    public void OnHurt(Damager damager, DamageController damageController)
+    public void OnHurt(HealthDamager damager, HealthController healthController)
     {
-        if (damageController.GetDamageDirection().x > 0f)
+        if (healthController.GetDamageDirection().x > 0f)
         {
             spriteRenderer.flipX = true;
             m_CurrentBulletSpawnPoint = facingLeftBulletSpawnPoint;
@@ -550,18 +559,18 @@ public class PlayerCharacter : MonoBehaviour
             m_CurrentBulletSpawnPoint = facingRightBulletSpawnPoint;
         }
 
-        damageController.EnableInvulnerability();
+        healthController.EnableInvulnerability();
         m_Animator.SetTrigger(m_HashHurtPara);
 
         //we only force respawn if helath > 0, otherwise both forceRespawn & Death trigger are set in the animator, messing with each other.
-        if (damageController.CurrentHealth > 0 && damager.forceRespawn)
+        if (healthController.CurrentHealth > 0 && damager.forceRespawn)
             m_Animator.SetTrigger(m_HashForcedRespawnPara);
 
         m_Animator.SetBool(m_HashGroundedPara, false);
         hurtAudioPlayer.PlayRandomSound();
 
         //if the health is < 0, mean die callback will take care of respawn
-        if (damager.forceRespawn && damageController.CurrentHealth > 0)
+        if (damager.forceRespawn && healthController.CurrentHealth > 0)
         {
             //StartCoroutine(DieRespawnCoroutine(false, true));
             Debug.LogWarning("Respawn need to be write");
@@ -576,7 +585,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public Vector2 GetHurtDirection()
     {
-        Vector2 damageDirection = damageController.GetDamageDirection();
+        Vector2 damageDirection = healthController.GetDamageDirection();
 
         if (damageDirection.y < 0f)
             return new Vector2(Mathf.Sign(damageDirection.x), 0f);
@@ -601,7 +610,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         float timer = 0f;
 
-        while (timer < damageController.invulnerabilityDuration)
+        while (timer < healthController.invulnerabilityDuration)
         {
             spriteRenderer.enabled = !spriteRenderer.enabled;
             yield return m_FlickeringWait;
@@ -737,26 +746,29 @@ public class PlayerCharacter : MonoBehaviour
         bool isAtk = m_Animator.GetBool(m_HashAtkLightPara);
         bool lightAtk = PlayerInput.Instance.AttackLight != 0f;
 
-        if (!CanShotCheck())
+        bool hasAether = aetherController.CanShotCheckAether(aetherController.lightAttackCost);
+
+        if (!hasAether || !CanShotCheckObstacle())
         {
             if (isAtk)
             {
-                m_Animator.SetBool(m_HashAtkLightPara, false);
+                SetAttackLightPara(false);
             }
+
             return false;
         }
 
         if (lightAtk)
         {
             if (!isAtk)
-                m_Animator.SetBool(m_HashAtkLightPara, true);
+                SetAttackLightPara(true);
 
             return true;
         }
         else
         {
             if (isAtk)
-                m_Animator.SetBool(m_HashAtkLightPara, false);
+                SetAttackLightPara(false);
 
             return false;
         }
@@ -769,6 +781,11 @@ public class PlayerCharacter : MonoBehaviour
 
     public void LightAttack()
     {
+        if (!aetherController.CanShotCheckAether(aetherController.lightAttackCost))
+        {
+            return;
+        }
+
         var ps = particleLightAttack.main;
         var setActive = particleLightAttack.gameObject;
         if (!setActive.activeSelf)
@@ -797,6 +814,8 @@ public class PlayerCharacter : MonoBehaviour
 
             float bufferTime = 60f / lightAttackCadence;
             lightAttackStartInitTime = bufferTime;
+
+            aetherController.HandleAetherBasePointReduction(aetherController.lightAttackCost);
         }
         else
         {
@@ -834,6 +853,11 @@ public class PlayerCharacter : MonoBehaviour
     {
         bool heavyAtk = PlayerInput.Instance.AttackHeavy != 0f;
 
+        if (!aetherController.CanShotCheckAether(aetherController.heavyAttackCost))
+        {
+            return false;
+        }
+
         if (heavyAtk)
         {
             return true;
@@ -868,6 +892,8 @@ public class PlayerCharacter : MonoBehaviour
         SpawnBullet(bulletPoolHeavyAttack, heavyAttackBulletSpeed);
         VFXController.Instance.Trigger(m_HeavyAttackShot, m_CurrentBulletSpawnPoint.position, 0, false, null);
 
+        aetherController.HandleAetherBasePointReduction(aetherController.heavyAttackCost);
+
         heavyAttackAudioPlayer.Stop();
     }
 
@@ -877,7 +903,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public bool InputCheckForAttackSuper()
     {
-        if (!CanShotCheck())
+        if (!CanShotCheckObstacle())
             return false;
 
         if (aetherController.CurrentAether < 1f)
@@ -915,11 +941,10 @@ public class PlayerCharacter : MonoBehaviour
 
         yield return new WaitForSeconds(superAttackTimeBeforeShot);
 
-        aetherController.SetAether(0f);
-
         SpawnBullet(bulletPoolSuperAttack, superAttackBulletSpeed);
+        aetherController.SetAether(0f);
+        
         VFXController.Instance.Trigger(m_SuperAttackShot, m_CurrentBulletSpawnPoint.position, 0, false, null);
-
         superAttackAudioPlayer.Stop();
     }
 
@@ -1094,7 +1119,9 @@ public class PlayerCharacter : MonoBehaviour
             }
         }
         else
+        {
             m_CurrentSurface = null;
+        }
 
         m_Animator.SetBool(m_HashGroundedPara, grounded);
 
@@ -1145,7 +1172,7 @@ public class PlayerCharacter : MonoBehaviour
         bullet.spriteRenderer.flipX = facingLeft ^ bullet.bullet.spriteOriginallyFacesLeft;
     }
 
-    bool CanShotCheck()
+    bool CanShotCheckObstacle()
     {
         if (spriteRenderer.flipX)
         {
@@ -1174,12 +1201,7 @@ public class PlayerCharacter : MonoBehaviour
     }
 
     #endregion // GENERAL
-
-    private void Update()
-    {
-        CooldownTimerDashing();
-    }
-
+        
     void FixedUpdate()
     {
         m_CharacterController2D.Move(m_MoveVector * Time.deltaTime);

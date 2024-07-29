@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6871457523356271203}
   - component: {fileID: 2907133633753504109}
   - component: {fileID: 2236022883479600750}
-  - component: {fileID: 5113547165315562767}
+  - component: {fileID: 3447704003803401220}
   m_Layer: 10
   m_Name: DamagerSpike_I
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1464612945
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300026, guid: 44c1b3b37217c0b4bb07a979fc3b4714, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &5113547165315562767
+--- !u!114 &3447704003803401220
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3076049565629648794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd206276fd62a1c4cb8a3e3e78306d7b, type: 3}
+  m_Script: {fileID: 11500000, guid: f531f9dd8dfc3ca448c27e953967ae5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0.1
