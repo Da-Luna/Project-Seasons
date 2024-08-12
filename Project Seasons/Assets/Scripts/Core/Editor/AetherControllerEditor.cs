@@ -4,48 +4,60 @@ using UnityEngine;
 [CustomEditor(typeof(AetherController))]
 public class AetherControllerEditor : Editor
 {
-    #region LIGHT AND HEAVY AETHER PROPERTYS
+    #region REFERENCES PROPERTYS
     SerializedProperty m_UIPrefabAetherLightHeavyProp;
     SerializedProperty m_ParentUIAetherLightHeavyProp;
+    #endregion // REFERENCES PROPERTYS
+
+    #region LIGHT AND HEAVY AETHER PROPERTYS
     SerializedProperty m_DelayAfterUseLHAttackProp;
     SerializedProperty m_ActiveAetherLHPointsProp;
     SerializedProperty m_AetherLHTimeStepProp;
     SerializedProperty m_SuperAttackBulletSpeedProp;
     SerializedProperty m_SuperAttackTimeBeforeShotProp;
 
+    SerializedProperty m_EnableLightAttackProp;
     SerializedProperty m_LightAttackCostProp;
     SerializedProperty m_LightAttackCadenceProp;
     SerializedProperty m_LightAttackBulletSpeedProp;
-    
+
+    SerializedProperty m_EnableHeavyAttackProp;
     SerializedProperty m_HeavyAttackCostProp;
     SerializedProperty m_HeavyAttackBulletSpeedProp;
     SerializedProperty m_HeavyAttackTimeBeforeShotProp;
     #endregion // LIGHT AND HEAVY AETHER PROPERTYS
 
     #region SUPER AETHER PROPERTYS
+    SerializedProperty m_EnableSuperAttackProp;
     SerializedProperty m_StartAetherValueProp;
     SerializedProperty m_MaxAetherValueProp;
     SerializedProperty m_AetherValueFillPerSecondProp;
     SerializedProperty m_AetherValueTimeStepProp;
     #endregion // SUPER AETHER PROPERTYS
 
-    #region LIGHT AND HEAVY CONTENT
+    #region REFERENCES CONTENT
     readonly GUIContent m_UIPrefabAetherLightHeavyContent = new("UI Prefab Aether Light Heavy");
     readonly GUIContent m_ParentUIAetherLightHeavyContent = new("Parent UI Aether Light Heavy");
+    #endregion // REFERENCES CONTENT
+
+    #region LIGHT AND HEAVY CONTENT
     readonly GUIContent m_DelayAfterUseLHAttackContent = new("Delay After Use LH Attack");
     readonly GUIContent m_ActiveAetherLHPointsContent = new("Active Aether LH Points");
     readonly GUIContent m_AetherLHTimeStepContent = new("Aether LH Time Step");
 
+    readonly GUIContent m_EnableLightAttackContent = new("Activate Light Attack");
     readonly GUIContent m_LightAttackCostContent = new("Light Attack Cost");
     readonly GUIContent m_LightAttackCadenceContent = new("Attack Cadence");
     readonly GUIContent m_LightAttackBulletSpeedContent = new("Bullet Speed");
 
+    readonly GUIContent m_EnableHeavyAttackContent = new("Enable Heavy Attack");
     readonly GUIContent m_HeavyAttackCostContent = new("Heavy Attack Cost");
     readonly GUIContent m_HeavyAttackBulletSpeedContent = new("Heavy Bullet Speed");
     readonly GUIContent m_HeavyAttackTimeBeforeShotContent = new("Heavy Time Before Shot");
     #endregion // LIGHT AND HEAVY CONTENT
 
     #region SUPER AETHER CONTENT
+    readonly GUIContent m_EnableSuperAttackContent = new("Enable Super Attack");
     readonly GUIContent m_StartAetherValueContent = new("Start Aether Value");
     readonly GUIContent m_MaxAetherValueContent = new("Max Aether Value");
     readonly GUIContent m_AetherValueFillPerSecondContent = new("Aether Value Fill Per Second");
@@ -55,10 +67,12 @@ public class AetherControllerEditor : Editor
     #endregion // SUPER AETHER CONTENT
 
     #region EDITOR TITLES
+    readonly GUIContent m_ReferencesContent = new("References");
     readonly GUIContent m_LightAndHeavyAetherSettingsContent = new("Light And Heavy Aether Settings");
     readonly GUIContent m_SuperAetherSettingsContent = new("Super Aether Settings");
     #endregion // EDITOR TITLES
 
+    bool m_ReferencesFoldout;
     bool m_SuperAetherSettingsFoldout;
     bool m_LightAndHeayAetherSettingsFoldout;
 
@@ -66,23 +80,29 @@ public class AetherControllerEditor : Editor
 
     void OnEnable()
     {
-        #region LIGHT AND HEAVY AETHER PROPERTYS
+        #region REFERENCES PROPERTYS
         m_UIPrefabAetherLightHeavyProp = serializedObject.FindProperty("uIPrefabAetherLightHeavy");
         m_ParentUIAetherLightHeavyProp = serializedObject.FindProperty("parentUIAetherLightHeavy");
+        #endregion // REFERENCES PROPERTYS
+
+        #region LIGHT AND HEAVY AETHER PROPERTYS
         m_DelayAfterUseLHAttackProp = serializedObject.FindProperty("delayAfterUseLHAttack");
         m_ActiveAetherLHPointsProp = serializedObject.FindProperty("activeAetherLHPoints");
         m_AetherLHTimeStepProp = serializedObject.FindProperty("aetherLHTimeStep");
 
+        m_EnableLightAttackProp = serializedObject.FindProperty("enableLightAttack");
         m_LightAttackCostProp = serializedObject.FindProperty("lightAttackCost");
         m_LightAttackCadenceProp = serializedObject.FindProperty("lightAttackCadence");
         m_LightAttackBulletSpeedProp = serializedObject.FindProperty("lightAttackBulletSpeed");
 
+        m_EnableHeavyAttackProp = serializedObject.FindProperty("enableHeavyAttack");
         m_HeavyAttackCostProp = serializedObject.FindProperty("heavyAttackCost");
         m_HeavyAttackBulletSpeedProp = serializedObject.FindProperty("heavyAttackBulletSpeed");
         m_HeavyAttackTimeBeforeShotProp = serializedObject.FindProperty("heavyAttackTimeBeforeShot");
         #endregion // LIGHT AND HEAVY AETHER PROPERTYS
 
         #region SUPER AETHER PROPERTYS
+        m_EnableSuperAttackProp = serializedObject.FindProperty("enableSuperAttack");
         m_StartAetherValueProp = serializedObject.FindProperty("startingAetherValue");
         m_MaxAetherValueProp = serializedObject.FindProperty("maxAetherValue");
         m_AetherValueFillPerSecondProp = serializedObject.FindProperty("aetherValueFillPerSecond");
@@ -104,6 +124,24 @@ public class AetherControllerEditor : Editor
     {
         serializedObject.Update();
 
+        #region REFERENCES LAYOUT
+        EditorGUILayout.BeginVertical(GUI.skin.box);
+        EditorGUI.indentLevel++;
+
+        EditorGUILayout.Space();
+        m_ReferencesFoldout = EditorGUILayout.Foldout(m_ReferencesFoldout, m_ReferencesContent, boldFoldoutStyle);
+        EditorGUILayout.Space();
+
+        if (m_ReferencesFoldout)
+        {
+            EditorGUILayout.PropertyField(m_UIPrefabAetherLightHeavyProp, m_UIPrefabAetherLightHeavyContent);
+            EditorGUILayout.PropertyField(m_ParentUIAetherLightHeavyProp, m_ParentUIAetherLightHeavyContent);
+        }
+
+        EditorGUI.indentLevel--;
+        EditorGUILayout.EndVertical();
+        #endregion // REFERENCES CONTENT
+
         #region LIGHT AND HEAVY AETHER LAYOUT
         EditorGUILayout.BeginVertical(GUI.skin.box);
         EditorGUI.indentLevel++;
@@ -114,16 +152,16 @@ public class AetherControllerEditor : Editor
 
         if (m_LightAndHeayAetherSettingsFoldout)
         {
-            EditorGUILayout.PropertyField(m_UIPrefabAetherLightHeavyProp, m_UIPrefabAetherLightHeavyContent);
-            EditorGUILayout.PropertyField(m_ParentUIAetherLightHeavyProp, m_ParentUIAetherLightHeavyContent);
             EditorGUILayout.PropertyField(m_DelayAfterUseLHAttackProp, m_DelayAfterUseLHAttackContent);
             EditorGUILayout.PropertyField(m_ActiveAetherLHPointsProp, m_ActiveAetherLHPointsContent);
             EditorGUILayout.PropertyField(m_AetherLHTimeStepProp, m_AetherLHTimeStepContent);
 
+            EditorGUILayout.PropertyField(m_EnableLightAttackProp, m_EnableLightAttackContent);
             EditorGUILayout.PropertyField(m_LightAttackCostProp, m_LightAttackCostContent);
             EditorGUILayout.PropertyField(m_LightAttackCadenceProp, m_LightAttackCadenceContent);
             EditorGUILayout.PropertyField(m_LightAttackBulletSpeedProp, m_LightAttackBulletSpeedContent);
 
+            EditorGUILayout.PropertyField(m_EnableHeavyAttackProp, m_EnableHeavyAttackContent);
             EditorGUILayout.PropertyField(m_HeavyAttackCostProp, m_HeavyAttackCostContent);
             EditorGUILayout.PropertyField(m_HeavyAttackBulletSpeedProp, m_HeavyAttackBulletSpeedContent);
             EditorGUILayout.PropertyField(m_HeavyAttackTimeBeforeShotProp, m_HeavyAttackTimeBeforeShotContent);
@@ -143,6 +181,7 @@ public class AetherControllerEditor : Editor
 
         if (m_SuperAetherSettingsFoldout)
         {
+            EditorGUILayout.PropertyField(m_EnableSuperAttackProp, m_EnableSuperAttackContent);
             EditorGUILayout.PropertyField(m_StartAetherValueProp, m_StartAetherValueContent);
             EditorGUILayout.PropertyField(m_MaxAetherValueProp, m_MaxAetherValueContent);
             EditorGUILayout.PropertyField(m_AetherValueFillPerSecondProp, m_AetherValueFillPerSecondContent);

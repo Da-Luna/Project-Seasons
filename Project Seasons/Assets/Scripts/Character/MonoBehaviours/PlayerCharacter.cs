@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class PlayerCharacter : MonoBehaviour
 {
     static protected PlayerCharacter s_PlayerInstance;
+
     static public PlayerCharacter PlayerInstance { get { return s_PlayerInstance; } }
 
     #region REFERENCES PROPERTIES
@@ -16,21 +17,26 @@ public class PlayerCharacter : MonoBehaviour
 
     [SerializeField]
     HealthController healthController;
+
     public HealthController PlayerHealthController { get { return healthController; } }
 
     [SerializeField]
     AetherController aetherController;
+
     public AetherController PlayerAether{ get { return aetherController; } }
 
     [SerializeField]
     Transform facingLeftBulletSpawnPoint;
+
     [SerializeField]
     Transform facingRightBulletSpawnPoint;
 
     [SerializeField]
     BulletPool bulletPoolLightAttack;
+
     [SerializeField]
     BulletPool bulletPoolHeavyAttack;
+
     [SerializeField]
     BulletPool bulletPoolSuperAttack;
 
@@ -40,30 +46,50 @@ public class PlayerCharacter : MonoBehaviour
 
     [SerializeField, Tooltip("Base movement speed of the player")]
     float moveSpeedWalk = 6.0f;
+
     [SerializeField, Tooltip("Running speed of the player")]
     float moveSpeedRun = 14.0f;
+
     [SerializeField]
     float groundAcceleration = 100f;
+
     [SerializeField]
     float groundDeceleration = 100f;
+
     [SerializeField, Range(0f, 1f)]
     float pushingSpeedProportion;
 
     public float PushingSpeedProportion { get { return pushingSpeedProportion; } }
+
     #endregion // MOVEMENT PROPERTIES
+
+    #region INTERACTING PROPERTIES
+
+    public bool IsInteracting { get; protected set; }
+    public bool inCarryTrigger;
+    public bool startCarryTrigger;
+    public bool inFocusTrigger;
+    public bool startFocusTrigger;
+
+    #endregion // INTERACTING PROPERTIES
 
     #region JUMP PROPERTIES
 
     [SerializeField, Range(0f, 5f)]
     float airborneAccelProportion = 1f;
+
     [SerializeField, Range(0f, 5f)]
     float airborneDecelProportion = 0.5f;
+
     [SerializeField]
     float gravity = 46f;
+
     [SerializeField, Tooltip("This value limits the falling speed. Enter a positive value! When executed, it is converted to a negative value")]
     float limitYGravity = 80f;
+
     [SerializeField]
     float jumpSpeed = 26f;
+
     [SerializeField]
     float jumpAbortSpeedReduction = 100f;
 
@@ -77,8 +103,10 @@ public class PlayerCharacter : MonoBehaviour
 
     [SerializeField]
     float dashSpeed = 20f;
+
     [SerializeField]
     float dashAcceleration = 2000f;
+
     [SerializeField]
     float dashCooldownTime = 1f;
 
@@ -138,8 +166,10 @@ public class PlayerCharacter : MonoBehaviour
 
     [SerializeField, Range(k_MinHurtJumpAngle, k_MaxHurtJumpAngle)]
     float hurtJumpAngle = 45f;
+
     [SerializeField]
     float hurtJumpSpeed = 5f;
+
     [SerializeField]
     float flickeringDuration = 0.1f;
 
@@ -147,46 +177,28 @@ public class PlayerCharacter : MonoBehaviour
 
     #endregion // HURT PROPERTIES
 
-    #region ATTACKING PROPERTIES
-
-    [Header("Light Attack Panel")]
-    [SerializeField, Tooltip("Indicates shots per minute.")]
-    float lightAttackCadence = 93f;
-    [SerializeField]
-    float lightAttackBulletSpeed = 20f;
-
-    float lightAttackStartInitTime = 0.3f;
-
-    [Header("Heavy Attack Panel")]
-    [SerializeField]
-    float heavyAttackBulletSpeed = 25f;
-    [SerializeField]
-    float heavyAttackTimeBeforeShot = 0.95f;
-    bool m_AttackHeavyRequested;
-    
-    [Header("Super Attack Panel")]
-    [SerializeField]
-    float superAttackBulletSpeed = 30f;
-    [SerializeField]
-    float superAttackTimeBeforeShot = 1.25f;
-
-    #endregion // ATTACKING PROPERTIES
-
     #region AUDIO PROPERTIES
 
     [Header("References are in the player character under SoundSources!")]
+
     [SerializeField, Tooltip("is executed as events in the animations")]
     RandomAudioPlayer footstepAudioPlayer;
+
     [SerializeField, Tooltip("is executed as events in the animations")]
     RandomAudioPlayer jumpingAudioPlayer;
+
     [SerializeField, Tooltip("is executed in UpdateGroundedCheck")]
     RandomAudioPlayer landingAudioPlayer;
+
     [SerializeField, Tooltip("")]
     RandomAudioPlayer hurtAudioPlayer;
+
     [SerializeField, Tooltip("")]
     RandomAudioPlayer focusedAudioPlayer;
+
     [SerializeField, Tooltip("")]
     RandomAudioPlayer heavyAttackAudioPlayer;
+
     [SerializeField, Tooltip("")]
     RandomAudioPlayer superAttackAudioPlayer;
 
@@ -195,16 +207,23 @@ public class PlayerCharacter : MonoBehaviour
     #region PARTICLE PROPERTIES
 
     [Header("Particle System References")]
+
     [SerializeField]
     ParticleSystem particleFocused;
+
     [SerializeField]
     ParticleSystem particleLightAttack;
-    GameObject particleChildLightAttack;
+
+    protected GameObject particleChildLightAttack;
+
+    [Tooltip("")]
     public ParticleSystem particleForceField;
 
     [Header("Particle System Settings")]
+
     [SerializeField]
     Vector3 jumpDustPositionOffset;
+    
     [SerializeField]
     Vector3 landDustPositionOffset;
 
@@ -225,6 +244,9 @@ public class PlayerCharacter : MonoBehaviour
     protected float m_CurrentSpeed;
     protected Transform m_CurrentBulletSpawnPoint;
     protected TileBase m_CurrentSurface;
+
+    protected bool m_AttackSuperRequested;
+    
     protected bool m_QuickslotAPressed;
     protected bool m_QuickslotBPressed;
     protected bool m_QuickslotCPressed;
@@ -357,7 +379,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public bool InputCheckForJump()
     {
-        bool _isJumping = PlayerInput.Instance.Jump != 0f;
+        bool _isJumping = PlayerInput.Instance.InputJump != 0f;
 
         if (_isJumping && !m_JumpRequested)
         {
@@ -374,7 +396,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void UpdateJump()
     {
-        if (PlayerInput.Instance.Jump == 0f && m_MoveVector.y > 0.0f)
+        if (PlayerInput.Instance.InputJump == 0f && m_MoveVector.y > 0.0f)
         {
             m_MoveVector.y -= jumpAbortSpeedReduction * Time.deltaTime;
         }
@@ -412,6 +434,7 @@ public class PlayerCharacter : MonoBehaviour
     #endregion // AIRBORN BEHAVIOUR
 
     #region ACTIONS MOVEMENT
+
     public void PlayFootstep()
     {
         footstepAudioPlayer.PlayRandomSound(m_CurrentSurface);
@@ -435,6 +458,38 @@ public class PlayerCharacter : MonoBehaviour
 
     #endregion // ACTIONS MOVEMENT
 
+    #region INTERACTING
+
+    public void CheckForInteractingInput()
+    {
+        bool inputInteracting = PlayerInput.Instance.InputInteract > 0f;
+
+        if (inputInteracting)
+        {
+            if (inCarryTrigger && !startFocusTrigger)
+            {
+                startCarryTrigger = true;
+            }
+            else if (inFocusTrigger && !startCarryTrigger)
+            {
+                startFocusTrigger = true;
+            }
+        }
+        else if (!inputInteracting && (startCarryTrigger || inFocusTrigger))
+        {
+            startCarryTrigger = false;
+            inFocusTrigger = false;
+        }
+    }
+
+
+    public void SetInteracting(bool interactState)
+    {
+        IsInteracting = interactState;
+    }
+
+    #endregion // INTERACTING
+
     #region DASHING
 
     public bool InputCheckForDash()
@@ -444,7 +499,7 @@ public class PlayerCharacter : MonoBehaviour
             return false;
         }
 
-        bool _isDashing = PlayerInput.Instance.Dash != 0f;
+        bool _isDashing = PlayerInput.Instance.InputDash != 0f;
 
         if (_isDashing && !m_DashRequested)
         {
@@ -546,6 +601,7 @@ public class PlayerCharacter : MonoBehaviour
     #endregion // AETHER
 
     #region HURTING
+
     public void OnHurt(HealthDamager damager, HealthController healthController)
     {
         if (healthController.GetDamageDirection().x > 0f)
@@ -623,6 +679,7 @@ public class PlayerCharacter : MonoBehaviour
     #endregion // HURTING
 
     #region DEAD
+
     public void OnDie()
     {
         m_Animator.SetTrigger(m_HashDeadPara);
@@ -669,6 +726,7 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
     */
+
     #endregion // DEAD
 
     #region FOCUSED
@@ -676,7 +734,7 @@ public class PlayerCharacter : MonoBehaviour
     public bool InputCheckForFocused()
     {
         bool isFocused = m_Animator.GetBool(m_HashFocusedPara);
-        bool focused = PlayerInput.Instance.Focused != 0f;
+        bool focused = PlayerInput.Instance.InputFocused != 0f;
 
         if (!focusedAudioPlayer.CheckIfPlaying())
         {
@@ -743,8 +801,11 @@ public class PlayerCharacter : MonoBehaviour
 
     public bool CheckForAttackLightInput()
     {
+        if (!aetherController.enableLightAttack)
+            return false;
+
         bool isAtk = m_Animator.GetBool(m_HashAtkLightPara);
-        bool lightAtk = PlayerInput.Instance.AttackLight != 0f;
+        bool lightAtk = PlayerInput.Instance.InputAttackLight != 0f;
 
         bool hasAether = aetherController.CanShotCheckAether(aetherController.lightAttackCost);
 
@@ -781,7 +842,8 @@ public class PlayerCharacter : MonoBehaviour
 
     public void LightAttack()
     {
-        if (!aetherController.CanShotCheckAether(aetherController.lightAttackCost))
+        int lightAttackCost = aetherController.lightAttackCost;
+        if (!aetherController.CanShotCheckAether(lightAttackCost))
         {
             return;
         }
@@ -806,20 +868,20 @@ public class PlayerCharacter : MonoBehaviour
         Vector2 facingLeft = spriteRenderer.flipX ? facingLeftBulletSpawnPoint.position : facingRightBulletSpawnPoint.position;
         particleLightAttack.transform.position = facingLeft;
 
-        if (lightAttackStartInitTime <= 0f)
+        if (aetherController.lightAttackStartInitTime <= 0f)
         {
-            SpawnBullet(bulletPoolLightAttack, lightAttackBulletSpeed);
+            SpawnBullet(bulletPoolLightAttack, aetherController.lightAttackBulletSpeed);
 
             VFXController.Instance.Trigger(m_LightAttackShot, m_CurrentBulletSpawnPoint.position, 0, false, null);
 
-            float bufferTime = 60f / lightAttackCadence;
-            lightAttackStartInitTime = bufferTime;
+            float bufferTime = 60f / aetherController.lightAttackCadence;
+            aetherController.lightAttackStartInitTime = bufferTime;
 
             aetherController.HandleAetherBasePointReduction(aetherController.lightAttackCost);
         }
         else
         {
-            lightAttackStartInitTime -= Time.deltaTime;
+            aetherController.lightAttackStartInitTime -= Time.deltaTime;
         }
     }
 
@@ -842,7 +904,7 @@ public class PlayerCharacter : MonoBehaviour
             yield return null;
 
         particleLightAttack.gameObject.SetActive(false);
-        lightAttackStartInitTime = 0.3f;
+        aetherController.lightAttackStartInitTime = 0.3f;
     }
 
     #endregion // ACTIONS LIGHT ATTACK
@@ -851,7 +913,10 @@ public class PlayerCharacter : MonoBehaviour
 
     public bool InputCheckForAttackHeavy()
     {
-        bool heavyAtk = PlayerInput.Instance.AttackHeavy != 0f;
+        if (!aetherController.enableHeavyAttack)
+            return false;
+
+        bool heavyAtk = PlayerInput.Instance.InputAttackHeavy != 0f;
 
         if (!aetherController.CanShotCheckAether(aetherController.heavyAttackCost))
         {
@@ -862,9 +927,9 @@ public class PlayerCharacter : MonoBehaviour
         {
             return true;
         }
-        else if (m_AttackHeavyRequested)
+        else if (aetherController.m_AttackHeavyRequested)
         {
-            m_AttackHeavyRequested = false;
+            aetherController.m_AttackHeavyRequested = false;
         }
 
         return false;
@@ -875,10 +940,10 @@ public class PlayerCharacter : MonoBehaviour
         if (!m_CharacterController2D.IsGrounded)
             return;
 
-        if (!m_AttackHeavyRequested)
+        if (!aetherController.m_AttackHeavyRequested)
         {
             StartCoroutine(HeavyAttackCoroutine());
-            m_AttackHeavyRequested = true;
+            aetherController.m_AttackHeavyRequested = true;
         }
     }
 
@@ -887,9 +952,11 @@ public class PlayerCharacter : MonoBehaviour
         m_Animator.SetTrigger(m_HashAtkHeavyPara);
         heavyAttackAudioPlayer.PlayRandomSound();
 
-        yield return new WaitForSeconds(heavyAttackTimeBeforeShot);
+        float timeBeforeShot = aetherController.heavyAttackTimeBeforeShot;
+        yield return new WaitForSeconds(timeBeforeShot);
 
-        SpawnBullet(bulletPoolHeavyAttack, heavyAttackBulletSpeed);
+        float bulletSpeed = aetherController.heavyAttackBulletSpeed;
+        SpawnBullet(bulletPoolHeavyAttack, bulletSpeed);
         VFXController.Instance.Trigger(m_HeavyAttackShot, m_CurrentBulletSpawnPoint.position, 0, false, null);
 
         aetherController.HandleAetherBasePointReduction(aetherController.heavyAttackCost);
@@ -903,13 +970,15 @@ public class PlayerCharacter : MonoBehaviour
 
     public bool InputCheckForAttackSuper()
     {
+        if (!aetherController.enableSuperAttack)
+            return false;
         if (!CanShotCheckObstacle())
             return false;
 
         if (aetherController.CurrentAether < 1f)
             return false;
 
-        bool superAtk = PlayerInput.Instance.AttackSuper != 0f;
+        bool superAtk = PlayerInput.Instance.InputAttackSuper != 0f;
 
         if (superAtk)
         {
@@ -922,8 +991,7 @@ public class PlayerCharacter : MonoBehaviour
 
         return false;
     }
-
-    bool m_AttackSuperRequested;
+    
     public void SuperAttack()
     {
         if (!m_AttackSuperRequested)
@@ -934,14 +1002,17 @@ public class PlayerCharacter : MonoBehaviour
             m_AttackSuperRequested = true;
         }
     }
+
     IEnumerator SuperAttackCoroutine()
     {
         m_Animator.SetTrigger(m_HashAtkSuperPara);
         superAttackAudioPlayer.PlayRandomSound();
 
-        yield return new WaitForSeconds(superAttackTimeBeforeShot);
+        float timeBeforeShot = aetherController.superAttackTimeBeforeShot;
+        yield return new WaitForSeconds(timeBeforeShot);
 
-        SpawnBullet(bulletPoolSuperAttack, superAttackBulletSpeed);
+        float bulletSpeed = aetherController.superAttackBulletSpeed;
+        SpawnBullet(bulletPoolSuperAttack, bulletSpeed);
         aetherController.SetAether(0f);
         
         VFXController.Instance.Trigger(m_SuperAttackShot, m_CurrentBulletSpawnPoint.position, 0, false, null);
@@ -1082,14 +1153,17 @@ public class PlayerCharacter : MonoBehaviour
     {
         AddHealth();
     }
+
     void QuickslotB()
     {
         Debug.LogWarning("Function is not implemented");
     }
+
     void QuickslotC()
     {
         Debug.LogWarning("Function is not implemented");
     }
+
     void QuickslotD()
     {
         AddAether();

@@ -9,15 +9,23 @@ public class AetherController : MonoBehaviour
 
     [Serializable] public class AetherFillEvent : UnityEvent<float> { }
 
-    #region HEAVY AETHER SETTINGS
+    #region REFERENCES
 
-    [Header("LIGHT AND HEAVY ATTACK SETTINGS")]
+    [Header("REFERENCES")]
 
     [Tooltip("Prefab for the aether base attack object.")]
     public GameObject uIPrefabAetherLightHeavy;
 
     [Tooltip("The parent transform that will hold all aether base attack objects.")]
     public Transform parentUIAetherLightHeavy;
+
+    const string uIParentSearch = "ParentAetherBaseAtk";
+
+    #endregion // REFERENCES
+
+    #region LIGHT AND HEAVY ATTACK SETTINGS
+
+    [Header("LIGHT AND HEAVY ATTACK SETTINGS")]
 
     [Tooltip("The delay in seconds after using a base attack before another can be activated.")]
     public float delayAfterUseLHAttack = 2f;
@@ -32,11 +40,14 @@ public class AetherController : MonoBehaviour
     protected int m_ActiveAetherLHPointsIndex;
     protected float m_TimerAetherLHPoints = 1f;
 
-    #endregion // HEAVY AETHER SETTINGS
+    #endregion // LIGHT AND HEAVY ATTACK SETTINGS
 
     #region LIGHT AETHER SETTINGS
 
     [Header("LIGHT ATTACK SETTINGS")]
+
+    [Tooltip(" ???????????????????? ")]
+    public bool enableLightAttack;
 
     [Tooltip("The cost in aether points for performing a light attack.")]
     public int lightAttackCost = 1;
@@ -47,13 +58,17 @@ public class AetherController : MonoBehaviour
     [Tooltip(" ???????????????????? ")]
     public float lightAttackBulletSpeed = 20f;
 
-    float lightAttackStartInitTime = 0.3f;
+    [Tooltip(" ???????????????????? ")]
+    public float lightAttackStartInitTime = 0.3f;
 
     #endregion // LIGHT AETHER SETTINGS
 
     #region HEAVY AETHER SETTINGS
 
     [Header("HEAVY ATTACK SETTINGS")]
+
+    [Tooltip(" ???????????????????? ")]
+    public bool enableHeavyAttack;
 
     [Tooltip("The cost in aether points for performing a heavy attack.")]
     public int heavyAttackCost = 3;
@@ -64,11 +79,17 @@ public class AetherController : MonoBehaviour
     [Tooltip(" ???????????????????? ")]
     public float heavyAttackTimeBeforeShot = 0.95f;
 
+    [Tooltip(" ???????????????????? ")]
+    public bool m_AttackHeavyRequested = false;
+
     #endregion // LIGHT AETHER SETTINGS
 
     #region SUPER AETHER SETTINGS
 
     [Header("AETHER BAR SETTINGS")]
+
+    [Tooltip(" ???????????????????? ")]
+    public bool enableSuperAttack;
 
     [Tooltip("The initial aether value displayed on the aether bar.")]
     public float startingAetherValue = 0.5f;
@@ -90,12 +111,12 @@ public class AetherController : MonoBehaviour
     [Tooltip(" ???????????????????? ")]
     public float superAttackTimeBeforeShot = 1.25f;
 
-    bool m_AttackHeavyRequested;
-
     protected float m_CurrentAetherBarValue;
     protected float m_TimerAetherBarValue;
 
     #endregion // SUPER AETHER SETTINGS
+
+    #region EVENTS
 
     [Header("EVENTS")]
     [Space]
@@ -106,19 +127,22 @@ public class AetherController : MonoBehaviour
     [Tooltip("Event triggered when the object gains aether.")]
     public AetherFillEvent OnGainAetherBarValue;
 
+    #endregion // EVENTS
+
     protected bool m_ResetAetherOnSceneReload; // Currently not used
     protected float m_AetherValueBeforeDead; //Currently not used
 
     void OnEnable()
     {
         Debug.LogWarning($"m_ResetAetherOnSceneReload & m_AetherValueBeforeDead has no function");
+
         if (parentUIAetherLightHeavy == null)
         {
-            parentUIAetherLightHeavy = GameObject.Find("ParentAetherBaseAtk").transform;
+            parentUIAetherLightHeavy = GameObject.Find(uIParentSearch).transform;
 
             if (parentUIAetherLightHeavy != null)
             {
-                Debug.Log($"{parentUIAetherLightHeavy} is NULL. search is started *ParentAetherBaseAtk*");
+                Debug.Log($"{parentUIAetherLightHeavy} is NULL. search is started, string is *{uIParentSearch}*");
             }
             else
             {
@@ -265,9 +289,6 @@ public class AetherController : MonoBehaviour
 
     #endregion // AETHERBAR
 
-    /// <summary>
-    /// Updates the aether bar value and aether base attack points every frame.
-    /// </summary>
     void Update()
     {
         AetherBarValueFilling();

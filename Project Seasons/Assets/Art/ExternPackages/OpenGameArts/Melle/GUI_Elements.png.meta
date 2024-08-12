@@ -3,7 +3,7 @@ guid: 99ae43fd5a181304ab19d770e9ab6715
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GUI_Elements_0
+      name: GUI_Button_A0
       rect:
         serializedVersion: 2
         x: 6
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_Elements_1
+      name: GUI_Button_B0
       rect:
         serializedVersion: 2
         x: 376
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_Elements_2
+      name: GUI_Elements_20
       rect:
         serializedVersion: 2
         x: 397
@@ -185,6 +185,153 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: GUI_Button_A1
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 845
+        width: 360
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031d4ff027646e84d843f157db021a3b
+      internalID: 1583627926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_Button_A2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 705
+        width: 360
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ab129d7040e6b49b8834acb98b4bca
+      internalID: 598330532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_Button_A3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 565
+        width: 360
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1022203593134245ae00b12134b2bf6
+      internalID: 2103553303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_Button_B1
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 845
+        width: 360
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45965a3e26a97a44a837cb81d296763f
+      internalID: 1434894905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_Button_B2
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 705
+        width: 360
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a65b82d8a9765a47819e75b16ca721e
+      internalID: 325937172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_Button_B3
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 565
+        width: 360
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd458f7c7598082408b9a9783600bcb1
+      internalID: 1153671111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_Paper
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 280
+        width: 560
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff37f87b3c88ae043a83be91dd3a35c9
+      internalID: 536273258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -196,9 +343,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      GUI_Elements_0: 950355967
-      GUI_Elements_1: -1901738205
-      GUI_Elements_2: 293701131
+      GUI_Button_A0: 950355967
+      GUI_Button_A1: 1583627926
+      GUI_Button_A2: 598330532
+      GUI_Button_A3: 2103553303
+      GUI_Button_B0: -1901738205
+      GUI_Button_B1: 1434894905
+      GUI_Button_B2: 325937172
+      GUI_Button_B3: 1153671111
+      GUI_Elements_20: 293701131
+      GUI_Elements_4: 1672064590
+      GUI_Paper: 536273258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

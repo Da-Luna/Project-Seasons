@@ -24,6 +24,7 @@ public class InteractCarrybleBox : MonoBehaviour
     Vector2 playerColliderSizeXCarry = new(1.8f, 1.1f);
 
     // Player References
+    PlayerCharacter m_PlayerCharacter;
     Animator m_PlayerAnimator;
     BoxCollider2D m_PlayerBoxCollider2D;
     Vector2 m_PlayerColliderSizeXBase;
@@ -35,18 +36,19 @@ public class InteractCarrybleBox : MonoBehaviour
     Collider2D m_Collider2D;
 
     // Carrybale Box Parameters
-    bool m_StartCarrying;
+    bool m_StartCarryingEnded;
     bool m_IsCarrying;
-    bool m_Request;
-    bool m_InTrigger;
+    bool m_HasStop;
     Vector2 m_CurrentBoxPosition;
     Vector2 m_TargetBoxPosition;
 
     const string m_PlayerLayerMask = "Player";
+
+    readonly int m_HashGroundedPara = Animator.StringToHash("Grounded");
     readonly int m_HashCarryPara = Animator.StringToHash("Carry");
     readonly int m_HashHorizontalSpeedPara = Animator.StringToHash("HorizontalSpeed");
 
-    void Start()
+    void OnEnable()
     {
         m_RigidBody2D = GetComponent<Rigidbody2D>();
         m_Collider2D = GetComponent<Collider2D>();
@@ -56,13 +58,8 @@ public class InteractCarrybleBox : MonoBehaviour
     {
         if (target.CompareTag(m_PlayerLayerMask))
         {
-            m_PlayerAnimator = target.GetComponent<Animator>();
-            m_PlayerBoxCollider2D = target.GetComponent<BoxCollider2D>();
-            m_PlayerColliderSizeXBase = m_PlayerBoxCollider2D.size;
-            m_PlayerTransform = target.transform;
-            m_PlayerSpriteRenderer = target.GetComponent<SpriteRenderer>();
-
-            m_InTrigger = true;
+            InitPlayerProperties(target);
+            UpdateCarryTrigger(true);
         }
     }
 
@@ -70,8 +67,32 @@ public class InteractCarrybleBox : MonoBehaviour
     {
         if (target.CompareTag(m_PlayerLayerMask))
         {
-            HandleCarrying();
-            Carrying();
+            if (CheckIfGrounded())
+            {
+                if (m_PlayerCharacter.startCarryTrigger)
+                {
+                    StartCarrying();
+                    m_HasStop = false;
+                    m_PlayerCharacter.SetInteracting(true);
+                }
+                else
+                {
+                    StopCarrying();
+                    m_HasStop = true;
+                    m_PlayerCharacter.SetInteracting(false);
+                }
+
+                if (m_StartCarryingEnded)
+                {
+                    Carrying();
+                }
+            }
+            else if (!m_HasStop)
+            {
+                StopCarrying();
+                m_HasStop = true;
+                m_PlayerCharacter.SetInteracting(false);
+            }
         }
     }
 
@@ -79,9 +100,40 @@ public class InteractCarrybleBox : MonoBehaviour
     {
         if (target.CompareTag(m_PlayerLayerMask))
         {
-            m_InTrigger = false;
+            UpdateCarryTrigger(false);
         }
     }
+
+    void InitPlayerProperties(Collider2D target)
+    {
+        m_PlayerCharacter = target.GetComponent<PlayerCharacter>();
+        m_PlayerAnimator = target.GetComponent<Animator>();
+        m_PlayerBoxCollider2D = target.GetComponent<BoxCollider2D>();
+        m_PlayerColliderSizeXBase = m_PlayerBoxCollider2D.size;
+        m_PlayerTransform = target.transform;
+        m_PlayerSpriteRenderer = target.GetComponent<SpriteRenderer>();
+    }
+
+    void StartCarrying()
+    {
+        if (m_StartCarryingEnded)
+        {
+            return;
+        }
+
+        if (m_PlayerCharacter.startCarryTrigger)
+        {
+            m_RigidBody2D.bodyType = RigidbodyType2D.Kinematic;
+            m_RigidBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
+            m_Collider2D.enabled = false;
+
+            m_PlayerAnimator.SetBool(m_HashCarryPara, true);
+            m_PlayerBoxCollider2D.size = playerColliderSizeXCarry;
+
+            m_StartCarryingEnded = true;
+        }
+    }
+
     void UpdatePositions()
     {
         Vector2 _playerPos = m_PlayerTransform.position;
@@ -101,41 +153,22 @@ public class InteractCarrybleBox : MonoBehaviour
         m_CurrentBoxPosition = transform.position;
     }
 
-    void HandleCarrying()
+    void StopCarrying()
     {
-        if (m_Request)
-        {
-            if (!m_StartCarrying)
-            {
-                m_RigidBody2D.bodyType = RigidbodyType2D.Kinematic;
-                m_RigidBody2D.constraints = RigidbodyConstraints2D.FreezeAll;
-                m_Collider2D.enabled = false;
+        m_RigidBody2D.bodyType = RigidbodyType2D.Dynamic;
+        m_RigidBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
+        m_Collider2D.enabled = true;
 
-                m_PlayerAnimator.SetBool(m_HashCarryPara, true);
-                m_PlayerBoxCollider2D.size = playerColliderSizeXCarry;
-                
-                m_StartCarrying = true;
-            }
-            else
-            {
-                m_RigidBody2D.bodyType = RigidbodyType2D.Dynamic;
-                m_RigidBody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
-                m_Collider2D.enabled = true;
+        m_PlayerAnimator.SetBool(m_HashCarryPara, false);
+        m_PlayerBoxCollider2D.size = m_PlayerColliderSizeXBase;
 
-                m_PlayerAnimator.SetBool(m_HashCarryPara, false);
-                m_PlayerBoxCollider2D.size = m_PlayerColliderSizeXBase;
-
-                m_IsCarrying = false;
-                m_StartCarrying = false;
-            }
-
-            m_Request = false;
-        }
+        m_StartCarryingEnded = false;
+        m_IsCarrying = false;
     }
-
+    
     void Carrying()
     {
-        if (m_StartCarrying)
+        if (m_StartCarryingEnded)
         {
             UpdatePositions();
 
@@ -160,20 +193,21 @@ public class InteractCarrybleBox : MonoBehaviour
         }
     }
 
-    void Update()
+    bool CheckIfGrounded()
     {
-        if (!m_InTrigger)
+        if (m_PlayerAnimator != null)
         {
-            return;
-        }
-        if (m_Request)
-        {
-            return;
+            return m_PlayerAnimator.GetBool(m_HashGroundedPara);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        return false;
+    }
+
+    void UpdateCarryTrigger(bool triggerState)
+    {
+        if (m_PlayerCharacter != null)
         {
-            m_Request = true;
+            m_PlayerCharacter.inCarryTrigger = triggerState;
         }
     }
 }

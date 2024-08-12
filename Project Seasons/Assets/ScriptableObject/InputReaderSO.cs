@@ -12,6 +12,7 @@ public class InputReaderSO : ScriptableObject, InputActions.IPlayerActions, Inpu
         
     public event UnityAction<float> Jump;
     public event UnityAction<float> Dash;
+    public event UnityAction<float> Interact;
 
     public event UnityAction<float> AttackLight;
     public event UnityAction<float> Focused;
@@ -83,7 +84,12 @@ public class InputReaderSO : ScriptableObject, InputActions.IPlayerActions, Inpu
     {
         Dash?.Invoke(context.ReadValue<float>());
     }
-    
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        Interact?.Invoke(context.ReadValue<float>());
+    }
+
     public void OnAttackLight(InputAction.CallbackContext context)
     {
         AttackLight?.Invoke(context.ReadValue<float>());

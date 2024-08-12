@@ -69,15 +69,6 @@ public class PlayerCharacterEditor : Editor
     SerializedProperty m_SuperAttackAudioPlayerProp;
     #endregion // AUDIO SETTINGS
 
-    #region ATTACKING SETTINGS
-    SerializedProperty m_LightAttackCadenceProp;
-    SerializedProperty m_LightAttackBulletSpeedProp;
-    SerializedProperty m_HeavyAttackBulletSpeedProp;
-    SerializedProperty m_HeavyAttackTimeBeforeShotProp;
-    SerializedProperty m_SuperAttackBulletSpeedProp;
-    SerializedProperty m_SuperAttackTimeBeforeShotProp;
-    #endregion // ATTACKING SETTINGS
-
     #region PARTICLE SYSTEMS
     SerializedProperty m_ParticleFocusedProp;
     SerializedProperty m_ParticleLightAttackProp;
@@ -153,15 +144,6 @@ public class PlayerCharacterEditor : Editor
     readonly GUIContent m_SuperAttackAudioPlayerContent = new("Super Attack Audio Player");
     #endregion // AUDIO SETTINGS
 
-    #region ATTACKING SETTINGS
-    readonly GUIContent m_LightAttackCadenceContent = new("Light Attack Cadence");
-    readonly GUIContent m_LightAttackBulletSpeedContent = new("Light Attack Bullet Speed");
-    readonly GUIContent m_HeavyAttackBulletSpeedContent = new("Heavy Attack Bullet Speed");
-    readonly GUIContent m_HeavyAttackTimeBeforeShotContent = new("Heavy Attack Time Before Shot");
-    readonly GUIContent m_SuperAttackBulletSpeedContent = new("Super Attack Bullet Speed");
-    readonly GUIContent m_SuperAttackTimeBeforeShotContent = new("Super Attack Time Before Shot");
-    #endregion // ATTACKING SETTINGS
-
     #region PARTICLE SYSTEMS
     readonly GUIContent m_ParticleFocusedContent = new("Particle Focused");
     readonly GUIContent m_ParticleLightAttackContent = new("Particle Light Attack");
@@ -180,7 +162,6 @@ public class PlayerCharacterEditor : Editor
     readonly GUIContent m_HealingSettingsContent = new("Healing Settings");
     readonly GUIContent m_AetherSettingsContent = new("Aether Settings");
     readonly GUIContent m_HurtSettingsContent = new("Hurt Settings");
-    readonly GUIContent m_AttackingSettingsContent = new("Attacking Settings");
     readonly GUIContent m_AudioSettingsContent = new("Audio Settings");
     readonly GUIContent m_ParticleSystemsSettingsContent = new("Particle Systems Settings");
     #endregion // TITLES
@@ -192,7 +173,6 @@ public class PlayerCharacterEditor : Editor
     bool m_HealingSettingsFoldout;
     bool m_AetherSettingsFoldout;
     bool m_HurtSettingsFoldout;
-    bool m_AttackingSettingsFoldout;
     bool m_AudioSettingsFoldout;
     bool m_ParticleSystemsSettingsFoldout;
 
@@ -260,15 +240,6 @@ public class PlayerCharacterEditor : Editor
         m_HeavyAttackAudioPlayerProp = serializedObject.FindProperty("heavyAttackAudioPlayer");
         m_SuperAttackAudioPlayerProp = serializedObject.FindProperty("superAttackAudioPlayer");
         #endregion // AUDIO SETTINGS
-
-        #region ATTACKING SETTINGS
-        m_LightAttackCadenceProp = serializedObject.FindProperty("lightAttackCadence");
-        m_LightAttackBulletSpeedProp = serializedObject.FindProperty("lightAttackBulletSpeed");
-        m_HeavyAttackBulletSpeedProp = serializedObject.FindProperty("heavyAttackBulletSpeed");
-        m_HeavyAttackTimeBeforeShotProp = serializedObject.FindProperty("heavyAttackTimeBeforeShot");
-        m_SuperAttackBulletSpeedProp = serializedObject.FindProperty("superAttackBulletSpeed");
-        m_SuperAttackTimeBeforeShotProp = serializedObject.FindProperty("superAttackTimeBeforeShot");
-        #endregion // ATTACKING SETTINGS
 
         #region PARTICLE SYSTEMS
         m_ParticleFocusedProp = serializedObject.FindProperty("particleFocused");
@@ -452,28 +423,6 @@ public class PlayerCharacterEditor : Editor
         EditorGUI.indentLevel--;
         EditorGUILayout.EndVertical();
         #endregion // AUDIO SYSTEMS
-
-        #region ATTACKING SETTINGS
-        EditorGUILayout.BeginVertical(GUI.skin.box);
-        EditorGUI.indentLevel++;
-
-        EditorGUILayout.Space();
-        m_AttackingSettingsFoldout = EditorGUILayout.Foldout(m_AttackingSettingsFoldout, m_AttackingSettingsContent, boldFoldoutStyle);
-        EditorGUILayout.Space();
-
-        if (m_AttackingSettingsFoldout)
-        {
-            EditorGUILayout.PropertyField(m_LightAttackCadenceProp, m_LightAttackCadenceContent);
-            EditorGUILayout.PropertyField(m_LightAttackBulletSpeedProp, m_LightAttackBulletSpeedContent);
-            EditorGUILayout.PropertyField(m_HeavyAttackBulletSpeedProp, m_HeavyAttackBulletSpeedContent);
-            EditorGUILayout.PropertyField(m_HeavyAttackTimeBeforeShotProp, m_HeavyAttackTimeBeforeShotContent);
-            EditorGUILayout.PropertyField(m_SuperAttackBulletSpeedProp, m_SuperAttackBulletSpeedContent);
-            EditorGUILayout.PropertyField(m_SuperAttackTimeBeforeShotProp, m_SuperAttackTimeBeforeShotContent);
-        }
-
-        EditorGUI.indentLevel--;
-        EditorGUILayout.EndVertical();
-        #endregion // ATTACKING SETTINGS
 
         #region PARTICLE SYSTEMS
         EditorGUILayout.BeginVertical(GUI.skin.box);

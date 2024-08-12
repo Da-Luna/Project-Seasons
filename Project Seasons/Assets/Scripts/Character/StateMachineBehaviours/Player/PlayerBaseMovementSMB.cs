@@ -30,5 +30,6 @@ public class PlayerBaseMovementSMB : SceneLinkedSMB<PlayerCharacter>
             m_MonoBehaviour.StartDashing();
 
         m_MonoBehaviour.CheckForPushing();
+        m_MonoBehaviour.CheckForInteractingInput();
     }
 }

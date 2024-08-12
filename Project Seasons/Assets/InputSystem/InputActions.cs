@@ -55,6 +55,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""217cfde8-4072-4866-af00-2bd31ce482c4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""AttackLight"",
                     ""type"": ""Button"",
                     ""id"": ""43e95812-edd3-440a-916c-7445e3a84f40"",
@@ -329,7 +338,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""c631663f-8194-44d1-9f97-817fe8fd8705"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -444,6 +453,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SlotEast"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""30598c38-3cb6-42a1-9c04-52eca7529a80"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5969f6ac-4a7f-483b-a17e-c63527f5236f"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1035,6 +1066,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Player_Horizontal = m_Player.FindAction("Horizontal", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_AttackLight = m_Player.FindAction("AttackLight", throwIfNotFound: true);
         m_Player_Focused = m_Player.FindAction("Focused", throwIfNotFound: true);
         m_Player_AttackHeavy = m_Player.FindAction("AttackHeavy", throwIfNotFound: true);
@@ -1121,6 +1153,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Horizontal;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_AttackLight;
     private readonly InputAction m_Player_Focused;
     private readonly InputAction m_Player_AttackHeavy;
@@ -1136,6 +1169,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Horizontal => m_Wrapper.m_Player_Horizontal;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @AttackLight => m_Wrapper.m_Player_AttackLight;
         public InputAction @Focused => m_Wrapper.m_Player_Focused;
         public InputAction @AttackHeavy => m_Wrapper.m_Player_AttackHeavy;
@@ -1162,6 +1196,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Dash.started += instance.OnDash;
             @Dash.performed += instance.OnDash;
             @Dash.canceled += instance.OnDash;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
             @AttackLight.started += instance.OnAttackLight;
             @AttackLight.performed += instance.OnAttackLight;
             @AttackLight.canceled += instance.OnAttackLight;
@@ -1199,6 +1236,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Dash.started -= instance.OnDash;
             @Dash.performed -= instance.OnDash;
             @Dash.canceled -= instance.OnDash;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
             @AttackLight.started -= instance.OnAttackLight;
             @AttackLight.performed -= instance.OnAttackLight;
             @AttackLight.canceled -= instance.OnAttackLight;
@@ -1379,6 +1419,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnHorizontal(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
         void OnAttackLight(InputAction.CallbackContext context);
         void OnFocused(InputAction.CallbackContext context);
         void OnAttackHeavy(InputAction.CallbackContext context);

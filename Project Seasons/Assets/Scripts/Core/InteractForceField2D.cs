@@ -182,7 +182,8 @@ public class InteractForceField2D : MonoBehaviour
 
         while (m_AetherLight.intensity > 0f)
         {
-            m_CurrentLightValue = Mathf.MoveTowards(m_CurrentLightValue, 0f, lightChangeSpeed * Time.deltaTime);
+            float _lightChangeSpeed = lightChangeSpeed / 2f;
+            m_CurrentLightValue = Mathf.MoveTowards(m_CurrentLightValue, 0f, _lightChangeSpeed * Time.deltaTime);
             m_AetherLight.intensity = m_CurrentLightValue;
 
             yield return null;

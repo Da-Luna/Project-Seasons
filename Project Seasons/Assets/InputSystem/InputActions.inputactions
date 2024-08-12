@@ -33,6 +33,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "217cfde8-4072-4866-af00-2bd31ce482c4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "AttackLight",
                     "type": "Button",
                     "id": "43e95812-edd3-440a-916c-7445e3a84f40",
@@ -307,7 +316,7 @@
                 {
                     "name": "",
                     "id": "c631663f-8194-44d1-9f97-817fe8fd8705",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -422,6 +431,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "SlotEast",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "30598c38-3cb6-42a1-9c04-52eca7529a80",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5969f6ac-4a7f-483b-a17e-c63527f5236f",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,0 +1,3778 @@
+fileFormatVersion: 2
+guid: 7d60d19f9173eef42b4758e9a91d8f9c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Tileset_Stone_Floor01
+  - first:
+      213: 21300002
+    second: Tileset_Stone_Floor02
+  - first:
+      213: 21300004
+    second: Tileset_Stone_Floor03
+  - first:
+      213: 21300006
+    second: Tileset_Stone_Floor04
+  - first:
+      213: 21300008
+    second: Tileset_Stone_Floor05
+  - first:
+      213: 21300010
+    second: Tileset_Stone_Floor06
+  - first:
+      213: 21300012
+    second: Tileset_Stone_Floor07
+  - first:
+      213: 21300014
+    second: Tileset_Stone_Floor6
+  - first:
+      213: 21300016
+    second: Tileset_Stone_Fill01
+  - first:
+      213: 21300018
+    second: Tileset_Stone_Fill02
+  - first:
+      213: 21300020
+    second: Tileset_Stone_Fill03
+  - first:
+      213: 21300022
+    second: Tileset_Stone_Fill04
+  - first:
+      213: 21300024
+    second: Tileset_Stone_Fill05
+  - first:
+      213: 21300026
+    second: Tileset_Stone_Fill06
+  - first:
+      213: 21300028
+    second: Tileset_Stone_Fill07
+  - first:
+      213: 21300030
+    second: Tileset_Stone_Fill08
+  - first:
+      213: 21300032
+    second: Tileset_Stone_FloorLeftEnd01
+  - first:
+      213: 21300034
+    second: Tileset_Stone_WallRight0
+  - first:
+      213: 21300036
+    second: Tileset_Stone_WallLeft1
+  - first:
+      213: 21300038
+    second: Tileset_Stone_FloorCornerRight01
+  - first:
+      213: 21300040
+    second: Tileset_Stone_FloorLeftCorner01
+  - first:
+      213: 21300042
+    second: Tileset_Stone_Fill9
+  - first:
+      213: 21300044
+    second: Tileset_Stone_Fill10
+  - first:
+      213: 21300046
+    second: Tileset_Stone_FloorRightEnd01
+  - first:
+      213: 21300048
+    second: Tileset_Stone_WallLeft01
+  - first:
+      213: 21300050
+    second: Tileset_Stone_Ceiling1
+  - first:
+      213: 21300052
+    second: Tileset_Stone_WallRight1
+  - first:
+      213: 21300054
+    second: Tileset_Stone_WallLeft2
+  - first:
+      213: 21300056
+    second: Tileset_Stone_CeilingCornerOuterLeft
+  - first:
+      213: 21300058
+    second: Tileset_Stone_Ceiling2
+  - first:
+      213: 21300060
+    second: Tileset_Stone_Ceiling3
+  - first:
+      213: 21300062
+    second: Tileset_Stone_WallRight01
+  - first:
+      213: 21300064
+    second: Tileset_Stone_Ceiling5
+  - first:
+      213: 21300066
+    second: Tileset_Stone_Ceiling6
+  - first:
+      213: 21300068
+    second: Tileset_Stone_CeilingCornerOuterRight
+  - first:
+      213: 21300070
+    second: Tileset_Stone_WallRight2
+  - first:
+      213: 21300072
+    second: Tileset_Stone_FloorCornerOuterLeft
+  - first:
+      213: 21300074
+    second: Tileset_Stone_Floor1
+  - first:
+      213: 21300076
+    second: Tileset_Stone_Floor2
+  - first:
+      213: 21300078
+    second: Tileset_Stone_Floor2
+  - first:
+      213: 21300080
+    second: Tileset_Stone_Floor4
+  - first:
+      213: 21300082
+    second: Tileset_Stone_Floor5
+  - first:
+      213: 21300084
+    second: Tileset_Stone_Floor6
+  - first:
+      213: 21300086
+    second: Tileset_Stone_Fill0
+  - first:
+      213: 21300088
+    second: Tileset_Stone_Fill1
+  - first:
+      213: 21300090
+    second: Tileset_Stone_Fill2
+  - first:
+      213: 21300092
+    second: Tileset_Stone_Fill3
+  - first:
+      213: 21300094
+    second: Tileset_Stone_Fill4
+  - first:
+      213: 21300096
+    second: Tileset_Stone_Fill5
+  - first:
+      213: 21300098
+    second: Tileset_Stone_Fill6
+  - first:
+      213: 21300100
+    second: Tileset_Stone_Fill7
+  - first:
+      213: 21300102
+    second: Tileset_Stone_FloorLeft
+  - first:
+      213: 21300104
+    second: Tileset_Stone_FloorCornerRight
+  - first:
+      213: 21300106
+    second: Tileset_Stone_FloorCornerLeft
+  - first:
+      213: 21300108
+    second: Tileset_Stone_FloorRight
+  - first:
+      213: 21300110
+    second: Tileset_Stone_Ceiling0
+  - first:
+      213: 21300112
+    second: Tileset_Stone_Ceiling4
+  - first:
+      213: 21300114
+    second: Tileset_Stone_WallLeft3
+  - first:
+      213: 21300116
+    second: Tileset_Stone_FloorSingleBlock
+  - first:
+      213: 21300118
+    second: Tileset_Stone_FloorCornerInnerRight0
+  - first:
+      213: 21300120
+    second: Tileset_Stone_FloorCornerInnerRight1
+  - first:
+      213: 21300122
+    second: Tileset_Stone_FloorCornerInnerRight2
+  - first:
+      213: 21300124
+    second: Tileset_Stone_FloorCornerInnerRight3
+  - first:
+      213: 21300126
+    second: Tileset_Stone_WallRight3
+  - first:
+      213: 21300128
+    second: Tileset_Stone_WallLeft4
+  - first:
+      213: 21300130
+    second: Tileset_Stone_SingleBlock
+  - first:
+      213: 21300132
+    second: Tileset_Stone_45
+  - first:
+      213: 21300134
+    second: Tileset_Stone_FloorCornerInnerLeft0
+  - first:
+      213: 21300136
+    second: Tileset_Stone_FloorCornerInnerLeft1
+  - first:
+      213: 21300138
+    second: Tileset_Stone_FloorCornerInnerLeft2
+  - first:
+      213: 21300140
+    second: Tileset_Stone_FloorCornerInnerLeft3
+  - first:
+      213: 21300142
+    second: Tileset_Stone_WallRight4
+  - first:
+      213: 21300144
+    second: Tileset_Stone_WallLeft5
+  - first:
+      213: 21300146
+    second: Tileset_Stone_FloorCornerSingleBlockLeft
+  - first:
+      213: 21300148
+    second: Tileset_Stone_FloorSingleBlock0
+  - first:
+      213: 21300150
+    second: Tileset_Stone_FloorSingleBlock1
+  - first:
+      213: 21300152
+    second: Tileset_Stone_FloorSingleBlock2
+  - first:
+      213: 21300154
+    second: Tileset_Stone_FloorSingleBlock3
+  - first:
+      213: 21300156
+    second: Tileset_Stone_FloorSingleBlock4
+  - first:
+      213: 21300158
+    second: Tileset_Stone_FloorCornerSingleBlockRight
+  - first:
+      213: 21300160
+    second: Tileset_Stone_WallRight5
+  - first:
+      213: 21300162
+    second: Tileset_Stone_WallLeft6
+  - first:
+      213: 21300164
+    second: Tileset_Stone_FloorSingleBlockLeft
+  - first:
+      213: 21300166
+    second: Tileset_Stone_FloorSingleBlock5
+  - first:
+      213: 21300168
+    second: Tileset_Stone_FloorSingleBlock6
+  - first:
+      213: 21300170
+    second: Tileset_Stone_Floor0
+  - first:
+      213: 21300172
+    second: Tileset_Stone_Floor3
+  - first:
+      213: 21300174
+    second: Tileset_Stone_FloorCornerOuterRight
+  - first:
+      213: 21300176
+    second: Tileset_Stone_WallLeft0
+  - first:
+      213: 21300178
+    second: Tileset_Stone_Fill8
+  - first:
+      213: 21300180
+    second: Tileset_Stone_Fill11
+  - first:
+      213: 21300182
+    second: Tileset_Stone_FloorSingleBlockRight
+  - first:
+      213: 21300184
+    second: Tileset_Stone_WallRight6
+  - first:
+      213: 21300186
+    second: Tileset_Stone_WallLeftCeilingCorner0
+  - first:
+      213: 21300188
+    second: Tileset_Stone_WallLeftCeilingCorner1
+  - first:
+      213: 21300190
+    second: Tileset_Stone_WallLeftCeilingCorner2
+  - first:
+      213: 21300192
+    second: Tileset_Stone_WallLeftCeilingCorner3
+  - first:
+      213: 21300194
+    second: Tileset_Stone_WallLeftCeilingCorner4
+  - first:
+      213: 21300196
+    second: Tileset_Stone_WallLeftCeilingCorner5
+  - first:
+      213: 21300198
+    second: Tileset_Stone_WallLeftCeilingCorner6
+  - first:
+      213: 21300200
+    second: Tileset_Stone_WallRightCeilingCorner0
+  - first:
+      213: 21300202
+    second: Tileset_Stone_WallRightCeilingCorner1
+  - first:
+      213: 21300204
+    second: Tileset_Stone_WallRightCeilingCorner2
+  - first:
+      213: 21300206
+    second: Tileset_Stone_WallRightCeilingCorner3
+  - first:
+      213: 21300208
+    second: Tileset_Stone_WallRightCeilingCorner4
+  - first:
+      213: 21300210
+    second: Tileset_Stone_78
+  - first:
+      213: 21300212
+    second: Tileset_Stone_79
+  - first:
+      213: 21300214
+    second: Tileset_Stone_WallRightCeilingCorner5
+  - first:
+      213: 21300216
+    second: Tileset_Stone_WallRightCeilingCorner6
+  - first:
+      213: 21300218
+    second: Tileset_Stone_SingleColumn0
+  - first:
+      213: 21300220
+    second: Tileset_Stone_SingleColumn1
+  - first:
+      213: 21300222
+    second: Tileset_Stone_SingleColumn2
+  - first:
+      213: 21300224
+    second: Tileset_Stone_SingleColumnBottom
+  - first:
+      213: 21300226
+    second: Tileset_Stone_SingleBlockCorner_Left
+  - first:
+      213: 21300228
+    second: Tileset_Stone_SingleBlockCorner_Right
+  - first:
+      213: 21300230
+    second: Tileset_Stone_WallLeftCornerGrass
+  - first:
+      213: 21300232
+    second: Tileset_Stone_WallCornerRightGrass
+  - first:
+      213: 21300234
+    second: Tileset_Stone_SingleColumnCentreCorners
+  - first:
+      213: 21300236
+    second: Tileset_Stone_CeilingCornerGrassRight
+  - first:
+      213: 21300238
+    second: Tileset_Stone_CeilingCornerGrassLeft
+  - first:
+      213: 21300240
+    second: Tileset_Stone_SingleColumnCentreCeiling
+  - first:
+      213: 21300242
+    second: Tileset_Stone_CeilingCornerGrassSingleLeft
+  - first:
+      213: 21300244
+    second: Tileset_Stone_CeilingCornerGrassSingleRight
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerOuterLeft
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f01fe2f148c3047ad83ac513eb9bf2
+      internalID: 1574417612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Floor0
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9248ba7386d2841b3705e93d49564f
+      internalID: 1678702399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Floor1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875ce5c15d25ac548b19ff870d929918
+      internalID: -193884851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Floor2
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bb603f148f09044a8f70eb8a3c3c965
+      internalID: -1634663581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Floor3
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1283c27e8b8e89f41a9d069cb17829c9
+      internalID: -99885845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Floor4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7accaef4d21583489588bdbac6402cb
+      internalID: 2080341057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Floor5
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d82325f99d0ea49ab4d79c97b0a69d
+      internalID: -1457149678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Floor6
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276a52b882bf2174e860c015c996a657
+      internalID: -1385400584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerOuterRight
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 7680
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: -218.49219}
+        - {x: 232.34766, y: 69.14209}
+        - {x: 196.3335, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f53ea2b61ef88e4eb3f7d80da95b829
+      internalID: 466029752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeft0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd921e21f35f684409b16197eb89dd59
+      internalID: -1094841662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill0
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2ecb807cb91ac4fac529e672defd14
+      internalID: 1998883911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2994ff0332e8f42988c3b44f66a4f3
+      internalID: -439159263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill2
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1878207726c770c4a8d2a56cf5b7e9d7
+      internalID: -350172342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill3
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f2e3ea0131e8cc489f34e931397d9a7
+      internalID: 900505231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill4
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d22d124ea4fb7418daebfd261aa1e4
+      internalID: 834512370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill5
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 028ff44640f6ccd43b5a36b43acf757a
+      internalID: 674293656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill6
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afa99b973dc6ae4081df95b5a03a008
+      internalID: 1404014206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRight0
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c635b6035ff507346bda775b0306eb73
+      internalID: -49223081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCornerGrass
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 7168
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d3148e7bac2b9439ca5e173a2ba1f4
+      internalID: 447719000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeft1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d448bf3aef39ed94683c76c046c97fc7
+      internalID: 1926989101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4856015a8ba76f445807e1770003d85e
+      internalID: 94846917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8c5eb9e96588841937f3ef25298754
+      internalID: -1468020079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill9
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e6d294f9d610145b26d1f03fb36829
+      internalID: -1772973632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9ade23dd2f36643b4c405f14408e05
+      internalID: -1294278648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Fill11
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e44d5faef816844d9edd1de95a715dd
+      internalID: 1316579073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Ceiling0
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa01b5d8baa93445a3b813dedc869b8
+      internalID: 2119927936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Ceiling1
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d9e2992012cb941b830ba7075096f3
+      internalID: 2033640547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRight1
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7732557fc3eee2b4e969a75fc3c90295
+      internalID: 294847981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallCornerRightGrass
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 6656
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48c7174ca84228b47956fecb27e9ea70
+      internalID: 389257487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeft2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f733a788518924487dccbce0ce2a03
+      internalID: -600767057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_CeilingCornerOuterLeft
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16545f94579ed8846ab317b7f4cafe7c
+      internalID: 201410889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Ceiling2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 106276eea341e1e458d623e42c557356
+      internalID: -876112332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Ceiling3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59fcba0f981a61147b2a0f9388e71cb0
+      internalID: -1637633589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Ceiling4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e8fd0e7b3167d409974bda7a4f4f69
+      internalID: -1436442627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Ceiling5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78df4d3246227c4e8cca76bae678b26
+      internalID: 839448125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_Ceiling6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fb08642811b334d94bf1e64f83c241
+      internalID: -1582013406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_CeilingCornerOuterRight
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb3bcc14b5abeb4b8b8166b88c190cf
+      internalID: -1625398606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRight2
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 6144
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b03f1b6c885004f9cb1b5d0ae6a9f7
+      internalID: 1618022609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeft3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6788b86e3322df4d84b62d08857ee36
+      internalID: -713317780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -231.29626, y: 130}
+        - {x: -248, y: -256}
+        - {x: 247, y: -256}
+        - {x: 250, y: -254}
+        - {x: 224.0741, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27dde199fee7df34892487353d39fe3b
+      internalID: -1242668042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleBlockCorner_Left
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7f1a024ab07534e9515c2462e28c13
+      internalID: -62181626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleBlockCorner_Right
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: 249, y: 256}
+        - {x: -243, y: 256}
+        - {x: -256, y: 239}
+        - {x: -256, y: -247}
+        - {x: 198, y: -247}
+        - {x: 223, y: -214}
+        - {x: 256, y: -15}
+        - {x: 256, y: 250}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6590fc3e827a044292677132512caaa
+      internalID: 633714663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerRight0
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720f69fbc5ef19d4b98a654351cc3321
+      internalID: 1230626165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerRight1
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad26b67b9a3d47d439a5e102b9f81784
+      internalID: -1487195417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerRight2
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fe958ae5ebd7da438dd624986a09268
+      internalID: 2117340228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerRight3
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 921b4a5db1794784597117ffecc19ad6
+      internalID: -751307767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRight3
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b01b4c282fd6945ace181aa8e6a683
+      internalID: 2136038266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleColumn0
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 5632
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05119491a7120349ae1c6cc7d3df3b4
+      internalID: 2007231770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeft4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f163fb524dabd6645a376b6d00b10d21
+      internalID: 1549104166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleBlock
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -235.5185, y: -194.6294}
+        - {x: -180.81482, y: -235.77783}
+        - {x: -67.96295, y: -222.85156}
+        - {x: 160.18524, y: -256}
+        - {x: 246.88892, y: -198}
+        - {x: 222, y: 130}
+        - {x: -240.70374, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b444170117391444d8adeec97d8f131a
+      internalID: 1678209784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_CeilingCornerGrassRight
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706569916de60ef4cbdfab1a34663688
+      internalID: 609885266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_CeilingCornerGrassLeft
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bf4a804b0e03a4880c77b545dc8778
+      internalID: 1999254098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerLeft0
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe950fa61b0e28a4c9fbd50e20ff9fb8
+      internalID: 1972708604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerLeft1
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef6d2f83936cf248b49f1e548cf4596
+      internalID: -1607472908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerLeft2
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d94c8becf361104dada95af2e3b480f
+      internalID: 243404711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerInnerLeft3
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 398c6ad8c502fa0408b18426fcd58b64
+      internalID: 18779052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRight4
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f948b23dc069394e8923a36e92fdd92
+      internalID: -982866955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleColumn1
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 5120
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb94780c9deae9148a3ecb9b199ed45d
+      internalID: -538360493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeft5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ed9be06a6e11147a2b9247752ec248
+      internalID: -1439749880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerSingleBlockLeft
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 220.22363}
+        - {x: 236.36932, y: 220.21094}
+        - {x: 242.66595, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596bfb81d01be9f4c9de11c858ca5142
+      internalID: 141451957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock0
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -221}
+        - {x: 256, y: -221}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddad035b0962d1a4a8b3cc1b2abbf8cc
+      internalID: -505193039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock1
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -236}
+        - {x: -210, y: -246}
+        - {x: 256, y: -246}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3c2d885e95e964b854a3094656b8ba
+      internalID: 740850146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -162, y: -256}
+        - {x: -157, y: -256}
+        - {x: -157, y: -254}
+        - {x: -159, y: -252}
+        - {x: -162, y: -253}
+      - - {x: -256, y: 130}
+        - {x: -256, y: -227}
+        - {x: -256, y: -249}
+        - {x: 221, y: -249}
+        - {x: 256, y: -219}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59244aa730b9524da92434287a55052
+      internalID: 1584418984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock3
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -222}
+        - {x: -224, y: -249}
+        - {x: 256, y: -249}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b022097267f86a94b9ba7b26c03301f0
+      internalID: 1439967018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock4
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: 256, y: 130}
+        - {x: -256, y: 130}
+        - {x: -256, y: -221}
+        - {x: -241, y: -247}
+        - {x: 256, y: -247}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4637a062c796da244b98fc4e33ab7184
+      internalID: -1058192897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorCornerSingleBlockRight
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb87c24b5a6826c41ba320dfb3c712c0
+      internalID: 303910383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRight5
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6906b1da349a4448d68014b6942931
+      internalID: -146277015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleColumn2
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 4608
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b1d9d0320f2e74683d1a39db055209
+      internalID: -1002944692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeft6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb14ffa67a91174283972c26ffbcc0d
+      internalID: 642262009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlockLeft
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -249, y: -168}
+        - {x: -179.80048, y: -236.77783}
+        - {x: 184, y: -253}
+        - {x: 256, y: -223}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aa48f719b134d24a95c29c01778ed95
+      internalID: -746480737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -247}
+        - {x: -246, y: -249}
+        - {x: 256, y: -249}
+        - {x: 256, y: -235}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f7a713ac42eb040bdf75439a0d527c
+      internalID: -824517035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlock6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -227}
+        - {x: -244, y: -251}
+        - {x: 256, y: -251}
+        - {x: 256, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f646e32084a738546b8f8164eec79a78
+      internalID: -1051504149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_FloorSingleBlockRight
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 130}
+        - {x: -256, y: -220}
+        - {x: -214, y: -241}
+        - {x: -99, y: -253}
+        - {x: 187, y: -253}
+        - {x: 250, y: -222}
+        - {x: 226.21997, y: 86.601074}
+        - {x: 189.04688, y: 130}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b501da3ccf6c84ab422954a4cea348
+      internalID: 1118554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleColumnCentreCeiling
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52d796e50d263b428faed48987f0ffb
+      internalID: 1597269017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleColumnCentreCorners
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021db921731a64f47ab6ba562baa8483
+      internalID: 877669806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRight6
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: caf25db693c33634089f55177e454849
+      internalID: -978501206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_SingleColumnBottom
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 4096
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: debf58232afd39049b0b096ae9151c94
+      internalID: -838241152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCeilingCorner0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b94e7403d0865428621a33154830b6
+      internalID: 852922378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCeilingCorner1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e056b807ed51d6d4bba52ad26bec36df
+      internalID: 1535626337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCeilingCorner2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238b2055ed7643345945c2a8f34f8d1c
+      internalID: -729982942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCeilingCorner3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462fb81fa9920724aa42cd5a20d689ed
+      internalID: 905916654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCeilingCorner4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515d8f288fa8ceb469863a8d19951832
+      internalID: 2081260918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCeilingCorner5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6457615a61b4e8b4d8cf5c0efbc6e84e
+      internalID: 259960718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallLeftCeilingCorner6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 360a72ea708b56c4ab056b08bbfdc2c0
+      internalID: -711991479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_CeilingCornerGrassSingleLeft
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b762347538d3dd47b712ad15f29a859
+      internalID: -1895276973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_CeilingCornerGrassSingleRight
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 3584
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -252}
+        - {x: 212, y: -252}
+        - {x: 256, y: -119}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2d6699a5edb9c46ac0f7903336484a
+      internalID: -1770014700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRightCeilingCorner0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef6be0df0ddb98d4aa3b12f17b6fef30
+      internalID: -928437325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRightCeilingCorner1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b668503931440a544b1e7aff65f0fd7a
+      internalID: -529521330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRightCeilingCorner2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d481a86f3389bb4e8604c815704fa7c
+      internalID: -1313458168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRightCeilingCorner3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b496369a9ce75ea47b79690465c16150
+      internalID: -20416269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRightCeilingCorner4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2454b100ae9a8df4790ed4d38214ebfd
+      internalID: -1805153133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRightCeilingCorner5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b4e1b933bd17d84b824b7df8aa6b538
+      internalID: 347318588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tileset_Stone_WallRightCeilingCorner6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 244, y: 256}
+        - {x: -245, y: 256}
+        - {x: -256, y: 253}
+        - {x: -256, y: -158}
+        - {x: -246, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 248}
+        - {x: 249, y: 255}
+      physicsShape:
+      - - {x: -256, y: 256}
+        - {x: -256, y: -241}
+        - {x: -256, y: -256}
+        - {x: 256, y: -256}
+        - {x: 256, y: 256}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765db4cc85314394a97859089037237f
+      internalID: -1824710544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tileset_Stone_10: -1113802208
+      Tileset_Stone_105: -1398878608
+      Tileset_Stone_106: -1890656930
+      Tileset_Stone_107: -109252286
+      Tileset_Stone_108: -1737226603
+      Tileset_Stone_109: -638044532
+      Tileset_Stone_11: -830832849
+      Tileset_Stone_110: -236955642
+      Tileset_Stone_111: 1662942734
+      Tileset_Stone_112: -1162213433
+      Tileset_Stone_113: 604362413
+      Tileset_Stone_114: 1421002931
+      Tileset_Stone_115: -1134208896
+      Tileset_Stone_116: 399714954
+      Tileset_Stone_117: 786767393
+      Tileset_Stone_118: -688347324
+      Tileset_Stone_119: -109838714
+      Tileset_Stone_120: 288052672
+      Tileset_Stone_121: 581155485
+      Tileset_Stone_122: -1854579044
+      Tileset_Stone_123: 11803785
+      Tileset_Stone_22: 1323147169
+      Tileset_Stone_33: 1627841114
+      Tileset_Stone_43: -561299926
+      Tileset_Stone_44: 1202051518
+      Tileset_Stone_55: -54996114
+      Tileset_Stone_83: -1932598826
+      Tileset_Stone_86: -239284432
+      Tileset_Stone_9: -283012367
+      Tileset_Stone_96: 1718209351
+      Tileset_Stone_97: 225639224
+      Tileset_Stone_Ceiling0: 2119927936
+      Tileset_Stone_Ceiling1: 2033640547
+      Tileset_Stone_Ceiling2: -876112332
+      Tileset_Stone_Ceiling3: -1637633589
+      Tileset_Stone_Ceiling4: -1436442627
+      Tileset_Stone_Ceiling5: 839448125
+      Tileset_Stone_Ceiling6: -1582013406
+      Tileset_Stone_CeilingCornerGrassLeft: 1999254098
+      Tileset_Stone_CeilingCornerGrassRight: 609885266
+      Tileset_Stone_CeilingCornerGrassSingleLeft: -1895276973
+      Tileset_Stone_CeilingCornerGrassSingleRight: -1770014700
+      Tileset_Stone_CeilingCornerOuterLeft: 201410889
+      Tileset_Stone_CeilingCornerOuterRight: -1625398606
+      Tileset_Stone_Fill0: 1998883911
+      Tileset_Stone_Fill1: -439159263
+      Tileset_Stone_Fill10: -1294278648
+      Tileset_Stone_Fill11: 1316579073
+      Tileset_Stone_Fill2: -350172342
+      Tileset_Stone_Fill3: 900505231
+      Tileset_Stone_Fill4: 834512370
+      Tileset_Stone_Fill5: 674293656
+      Tileset_Stone_Fill6: 1404014206
+      Tileset_Stone_Fill7: 94846917
+      Tileset_Stone_Fill8: -1468020079
+      Tileset_Stone_Fill9: -1772973632
+      Tileset_Stone_Floor0: 1678702399
+      Tileset_Stone_Floor1: -193884851
+      Tileset_Stone_Floor2: -1634663581
+      Tileset_Stone_Floor3: -99885845
+      Tileset_Stone_Floor4: 2080341057
+      Tileset_Stone_Floor5: -1457149678
+      Tileset_Stone_Floor6: -1385400584
+      Tileset_Stone_FloorCornerInnerLeft0: 1972708604
+      Tileset_Stone_FloorCornerInnerLeft1: -1607472908
+      Tileset_Stone_FloorCornerInnerLeft2: 243404711
+      Tileset_Stone_FloorCornerInnerLeft3: 18779052
+      Tileset_Stone_FloorCornerInnerRight0: 1230626165
+      Tileset_Stone_FloorCornerInnerRight1: -1487195417
+      Tileset_Stone_FloorCornerInnerRight2: 2117340228
+      Tileset_Stone_FloorCornerInnerRight3: -751307767
+      Tileset_Stone_FloorCornerOuterLeft: 1574417612
+      Tileset_Stone_FloorCornerOuterRight: 466029752
+      Tileset_Stone_FloorCornerSingleBlockLeft: 141451957
+      Tileset_Stone_FloorCornerSingleBlockRight: 303910383
+      Tileset_Stone_FloorSingleBlock: -1242668042
+      Tileset_Stone_FloorSingleBlock0: -505193039
+      Tileset_Stone_FloorSingleBlock1: 740850146
+      Tileset_Stone_FloorSingleBlock2: 1584418984
+      Tileset_Stone_FloorSingleBlock3: 1439967018
+      Tileset_Stone_FloorSingleBlock4: -1058192897
+      Tileset_Stone_FloorSingleBlock5: -824517035
+      Tileset_Stone_FloorSingleBlock6: -1051504149
+      Tileset_Stone_FloorSingleBlockLeft: -746480737
+      Tileset_Stone_FloorSingleBlockRight: 1118554
+      Tileset_Stone_SingleBlock: 1678209784
+      Tileset_Stone_SingleBlockCorner_Left: -62181626
+      Tileset_Stone_SingleBlockCorner_Right: 633714663
+      Tileset_Stone_SingleColumn0: 2007231770
+      Tileset_Stone_SingleColumn1: -538360493
+      Tileset_Stone_SingleColumn2: -1002944692
+      Tileset_Stone_SingleColumnBottom: -838241152
+      Tileset_Stone_SingleColumnCentreCeiling: 1597269017
+      Tileset_Stone_SingleColumnCentreCorners: 877669806
+      Tileset_Stone_WallCornerRightGrass: 389257487
+      Tileset_Stone_WallLeft0: -1094841662
+      Tileset_Stone_WallLeft1: 1926989101
+      Tileset_Stone_WallLeft2: -600767057
+      Tileset_Stone_WallLeft3: -713317780
+      Tileset_Stone_WallLeft4: 1549104166
+      Tileset_Stone_WallLeft5: -1439749880
+      Tileset_Stone_WallLeft6: 642262009
+      Tileset_Stone_WallLeftCeilingCorner0: 852922378
+      Tileset_Stone_WallLeftCeilingCorner1: 1535626337
+      Tileset_Stone_WallLeftCeilingCorner2: -729982942
+      Tileset_Stone_WallLeftCeilingCorner3: 905916654
+      Tileset_Stone_WallLeftCeilingCorner4: 2081260918
+      Tileset_Stone_WallLeftCeilingCorner5: 259960718
+      Tileset_Stone_WallLeftCeilingCorner6: -711991479
+      Tileset_Stone_WallLeftCornerGrass: 447719000
+      Tileset_Stone_WallRight0: -49223081
+      Tileset_Stone_WallRight1: 294847981
+      Tileset_Stone_WallRight2: 1618022609
+      Tileset_Stone_WallRight3: 2136038266
+      Tileset_Stone_WallRight4: -982866955
+      Tileset_Stone_WallRight5: -146277015
+      Tileset_Stone_WallRight6: -978501206
+      Tileset_Stone_WallRightCeilingCorner0: -928437325
+      Tileset_Stone_WallRightCeilingCorner1: -529521330
+      Tileset_Stone_WallRightCeilingCorner2: -1313458168
+      Tileset_Stone_WallRightCeilingCorner3: -20416269
+      Tileset_Stone_WallRightCeilingCorner4: -1805153133
+      Tileset_Stone_WallRightCeilingCorner5: 347318588
+      Tileset_Stone_WallRightCeilingCorner6: -1824710544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
